@@ -62,11 +62,6 @@ namespace Biblioteca.DAO
             }
         }
 
-        public List<Fornecedor> Select(Fornecedor filtro)
-        {
-            throw new NotImplementedException();
-        }
-
         public void Update(Fornecedor fornecedor)
         {
             try
@@ -143,9 +138,114 @@ namespace Biblioteca.DAO
 
         public bool VerificarDuplicidade(Fornecedor fornecedor)
         {
-            throw new NotImplementedException();
+            bool retorno = false;
+            try
+            {
+                this.Conectar();
+                string sql = "SELECT CNPJ,RazaoSocial,Email,CEP,Telefone,";
+                sql += " Estado,Cidade,Bairro,Logradouro,Complemento FROM Fornecedor where ID = @ID";
+                SqlCommand cmd = new SqlCommand(sql, sqlcon);
+
+                cmd.Parameters.Add("@CNPJ", SqlDbType.VarChar);
+                cmd.Parameters["@CNPJ"].Value = fornecedor.Cnpj;
+
+                cmd.Parameters.Add("@RazaoSocial", SqlDbType.VarChar);
+                cmd.Parameters["@RazaoSocial"].Value = fornecedor.RazaoSocial;
+
+                cmd.Parameters.Add("@Email", SqlDbType.VarChar);
+                cmd.Parameters["@Email"].Value = fornecedor.Email;
+
+                cmd.Parameters.Add("@CEP", SqlDbType.VarChar);
+                cmd.Parameters["@CEP"].Value = fornecedor.Cep;
+
+                cmd.Parameters.Add("@Telefone", SqlDbType.VarChar);
+                cmd.Parameters["@Telefone"].Value = fornecedor.Telefone;
+
+                cmd.Parameters.Add("@Estado", SqlDbType.VarChar);
+                cmd.Parameters["@Estado"].Value = fornecedor.Estado;
+
+                cmd.Parameters.Add("@Cidade", SqlDbType.VarChar);
+                cmd.Parameters["@Cidade"].Value = fornecedor.Cidade;
+
+                cmd.Parameters.Add("@Bairro", SqlDbType.VarChar);
+                cmd.Parameters["@Bairro"].Value = fornecedor.Bairro;
+
+                cmd.Parameters.Add("@Logradouro", SqlDbType.VarChar);
+                cmd.Parameters["@Logradouro"].Value = fornecedor.Logradouro;
+
+                cmd.Parameters.Add("@Complemento", SqlDbType.VarChar);
+                cmd.Parameters["@Complemento"].Value = fornecedor.Complemento;
+
+                cmd.Parameters.Add("ID", SqlDbType.Int);
+                cmd.Parameters["@ID"].Value = fornecedor.Id;
+
+                SqlDataReader DbReader = cmd.ExecuteReader();
+
+                while (DbReader.Read())
+                {
+                    retorno = true;
+                    break;
+                }
+
+                DbReader.Close();
+                cmd.Dispose();
+                this.Desconectar();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao conecar e inserir " + ex.Message);
+            }
+            return retorno;
         }
 
-       
+        public List<Fornecedor> Select(Fornecedor filtro)
+        {
+            List<Fornecedor> retorno = new List<Fornecedor>();
+            try
+            {
+                this.Conectar();
+                string sql = "SELECT CNPJ,RazaoSocial,Email,CEP,Telefone,";
+                sql += " Estado,Cidade,Bairro,Logradouro,Complemento FROM Fornecedor where ID = ID";
+
+                if (filtro.Id > 0)
+                {
+                    sql += "and ID = @ID";
+                }
+                if (filtro.RazaoSocial != null && filtro.RazaoSocial.Trim().Equals("") == false)
+                {
+                    sql += " and nome like @RazaoSocial";
+                }
+                SqlCommand cmd = new SqlCommand(sql, sqlcon);
+
+                if (filtro.Id > 0)
+                {
+                    cmd.Parameters.Add("ID", SqlDbType.Int);
+                    cmd.Parameters["@ID"].Value = filtro.Id;
+                }
+                if (filtro.RazaoSocial != null && filtro.RazaoSocial.Trim().Equals("") == false)
+                {
+                    cmd.Parameters.Add("@RazaoSocial", SqlDbType.VarChar);
+                    cmd.Parameters["@RazaoSocial"].Value = filtro.RazaoSocial;
+                }
+                SqlDataReader DbReader = cmd.ExecuteReader();
+                while (DbReader.Read())
+                {
+                    Fornecedor fornecedor = new Fornecedor();
+                    fornecedor.Id = DbReader.GetInt32(DbReader.GetOrdinal("Id"));
+                    fornecedor.RazaoSocial = DbReader.GetString(DbReader.GetOrdinal("RazaoSocial"));
+                    retorno.Add(fornecedor);
+                }
+
+                DbReader.Close();
+                cmd.Dispose();
+                this.Desconectar();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao conecar e selecionar " + ex.Message);
+            }
+            return retorno;
+        }
+
     }
 }
