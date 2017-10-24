@@ -121,14 +121,31 @@ namespace Biblioteca.DAO
             }
         }
 
+        
+        public void Delete(Fornecedor fornecedor)
+        {
+            try
+            {
+                this.Conectar();
+                string sql = "delete from Fornecedor where ID=@ID";
+                SqlCommand cmd = new SqlCommand(sql, this.sqlcon);
+                cmd.Parameters.Add("@ID", SqlDbType.Int);
+                cmd.Parameters["@ID"].Value = fornecedor.Id;
+                cmd.ExecuteNonQuery();
+                cmd.Dispose();
+                this.Desconectar();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao conecar e remover " + ex.Message);
+            }
+        }
+
         public bool VerificarDuplicidade(Fornecedor fornecedor)
         {
             throw new NotImplementedException();
         }
 
-        public void Delete(Fornecedor fornecedor)
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }
