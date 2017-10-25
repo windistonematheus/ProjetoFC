@@ -21,9 +21,15 @@ namespace ProjetoFabricaCosmeticos
         private void button1_Click(object sender, EventArgs e)
         {
             GerenciadorConexaoSqlServer sqlconnection = new GerenciadorConexaoSqlServer();
-            sqlconnection.conectar();
-            sqlconnection.desconectar();
+            sqlconnection.Conectar();
+            sqlconnection.Desconectar();
             MessageBox.Show("OK");
+        }
+
+        private void cadastroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormCadastroFornecedor form = new FormCadastroFornecedor();
+            form.Show();
         }
     }
 }
