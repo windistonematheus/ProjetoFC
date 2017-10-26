@@ -24,6 +24,15 @@ namespace ProjetoFabricaCosmeticos
             {
                 Fornecedor f = new Fornecedor();
                 f.Cnpj = textBoxCnpj.Text;
+                f.RazaoSocial = textBoxRazaoSocial.Text;
+                f.Email = textBoxEmail.Text;
+                f.Telefone = textBoxTelefone.Text;
+                f.Cep = textBoxCep.Text;
+                f.Logradouro = textBoxTelefone.Text;
+                f.Complemento = textBoxComplemento.Text;
+                f.Bairro = textBoxBairro.Text;
+                f.Cidade = textBoxCidade.Text;
+                f.Estado = textBoxEstado.Text;
             }
             catch (Exception ex)
             {
