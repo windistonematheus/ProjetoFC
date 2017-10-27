@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Biblioteca.Classes_Basicas;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,26 @@ namespace ProjetoFabricaCosmeticos
         public FormConsultaFornecedor()
         {
             InitializeComponent();
+        }
+
+        private void buttonListar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Fornecedor filtro = new Fornecedor();
+                if (textBoxCnpj.Text.Trim().Equals("") == false)
+                {
+                    filtro.Cnpj = textBoxCnpj.Text.Trim();
+                }
+                filtro.RazaoSocial = textBoxRazaoSocial.Text;
+                listViewFornecedor.Items.Clear();
+               
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
     }
 }

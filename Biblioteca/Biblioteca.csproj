@@ -46,6 +46,7 @@
     <Compile Include="Classes Basicas\MateriaPrima.cs" />
     <Compile Include="DAO\FornecedorDados.cs" />
     <Compile Include="DAO\InterfaceFornecedor.cs" />
+    <Compile Include="Negocio\FornecedorNegocio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util\GerenciadorConexaoSqlServer.cs" />
   </ItemGroup>
