@@ -207,9 +207,9 @@ namespace Biblioteca.DAO
                 string sql = "SELECT CNPJ,RazaoSocial,Email,CEP,Telefone,";
                 sql += " Estado,Cidade,Bairro,Logradouro,Complemento FROM Fornecedor where ID = ID";
 
-                if (filtro.Id > 0)
+                if (filtro.Cnpj != null && filtro.RazaoSocial.Trim().Equals("") == false)
                 {
-                    sql += "and ID = @ID";
+                    sql += "and CNPJ = @CNPJ";
                 }
                 if (filtro.RazaoSocial != null && filtro.RazaoSocial.Trim().Equals("") == false)
                 {
@@ -217,10 +217,10 @@ namespace Biblioteca.DAO
                 }
                 SqlCommand cmd = new SqlCommand(sql, sqlcon);
 
-                if (filtro.Id > 0)
+                if (filtro.Cnpj != null && filtro.RazaoSocial.Trim().Equals("") == false)
                 {
-                    cmd.Parameters.Add("ID", SqlDbType.Int);
-                    cmd.Parameters["@ID"].Value = filtro.Id;
+                    cmd.Parameters.Add("CNPJ", SqlDbType.VarChar);
+                    cmd.Parameters["@CNPJ"].Value = filtro.Cnpj;
                 }
                 if (filtro.RazaoSocial != null && filtro.RazaoSocial.Trim().Equals("") == false)
                 {
