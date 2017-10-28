@@ -1,4 +1,5 @@
 ﻿using Biblioteca.Classes_Basicas;
+using Biblioteca.Negocio;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -33,6 +34,10 @@ namespace ProjetoFabricaCosmeticos
                 f.Bairro = textBoxBairro.Text;
                 f.Cidade = textBoxCidade.Text;
                 f.Estado = textBoxEstado.Text;
+
+                FornecedorNegocio dados = new FornecedorNegocio();
+                dados.Insert(f);
+                MessageBox.Show("Fornecedor cadastrado com sucesso");
             }
             catch (Exception ex)
             {
