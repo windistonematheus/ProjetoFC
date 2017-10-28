@@ -142,43 +142,13 @@ namespace Biblioteca.DAO
             try
             {
                 this.Conectar();
-                string sql = "SELECT CNPJ,RazaoSocial,Email,CEP,Telefone,";
-                sql += " Estado,Cidade,Bairro,Logradouro,Complemento FROM Fornecedor where ID = @ID";
+                string sql = "SELECT ID,CNPJ,RazaoSocial,Email,CEP,Telefone,";
+                sql += " Estado,Cidade,Bairro,Logradouro,Complemento FROM Fornecedor where CNPJ = @CNPJ";
                 SqlCommand cmd = new SqlCommand(sql, sqlcon);
 
                 cmd.Parameters.Add("@CNPJ", SqlDbType.VarChar);
                 cmd.Parameters["@CNPJ"].Value = fornecedor.Cnpj;
-
-                cmd.Parameters.Add("@RazaoSocial", SqlDbType.VarChar);
-                cmd.Parameters["@RazaoSocial"].Value = fornecedor.RazaoSocial;
-
-                cmd.Parameters.Add("@Email", SqlDbType.VarChar);
-                cmd.Parameters["@Email"].Value = fornecedor.Email;
-
-                cmd.Parameters.Add("@CEP", SqlDbType.VarChar);
-                cmd.Parameters["@CEP"].Value = fornecedor.Cep;
-
-                cmd.Parameters.Add("@Telefone", SqlDbType.VarChar);
-                cmd.Parameters["@Telefone"].Value = fornecedor.Telefone;
-
-                cmd.Parameters.Add("@Estado", SqlDbType.VarChar);
-                cmd.Parameters["@Estado"].Value = fornecedor.Estado;
-
-                cmd.Parameters.Add("@Cidade", SqlDbType.VarChar);
-                cmd.Parameters["@Cidade"].Value = fornecedor.Cidade;
-
-                cmd.Parameters.Add("@Bairro", SqlDbType.VarChar);
-                cmd.Parameters["@Bairro"].Value = fornecedor.Bairro;
-
-                cmd.Parameters.Add("@Logradouro", SqlDbType.VarChar);
-                cmd.Parameters["@Logradouro"].Value = fornecedor.Logradouro;
-
-                cmd.Parameters.Add("@Complemento", SqlDbType.VarChar);
-                cmd.Parameters["@Complemento"].Value = fornecedor.Complemento;
-
-                cmd.Parameters.Add("ID", SqlDbType.Int);
-                cmd.Parameters["@ID"].Value = fornecedor.Id;
-
+                
                 SqlDataReader DbReader = cmd.ExecuteReader();
 
                 while (DbReader.Read())
@@ -193,7 +163,7 @@ namespace Biblioteca.DAO
             }
             catch (Exception ex)
             {
-                throw new Exception("Erro ao conecar e inserir " + ex.Message);
+                throw new Exception("Erro ao conecar e selecionar " + ex.Message);
             }
             return retorno;
         }
