@@ -57,6 +57,8 @@ namespace ProjetoFabricaCosmeticos
                 f.Bairro = textBoxBairro.Text;
                 f.Cidade = textBoxCidade.Text;
                 f.Estado = textBoxEstado.Text;
+                
+
 
                 FornecedorNegocio dados = new FornecedorNegocio();
                 if (this.operacao == 0)
