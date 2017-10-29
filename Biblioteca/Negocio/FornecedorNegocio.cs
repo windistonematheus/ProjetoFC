@@ -13,7 +13,22 @@ namespace Biblioteca.Negocio
     {
         public void Delete(Fornecedor fornecedor)
         {
-            throw new NotImplementedException();
+            if (fornecedor == null)
+            {
+                throw new Exception("Informar os dados do fornecedor");
+            }
+            if (fornecedor.Id <= 0)
+            {
+                throw new Exception("O Id do aluno não poderá ser menor ou igual a zero");
+            }
+            FornecedorDados dados = new FornecedorDados();
+
+            if (this.VerificarDuplicidade(fornecedor) == false)
+            {
+                throw new Exception("O fornecedor não esta cadastrado");
+            }
+
+            dados.Delete(fornecedor);
         }
 
         public void Insert(Fornecedor fornecedor)

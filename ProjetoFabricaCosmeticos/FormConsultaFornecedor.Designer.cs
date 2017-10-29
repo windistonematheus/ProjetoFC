@@ -175,6 +175,7 @@
             this.buttonRemover.TabIndex = 7;
             this.buttonRemover.Text = "Remover";
             this.buttonRemover.UseVisualStyleBackColor = true;
+            this.buttonRemover.Click += new System.EventHandler(this.buttonRemover_Click);
             // 
             // FormConsultaFornecedor
             // 
