@@ -49,6 +49,7 @@
             this.textBoxCidade = new System.Windows.Forms.TextBox();
             this.textBoxEstado = new System.Windows.Forms.TextBox();
             this.buttonCadastraFornecedor = new System.Windows.Forms.Button();
+            this.textBoxId = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -221,11 +222,19 @@
             this.buttonCadastraFornecedor.UseVisualStyleBackColor = true;
             this.buttonCadastraFornecedor.Click += new System.EventHandler(this.buttonCadastraFornecedor_Click);
             // 
+            // textBoxId
+            // 
+            this.textBoxId.Location = new System.Drawing.Point(103, 2);
+            this.textBoxId.Name = "textBoxId";
+            this.textBoxId.Size = new System.Drawing.Size(100, 20);
+            this.textBoxId.TabIndex = 21;
+            // 
             // FormCadastroFornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(644, 261);
+            this.Controls.Add(this.textBoxId);
             this.Controls.Add(this.buttonCadastraFornecedor);
             this.Controls.Add(this.textBoxEstado);
             this.Controls.Add(this.textBoxCidade);
@@ -277,5 +286,6 @@
         private System.Windows.Forms.TextBox textBoxCidade;
         private System.Windows.Forms.TextBox textBoxEstado;
         private System.Windows.Forms.Button buttonCadastraFornecedor;
+        private System.Windows.Forms.TextBox textBoxId;
     }
 }
