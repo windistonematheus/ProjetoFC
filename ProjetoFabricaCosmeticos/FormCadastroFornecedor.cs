@@ -15,17 +15,31 @@ namespace ProjetoFabricaCosmeticos
     public partial class FormCadastroFornecedor : Form
     {
         int operacao;
+
         public FormCadastroFornecedor()
-        {
-            InitializeComponent();
-        }
-        public FormCadastroFornecedor(Fornecedor f)
         {
             InitializeComponent();
             this.operacao = 0;
             buttonCadastraFornecedor.Text = "Cadastrar";
             this.Text = "Cadastro de Fornecedor";
+        }
 
+        public FormCadastroFornecedor(Fornecedor f)
+        {
+            InitializeComponent();
+            textBoxCnpj.Text = f.Cnpj;
+            textBoxRazaoSocial.Text = f.RazaoSocial;
+            textBoxEmail.Text = f.Email;
+            textBoxTelefone.Text = f.Telefone;
+            textBoxCep.Text = f.Cep;
+            textBoxLogradouro.Text = f.Logradouro;
+            textBoxComplemento.Text = f.Complemento;
+            textBoxBairro.Text = f.Bairro;
+            textBoxCidade.Text = f.Cidade;
+            textBoxEstado.Text = f.Estado;
+            this.operacao = 1;
+            buttonCadastraFornecedor.Text = "Atualizar";
+            this.Text = "Atualização de Fornecedor";
         }
 
         private void buttonCadastraFornecedor_Click(object sender, EventArgs e)
@@ -45,7 +59,17 @@ namespace ProjetoFabricaCosmeticos
                 f.Estado = textBoxEstado.Text;
 
                 FornecedorNegocio dados = new FornecedorNegocio();
-                dados.Insert(f);
+                if (this.operacao == 0)
+                {
+                    dados.Insert(f);
+                    MessageBox.Show("Fornecedor cadastrado com sucesso");
+                }
+                else
+                {
+                    dados.Update(f);
+                    MessageBox.Show("Fornecedor cadastrado com sucesso");
+                }
+
                 textBoxCnpj.Clear();
                 textBoxRazaoSocial.Clear();
                 textBoxEmail.Clear();
@@ -57,7 +81,6 @@ namespace ProjetoFabricaCosmeticos
                 textBoxLogradouro.Clear();
                 textBoxComplemento.Clear();
                 
-                MessageBox.Show("Fornecedor cadastrado com sucesso");
             }
             catch (Exception ex)
             {
