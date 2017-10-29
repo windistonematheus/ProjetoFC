@@ -177,7 +177,7 @@ namespace Biblioteca.Negocio
 
             if (this.VerificarDuplicidade(fornecedor) == true)
             {
-                throw new Exception("A matricula do aluno já se encontra cadastrada");
+                throw new Exception("O fornecedor já se encontra cadastrado");
             }
 
             dados.Insert(fornecedor);

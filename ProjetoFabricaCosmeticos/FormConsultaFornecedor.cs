@@ -78,7 +78,11 @@ namespace ProjetoFabricaCosmeticos
 
         private void buttonAlterar_Click(object sender, EventArgs e)
         {
-            AlterarAluno();
+            AlterarFornecedor();
+        }
+        private void listViewsFornecedor_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            AlterarFornecedor();
         }
     }
 }

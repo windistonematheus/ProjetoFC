@@ -14,9 +14,18 @@ namespace ProjetoFabricaCosmeticos
 {
     public partial class FormCadastroFornecedor : Form
     {
+        int operacao;
         public FormCadastroFornecedor()
         {
             InitializeComponent();
+        }
+        public FormCadastroFornecedor(Fornecedor f)
+        {
+            InitializeComponent();
+            this.operacao = 0;
+            buttonCadastraFornecedor.Text = "Cadastrar";
+            this.Text = "Cadastro de Fornecedor";
+
         }
 
         private void buttonCadastraFornecedor_Click(object sender, EventArgs e)
