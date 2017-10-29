@@ -29,7 +29,7 @@ namespace ProjetoFabricaCosmeticos
                 f.Email = textBoxEmail.Text;
                 f.Telefone = textBoxTelefone.Text;
                 f.Cep = textBoxCep.Text;
-                f.Logradouro = textBoxTelefone.Text;
+                f.Logradouro = textBoxLogradouro.Text;
                 f.Complemento = textBoxComplemento.Text;
                 f.Bairro = textBoxBairro.Text;
                 f.Cidade = textBoxCidade.Text;
@@ -37,6 +37,17 @@ namespace ProjetoFabricaCosmeticos
 
                 FornecedorNegocio dados = new FornecedorNegocio();
                 dados.Insert(f);
+                textBoxCnpj.Clear();
+                textBoxRazaoSocial.Clear();
+                textBoxEmail.Clear();
+                textBoxCep.Clear();
+                textBoxTelefone.Clear();
+                textBoxEstado.Clear();
+                textBoxCidade.Clear();
+                textBoxBairro.Clear();
+                textBoxLogradouro.Clear();
+                textBoxComplemento.Clear();
+                
                 MessageBox.Show("Fornecedor cadastrado com sucesso");
             }
             catch (Exception ex)

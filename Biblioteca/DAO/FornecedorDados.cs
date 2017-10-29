@@ -188,7 +188,7 @@ namespace Biblioteca.DAO
                 }
                 SqlCommand cmd = new SqlCommand(sql, sqlcon);
 
-                if (filtro.Cnpj != null && filtro.RazaoSocial.Trim().Equals("") == false)
+                if (filtro.Cnpj != null && filtro.Cnpj.Trim().Equals("") == false)
                 {
                     cmd.Parameters.Add("@CNPJ", SqlDbType.VarChar);
                     cmd.Parameters["@CNPJ"].Value = filtro.Cnpj;
@@ -213,10 +213,9 @@ namespace Biblioteca.DAO
                     fornecedor.Cep= DbReader.GetString(DbReader.GetOrdinal("CEP"));
                     fornecedor.Email= DbReader.GetString(DbReader.GetOrdinal("Email"));
                     fornecedor.Telefone= DbReader.GetString(DbReader.GetOrdinal("Telefone"));
-
                     retorno.Add(fornecedor);
                 }
-
+                
                 DbReader.Close();
                 cmd.Dispose();
                 this.Desconectar();
