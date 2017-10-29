@@ -1,4 +1,5 @@
 ﻿using Biblioteca.Classes_Basicas;
+using Biblioteca.Negocio;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,8 @@ namespace ProjetoFabricaCosmeticos
 {
     public partial class FormConsultaFornecedor : Form
     {
+        List<Fornecedor> listaFornecedor = new List<Fornecedor>();
+
         public FormConsultaFornecedor()
         {
             InitializeComponent();
@@ -22,13 +25,30 @@ namespace ProjetoFabricaCosmeticos
         {
             try
             {
+                FornecedorNegocio dados = new FornecedorNegocio();
                 Fornecedor filtro = new Fornecedor();
                 if (textBoxCnpj.Text.Trim().Equals("") == false)
                 {
                     filtro.Cnpj = textBoxCnpj.Text.Trim();
                 }
                 filtro.RazaoSocial = textBoxRazaoSocial.Text;
+                listaFornecedor = dados.Select(filtro);
                 listViewFornecedor.Items.Clear();
+                foreach (Fornecedor a in listaFornecedor)
+                {
+                    ListViewItem linha = listViewFornecedor.Items.Add(a.Id.ToString());
+                    linha.SubItems.Add(a.Cnpj);
+                    linha.SubItems.Add(a.RazaoSocial);
+                    linha.SubItems.Add(a.Logradouro);
+                    linha.SubItems.Add(a.Complemento);
+                    linha.SubItems.Add(a.Bairro);
+                    linha.SubItems.Add(a.Cidade);
+                    linha.SubItems.Add(a.Estado);
+                    linha.SubItems.Add(a.Cep);
+                    linha.SubItems.Add(a.Email);
+                    linha.SubItems.Add(a.Telefone);
+                }
+
                
             }
             catch (Exception ex)

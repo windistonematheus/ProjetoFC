@@ -174,22 +174,23 @@ namespace Biblioteca.DAO
             try
             {
                 this.Conectar();
-                string sql = "SELECT CNPJ,RazaoSocial,Email,CEP,Telefone,";
-                sql += " Estado,Cidade,Bairro,Logradouro,Complemento FROM Fornecedor where ID = ID";
+                string sql = "SELECT ID,CNPJ,RazaoSocial,Email,CEP,Telefone,";
+                sql += " Estado,Cidade,Bairro,Logradouro,Complemento ";
+                sql +=" FROM Fornecedor where id = id";
 
-                if (filtro.Cnpj != null && filtro.RazaoSocial.Trim().Equals("") == false)
+                if (filtro.Cnpj != null && filtro.Cnpj.Trim().Equals("") == false)
                 {
-                    sql += "and CNPJ = @CNPJ";
+                    sql += " and CNPJ like @CNPJ ";
                 }
                 if (filtro.RazaoSocial != null && filtro.RazaoSocial.Trim().Equals("") == false)
                 {
-                    sql += " and nome like @RazaoSocial";
+                    sql += " and RazaoSocial like @RazaoSocial";
                 }
                 SqlCommand cmd = new SqlCommand(sql, sqlcon);
 
                 if (filtro.Cnpj != null && filtro.RazaoSocial.Trim().Equals("") == false)
                 {
-                    cmd.Parameters.Add("CNPJ", SqlDbType.VarChar);
+                    cmd.Parameters.Add("@CNPJ", SqlDbType.VarChar);
                     cmd.Parameters["@CNPJ"].Value = filtro.Cnpj;
                 }
                 if (filtro.RazaoSocial != null && filtro.RazaoSocial.Trim().Equals("") == false)
@@ -202,7 +203,17 @@ namespace Biblioteca.DAO
                 {
                     Fornecedor fornecedor = new Fornecedor();
                     fornecedor.Id = DbReader.GetInt32(DbReader.GetOrdinal("Id"));
-                    fornecedor.RazaoSocial = DbReader.GetString(DbReader.GetOrdinal("RazaoSocial"));
+                    fornecedor.Cnpj= DbReader.GetString(DbReader.GetOrdinal("CNPJ"));
+                    fornecedor.RazaoSocial= DbReader.GetString(DbReader.GetOrdinal("RazaoSocial"));
+                    fornecedor.Logradouro = DbReader.GetString(DbReader.GetOrdinal("Logradouro"));
+                    fornecedor.Complemento= DbReader.GetString(DbReader.GetOrdinal("Complemento"));
+                    fornecedor.Bairro= DbReader.GetString(DbReader.GetOrdinal("Bairro"));
+                    fornecedor.Cidade= DbReader.GetString(DbReader.GetOrdinal("Cidade"));
+                    fornecedor.Estado= DbReader.GetString(DbReader.GetOrdinal("Estado"));
+                    fornecedor.Cep= DbReader.GetString(DbReader.GetOrdinal("CEP"));
+                    fornecedor.Email= DbReader.GetString(DbReader.GetOrdinal("Email"));
+                    fornecedor.Telefone= DbReader.GetString(DbReader.GetOrdinal("Telefone"));
+
                     retorno.Add(fornecedor);
                 }
 
