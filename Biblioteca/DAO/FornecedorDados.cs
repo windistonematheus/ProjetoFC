@@ -70,7 +70,7 @@ namespace Biblioteca.DAO
                 string sql = "update Fornecedor set CNPJ = @CNPJ,RazaoSocial = @RazaoSocial,Email = @Email, ";
                 sql += " CEP = @CEP,Telefone = @Telefone,Estado = @Estado,";
                 sql += " Cidade = @Cidade,Bairro = @Bairro,Logradouro = @Logradouro,Complemento = @Complemento";
-                sql += " Where line = posicao";
+                sql += " Where Id = @ID ";
                 SqlCommand cmd = new SqlCommand(sql, this.sqlcon);
 
                 cmd.Parameters.Add("@CNPJ", SqlDbType.VarChar);
@@ -102,6 +102,9 @@ namespace Biblioteca.DAO
 
                 cmd.Parameters.Add("@Complemento", SqlDbType.VarChar);
                 cmd.Parameters["@Complemento"].Value = fornecedor.Complemento;
+
+                cmd.Parameters.Add("@ID", SqlDbType.Int);
+                cmd.Parameters["@ID"].Value = fornecedor.Id;
 
                 cmd.ExecuteNonQuery();
                 cmd.Dispose();
