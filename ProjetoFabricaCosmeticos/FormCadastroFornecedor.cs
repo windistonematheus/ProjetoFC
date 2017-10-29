@@ -15,6 +15,7 @@ namespace ProjetoFabricaCosmeticos
     public partial class FormCadastroFornecedor : Form
     {
         int operacao;
+        int filtro;
 
         public FormCadastroFornecedor()
         {
@@ -37,6 +38,7 @@ namespace ProjetoFabricaCosmeticos
             textBoxBairro.Text = f.Bairro;
             textBoxCidade.Text = f.Cidade;
             textBoxEstado.Text = f.Estado;
+            this.filtro = f.Id;
             this.operacao = 1;
             buttonCadastraFornecedor.Text = "Atualizar";
             this.Text = "Atualização de Fornecedor";
@@ -68,6 +70,7 @@ namespace ProjetoFabricaCosmeticos
                 }
                 else
                 {
+                    f.Id = this.filtro;
                     dados.Update(f);
                     MessageBox.Show("Fornecedor cadastrado com sucesso");
                 }

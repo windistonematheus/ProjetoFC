@@ -344,11 +344,17 @@ namespace Biblioteca.Negocio
             {
                 throw new Exception("O Telefone do fornecedor não pode ter mais de 50 caracteres");
             }
+            if (fornecedor.Id <= 0)
+            {
+                throw new Exception("O Id do aluno não poderá ser menor ou igual a zero");
+            }
             FornecedorDados dados = new FornecedorDados();
-            if(this.VerificarDuplicidade(fornecedor)==false)
+            
+            if (this.VerificarDuplicidade(fornecedor)==false)
             {
                 throw new Exception("O fornecedor não esta cadastrado");
             }
+            
             dados.Update(fornecedor);
         }
 
