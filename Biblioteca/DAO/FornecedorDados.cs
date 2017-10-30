@@ -73,7 +73,7 @@ namespace Biblioteca.DAO
                 sql += " Where ID = @ID";
                 SqlCommand cmd = new SqlCommand(sql, this.sqlcon);
 
-                cmd.Parameters.Add("@ID", SqlDbType.VarChar);
+                cmd.Parameters.Add("@ID", SqlDbType.Int);
                 cmd.Parameters["@ID"].Value = fornecedor.Id;
 
                 cmd.Parameters.Add("@CNPJ", SqlDbType.VarChar);
@@ -143,12 +143,25 @@ namespace Biblioteca.DAO
             {
                 this.Conectar();
                 string sql = "SELECT ID,CNPJ,RazaoSocial,Email,CEP,Telefone,";
-                sql += " Estado,Cidade,Bairro,Logradouro,Complemento FROM Fornecedor where CNPJ = @CNPJ";
+                sql += " Estado,Cidade,Bairro,Logradouro,Complemento FROM Fornecedor where ";
+                                               
+                if (fornecedor.Id != 0)
+                {
+                    sql += " ID like @ID ";
+                }
+                else 
+                {
+                    sql += " CNPJ like @CNPJ";
+                }
+
                 SqlCommand cmd = new SqlCommand(sql, sqlcon);
+
+                cmd.Parameters.Add("@ID", SqlDbType.Int);
+                cmd.Parameters["@ID"].Value = fornecedor.Id;
 
                 cmd.Parameters.Add("@CNPJ", SqlDbType.VarChar);
                 cmd.Parameters["@CNPJ"].Value = fornecedor.Cnpj;
-                
+
                 SqlDataReader DbReader = cmd.ExecuteReader();
 
                 while (DbReader.Read())
