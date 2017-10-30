@@ -88,5 +88,30 @@ namespace ProjetoFabricaCosmeticos
         {
             AlterarFornecedor();
         }
+
+        private void buttonRemover_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (listViewFornecedor.FocusedItem != null)
+                {
+                    int posicao = listViewFornecedor.FocusedItem.Index;
+                    Fornecedor fornecedorSelecionado = this.listaFornecedor.ElementAt(posicao);
+                    FornecedorNegocio dados = new FornecedorNegocio();
+                    dados.Delete(fornecedorSelecionado);
+                    listViewFornecedor.Items.Clear();
+                    MessageBox.Show("Fornecedor removido com sucesso");
+
+                }
+                else
+                {
+                    MessageBox.Show(" Favor selecionar o Fornecedor");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
