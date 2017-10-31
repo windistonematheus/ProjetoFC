@@ -58,7 +58,7 @@ namespace Biblioteca.DAO
             }
             catch (Exception ex)
             {
-                throw new Exception("Erro ao conectar e inserir" + ex.Message);
+                throw new Exception("Erro ao conectar e inserir " + ex.Message);
             }
         }
 
@@ -112,7 +112,7 @@ namespace Biblioteca.DAO
             }
             catch (Exception ex)
             {
-                throw new Exception("Erro ao conecar e atualizar" + ex.Message);
+                throw new Exception("Erro ao conecar e atualizar " + ex.Message);
             }
         }
 
