@@ -37,5 +37,11 @@ namespace ProjetoFabricaCosmeticos
             FormConsultaFornecedor formc = new FormConsultaFornecedor();
             formc.Show();
         }
+
+        private void cadastroToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FormCadastroProduto form = new FormCadastroProduto();
+            form.Show();
+        }
     }
 }

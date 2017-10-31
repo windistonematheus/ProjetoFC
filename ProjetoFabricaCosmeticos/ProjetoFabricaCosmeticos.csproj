@@ -52,6 +52,12 @@
     <Compile Include="FormCadastroFornecedor.Designer.cs">
       <DependentUpon>FormCadastroFornecedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCadastroProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadastroProduto.Designer.cs">
+      <DependentUpon>FormCadastroProduto.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormConsultaFornecedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +74,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormCadastroFornecedor.resx">
       <DependentUpon>FormCadastroFornecedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCadastroProduto.resx">
+      <DependentUpon>FormCadastroProduto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormConsultaFornecedor.resx">
       <DependentUpon>FormConsultaFornecedor.cs</DependentUpon>
