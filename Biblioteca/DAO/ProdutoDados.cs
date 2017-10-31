@@ -163,7 +163,7 @@ namespace Biblioteca.DAO
                 if (filtro.Nome != null && filtro.Nome.Trim().Equals("") == false)
                 {
                     cmd.Parameters.Add("@nome", SqlDbType.VarChar);
-                    cmd.Parameters["@nome"].Value = filtro.Nome;
+                    cmd.Parameters["@nome"].Value = "%" + filtro.Nome + "%";
                 }
                 if (filtro.Status != null && filtro.Status.Trim().Equals("") == false)
                 {
