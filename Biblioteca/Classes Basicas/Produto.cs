@@ -11,7 +11,6 @@ namespace Biblioteca.Classes_Basicas
         //Declaração dos atributos
         private int id;
         private string unidadeFornecimento;
-        private string status;
         private List<MateriaPrima> materiaPrima;
         private string descricao;
         private string nome;
@@ -45,19 +44,6 @@ namespace Biblioteca.Classes_Basicas
             set
             {
                 unidadeFornecimento = value;
-            }
-        }
-
-        public string Status
-        {
-            get
-            {
-                return status;
-            }
-
-            set
-            {
-                status = value;
             }
         }
 

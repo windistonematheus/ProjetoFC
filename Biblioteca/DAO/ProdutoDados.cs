@@ -10,7 +10,7 @@ using System.Data;
 
 namespace Biblioteca.DAO
 {
-    class ProdutoDados : GerenciadorConexaoSqlServer, InterfaceProduto
+    public class ProdutoDados : GerenciadorConexaoSqlServer, InterfaceProduto
     {   
         public void Insert(Produto produto)
         {
@@ -18,8 +18,8 @@ namespace Biblioteca.DAO
             {
                 this.Conectar();
 
-                string sql = "insert into Produto (nome, unidadeFornecimento, descricao, status) ";
-                sql += " values (@nome, @unidadeFornecimento, @descricao, @status);";
+                string sql = "insert into Produto (nome, unidadeFornecimento, descricao) ";
+                sql += " values (@nome, @unidadeFornecimento, @descricao);";
                 SqlCommand cmd = new SqlCommand(sql, sqlcon);
 
                 cmd.Parameters.Add("@nome", SqlDbType.VarChar);
@@ -30,10 +30,7 @@ namespace Biblioteca.DAO
 
                 cmd.Parameters.Add("@descricao", SqlDbType.VarChar);
                 cmd.Parameters["@descricao"].Value = produto.Descricao;
-
-                cmd.Parameters.Add("@status", SqlDbType.VarChar);
-                cmd.Parameters["@status"].Value = produto.Status;
-
+                
                 cmd.ExecuteNonQuery();
                 cmd.Dispose();
                 this.Desconectar();
@@ -50,7 +47,7 @@ namespace Biblioteca.DAO
             {
                 this.Conectar();
                 string sql = "update Produto set nome = @nome, unidadeFornecimento = @unidadeFornecimento, ";
-                sql += " descricao = @descricao, status = @status Where id = @id";
+                sql += " descricao = @descricao Where id = @id";
 
                 SqlCommand cmd = new SqlCommand(sql, sqlcon);
 
@@ -65,10 +62,7 @@ namespace Biblioteca.DAO
 
                 cmd.Parameters.Add("@descricao", SqlDbType.VarChar);
                 cmd.Parameters["@descricao"].Value = produto.Descricao;
-
-                cmd.Parameters.Add("@status", SqlDbType.VarChar);
-                cmd.Parameters["@status"].Value = produto.Status;
-
+                
                 cmd.ExecuteNonQuery();
                 cmd.Dispose();
                 this.Desconectar();
@@ -106,7 +100,7 @@ namespace Biblioteca.DAO
             try
             {
                 this.Conectar();
-                string sql = "SELECT id, nome, unidadeFornecimento, descricao, status ";
+                string sql = "SELECT id, nome, unidadeFornecimento, descricao ";
                 sql += " FROM Produto where id = @id";
                 SqlCommand cmd = new SqlCommand(sql, sqlcon);
 
@@ -137,7 +131,7 @@ namespace Biblioteca.DAO
             try
             {
                 this.Conectar();
-                string sql = "SELECT id, nome, unidadeFornecimento, descricao, status ";
+                string sql = "SELECT id, nome, unidadeFornecimento, descricao ";
                 sql += " FROM Produto where id = id ";
 
                 if (filtro.Id > 0)
@@ -149,10 +143,7 @@ namespace Biblioteca.DAO
                     sql += " and nome like @nome ";
                 }
 
-                if (filtro.Status != null && filtro.Status.Trim().Equals("") == false)
-                {
-                    sql += " and status like @status ";
-                }
+                
                 SqlCommand cmd = new SqlCommand(sql, sqlcon);
 
                 if (filtro.Id > 0)
@@ -165,11 +156,7 @@ namespace Biblioteca.DAO
                     cmd.Parameters.Add("@nome", SqlDbType.VarChar);
                     cmd.Parameters["@nome"].Value = "%" + filtro.Nome + "%";
                 }
-                if (filtro.Status != null && filtro.Status.Trim().Equals("") == false)
-                {
-                    cmd.Parameters.Add("@status", SqlDbType.VarChar);
-                    cmd.Parameters["@status"].Value = filtro.Status;
-                }
+                
                 SqlDataReader DbReader = cmd.ExecuteReader();
 
                 while (DbReader.Read())
@@ -179,7 +166,6 @@ namespace Biblioteca.DAO
                     produto.Nome = DbReader.GetString(DbReader.GetOrdinal("CNPJ"));
                     produto.UnidadeFornecimento = DbReader.GetString(DbReader.GetOrdinal("RazaoSocial"));
                     produto.Descricao = DbReader.GetString(DbReader.GetOrdinal("Logradouro"));
-                    produto.Status = DbReader.GetString(DbReader.GetOrdinal("Complemento"));
                     retorno.Add(produto);
                 }
 

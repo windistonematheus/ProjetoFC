@@ -49,6 +49,7 @@
     <Compile Include="DAO\InterfaceProduto.cs" />
     <Compile Include="DAO\ProdutoDados.cs" />
     <Compile Include="Negocio\FornecedorNegocio.cs" />
+    <Compile Include="Negocio\ProdutoNegocio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util\GerenciadorConexaoSqlServer.cs" />
   </ItemGroup>

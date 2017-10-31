@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Biblioteca.DAO
 {
-    interface InterfaceProduto
+    public interface InterfaceProduto
     {
         void Insert(Produto produto);
         void Update(Produto produto);
