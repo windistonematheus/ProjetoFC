@@ -19,6 +19,11 @@ namespace ProjetoFabricaCosmeticos
             InitializeComponent();
         }
 
+        public FormCadastroProduto(Produto p)
+        {
+
+        }
+
         private void buttonCadastrar_Click(object sender, EventArgs e)
         {
             try

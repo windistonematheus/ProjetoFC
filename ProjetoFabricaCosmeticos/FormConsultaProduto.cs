@@ -21,6 +21,28 @@ namespace ProjetoFabricaCosmeticos
             InitializeComponent();
         }
 
+        private void AlterarProduto()
+        {
+            try
+            {
+                if (listViewProduto.FocusedItem != null)
+                {
+                    int posicao = listViewProduto.FocusedItem.Index;
+                    Produto fornecedorSelecionado = this.listaProduto.ElementAt(posicao);
+                    FormCadastroProduto form = new FormCadastroProduto(produtoSelecionado);
+                    form.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show(" Favor selecionar o Fornecedor");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         private void buttonListar_Click(object sender, EventArgs e)
         {
 
@@ -44,13 +66,16 @@ namespace ProjetoFabricaCosmeticos
                     linha.SubItems.Add(p.UnidadeFornecimento);
                     linha.SubItems.Add(p.Descricao);
                 }
-
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void buttonAlterar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
