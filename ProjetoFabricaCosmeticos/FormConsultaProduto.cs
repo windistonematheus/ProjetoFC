@@ -28,13 +28,14 @@ namespace ProjetoFabricaCosmeticos
                 if (listViewProduto.FocusedItem != null)
                 {
                     int posicao = listViewProduto.FocusedItem.Index;
-                    Produto fornecedorSelecionado = this.listaProduto.ElementAt(posicao);
+                    Produto produtoSelecionado = this.listaProduto.ElementAt(posicao);
                     FormCadastroProduto form = new FormCadastroProduto(produtoSelecionado);
                     form.ShowDialog();
+                    listViewProduto.Items.Clear();
                 }
                 else
                 {
-                    MessageBox.Show(" Favor selecionar o Fornecedor");
+                    MessageBox.Show(" Favor selecionar o produto");
                 }
             }
             catch (Exception ex)
@@ -75,7 +76,37 @@ namespace ProjetoFabricaCosmeticos
 
         private void buttonAlterar_Click(object sender, EventArgs e)
         {
+            AlterarProduto();
+        }
 
+        private void listViewProduto_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            AlterarProduto();
+        }
+
+        private void buttonRemover_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (listViewProduto.FocusedItem != null)
+                {
+                    int posicao = listViewProduto.FocusedItem.Index;
+                    Produto ProdutoSelecionado = this.listaProduto.ElementAt(posicao);
+                    ProdutoNegocio dados = new ProdutoNegocio();
+                    dados.Delete(ProdutoSelecionado);
+                    listViewProduto.Items.Clear();
+                    MessageBox.Show("Produto removido com sucesso");
+
+                }
+                else
+                {
+                    MessageBox.Show("Favor selecionar o produto");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

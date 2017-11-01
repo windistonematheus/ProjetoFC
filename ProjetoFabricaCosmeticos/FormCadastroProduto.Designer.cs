@@ -108,7 +108,7 @@
             this.Controls.Add(this.textBoxUnidadeFornecimento);
             this.Controls.Add(this.textBoxNome);
             this.Name = "FormCadastroProduto";
-            this.Text = "FormCadastroProduto";
+            this.Text = "Cadastro Produto";
             this.ResumeLayout(false);
             this.PerformLayout();
 
