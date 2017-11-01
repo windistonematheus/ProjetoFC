@@ -29,7 +29,7 @@ namespace ProjetoFabricaCosmeticos
         private void cadastroToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormCadastroFornecedor form = new FormCadastroFornecedor();
-            form.Show();
+            form.ShowDialog();
         }
 
         private void consultaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -41,6 +41,12 @@ namespace ProjetoFabricaCosmeticos
         private void cadastroToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             FormCadastroProduto form = new FormCadastroProduto();
+            form.ShowDialog();
+        }
+
+        private void consultaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FormConsultaProduto form = new FormConsultaProduto();
             form.Show();
         }
     }

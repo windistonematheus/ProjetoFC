@@ -79,12 +79,12 @@ namespace Biblioteca.Negocio
 
         public bool VerificarDuplicidade(Produto produto)
         {
-            throw new NotImplementedException();
+            return new ProdutoDados().VerificarDuplicidade(produto);
         }
 
         public List<Produto> Select(Produto filtro)
         {
-            throw new NotImplementedException();
+            return new ProdutoDados().Select(filtro);
         }
     }
 }

@@ -162,10 +162,10 @@ namespace Biblioteca.DAO
                 while (DbReader.Read())
                 {
                     Produto produto = new Produto();
-                    produto.Id = DbReader.GetInt32(DbReader.GetOrdinal("Id"));
-                    produto.Nome = DbReader.GetString(DbReader.GetOrdinal("CNPJ"));
-                    produto.UnidadeFornecimento = DbReader.GetString(DbReader.GetOrdinal("RazaoSocial"));
-                    produto.Descricao = DbReader.GetString(DbReader.GetOrdinal("Logradouro"));
+                    produto.Id = DbReader.GetInt32(DbReader.GetOrdinal("id"));
+                    produto.Nome = DbReader.GetString(DbReader.GetOrdinal("nome"));
+                    produto.UnidadeFornecimento = DbReader.GetString(DbReader.GetOrdinal("UnidadeFornecimento"));
+                    produto.Descricao = DbReader.GetString(DbReader.GetOrdinal("Descricao"));
                     retorno.Add(produto);
                 }
 
