@@ -30,7 +30,8 @@ namespace ProjetoFabricaCosmeticos
                     int posicao = listViewFornecedor.FocusedItem.Index;
                     Fornecedor fornecedorSelecionado = this.listaFornecedor.ElementAt(posicao);
                     FormCadastroFornecedor form = new FormCadastroFornecedor(fornecedorSelecionado);
-                    form.ShowDialog();                  
+                    form.ShowDialog();
+                    listViewFornecedor.Items.Clear();
                 }
                 else
                 {

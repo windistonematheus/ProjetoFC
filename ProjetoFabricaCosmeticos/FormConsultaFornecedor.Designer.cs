@@ -191,7 +191,7 @@
             this.Controls.Add(this.textBoxRazaoSocial);
             this.Controls.Add(this.textBoxCnpj);
             this.Name = "FormConsultaFornecedor";
-            this.Text = "Consulta Forneccedor";
+            this.Text = "Consulta Fornecedor";
             this.ResumeLayout(false);
             this.PerformLayout();
 

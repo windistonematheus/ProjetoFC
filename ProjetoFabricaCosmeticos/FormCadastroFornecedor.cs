@@ -72,7 +72,7 @@ namespace ProjetoFabricaCosmeticos
                 {
                     f.Id = this.filtro;
                     dados.Update(f);
-                    MessageBox.Show("Fornecedor cadastrado com sucesso");
+                    MessageBox.Show("Fornecedor alterado com sucesso");
                 }
 
                 textBoxCnpj.Clear();
