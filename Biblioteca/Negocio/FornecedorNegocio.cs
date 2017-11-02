@@ -19,7 +19,7 @@ namespace Biblioteca.Negocio
             }
             if (fornecedor.Id <= 0)
             {
-                throw new Exception("O Id do aluno não poderá ser menor ou igual a zero");
+                throw new Exception("O Id do fornecedor não poderá ser menor ou igual a zero");
             }
             FornecedorDados dados = new FornecedorDados();
 
