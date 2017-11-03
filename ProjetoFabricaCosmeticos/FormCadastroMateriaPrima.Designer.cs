@@ -28,27 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonCadastrar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.textBoxNome = new System.Windows.Forms.TextBox();
+            this.textBoxDescricao = new System.Windows.Forms.TextBox();
+            this.textBoxLote = new System.Windows.Forms.TextBox();
+            this.textBoxValidade = new System.Windows.Forms.TextBox();
+            this.textBoxEstoqueAtual = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // button1
+            // buttonCadastrar
             // 
-            this.button1.Location = new System.Drawing.Point(50, 203);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonCadastrar.Location = new System.Drawing.Point(27, 197);
+            this.buttonCadastrar.Name = "buttonCadastrar";
+            this.buttonCadastrar.Size = new System.Drawing.Size(75, 23);
+            this.buttonCadastrar.TabIndex = 0;
+            this.buttonCadastrar.Text = "Cadastrar";
+            this.buttonCadastrar.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(50, 29);
+            this.label1.Location = new System.Drawing.Point(24, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 1;
@@ -57,50 +62,90 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(50, 70);
+            this.label2.Location = new System.Drawing.Point(24, 50);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.Size = new System.Drawing.Size(55, 13);
             this.label2.TabIndex = 2;
-            this.label2.Text = "label2";
+            this.label2.Text = "Descrição";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(49, 101);
+            this.label3.Location = new System.Drawing.Point(24, 82);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.Size = new System.Drawing.Size(28, 13);
             this.label3.TabIndex = 3;
-            this.label3.Text = "label3";
+            this.label3.Text = "Lote";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(53, 137);
+            this.label4.Location = new System.Drawing.Point(24, 118);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.Size = new System.Drawing.Size(48, 13);
             this.label4.TabIndex = 4;
-            this.label4.Text = "label4";
+            this.label4.Text = "Validade";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(50, 169);
+            this.label5.Location = new System.Drawing.Point(24, 151);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
+            this.label5.Size = new System.Drawing.Size(72, 13);
             this.label5.TabIndex = 5;
-            this.label5.Text = "label5";
+            this.label5.Text = "Estoque atual";
+            // 
+            // textBoxNome
+            // 
+            this.textBoxNome.Location = new System.Drawing.Point(152, 11);
+            this.textBoxNome.Name = "textBoxNome";
+            this.textBoxNome.Size = new System.Drawing.Size(288, 20);
+            this.textBoxNome.TabIndex = 6;
+            // 
+            // textBoxDescricao
+            // 
+            this.textBoxDescricao.Location = new System.Drawing.Point(152, 47);
+            this.textBoxDescricao.Name = "textBoxDescricao";
+            this.textBoxDescricao.Size = new System.Drawing.Size(288, 20);
+            this.textBoxDescricao.TabIndex = 7;
+            // 
+            // textBoxLote
+            // 
+            this.textBoxLote.Location = new System.Drawing.Point(152, 82);
+            this.textBoxLote.Name = "textBoxLote";
+            this.textBoxLote.Size = new System.Drawing.Size(100, 20);
+            this.textBoxLote.TabIndex = 8;
+            // 
+            // textBoxValidade
+            // 
+            this.textBoxValidade.Location = new System.Drawing.Point(152, 118);
+            this.textBoxValidade.Name = "textBoxValidade";
+            this.textBoxValidade.Size = new System.Drawing.Size(100, 20);
+            this.textBoxValidade.TabIndex = 9;
+            // 
+            // textBoxEstoqueAtual
+            // 
+            this.textBoxEstoqueAtual.Location = new System.Drawing.Point(152, 151);
+            this.textBoxEstoqueAtual.Name = "textBoxEstoqueAtual";
+            this.textBoxEstoqueAtual.Size = new System.Drawing.Size(100, 20);
+            this.textBoxEstoqueAtual.TabIndex = 10;
             // 
             // FormCadastroMateriaPrima
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(581, 261);
+            this.Controls.Add(this.textBoxEstoqueAtual);
+            this.Controls.Add(this.textBoxValidade);
+            this.Controls.Add(this.textBoxLote);
+            this.Controls.Add(this.textBoxDescricao);
+            this.Controls.Add(this.textBoxNome);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonCadastrar);
             this.Name = "FormCadastroMateriaPrima";
             this.Text = "FormCadastroMateriaPrima";
             this.ResumeLayout(false);
@@ -110,11 +155,16 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonCadastrar;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        internal System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBoxNome;
+        private System.Windows.Forms.TextBox textBoxDescricao;
+        private System.Windows.Forms.TextBox textBoxLote;
+        private System.Windows.Forms.TextBox textBoxValidade;
+        private System.Windows.Forms.TextBox textBoxEstoqueAtual;
     }
 }
