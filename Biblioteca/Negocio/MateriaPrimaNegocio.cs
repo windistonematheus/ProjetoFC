@@ -33,6 +33,7 @@ namespace Biblioteca.Negocio
 
         public void Insert(MateriaPrima materiaprima)
         {
+
             if (materiaprima == null)
             {
                 throw new Exception("Informar os dados da materia prima");

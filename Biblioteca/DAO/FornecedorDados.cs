@@ -147,11 +147,11 @@ namespace Biblioteca.DAO
                                                
                 if (fornecedor.Id != 0)
                 {
-                    sql += " ID like @ID ";
+                    sql += " ID = @ID ";
                 }
                 else 
                 {
-                    sql += " CNPJ like @CNPJ";
+                    sql += " CNPJ = @CNPJ";
                 }
 
                 SqlCommand cmd = new SqlCommand(sql, sqlcon);
@@ -193,7 +193,7 @@ namespace Biblioteca.DAO
 
                 if (filtro.Cnpj != null && filtro.Cnpj.Trim().Equals("") == false)
                 {
-                    sql += " and CNPJ like @CNPJ ";
+                    sql += " and CNPJ = @CNPJ ";
                 }
                 if (filtro.RazaoSocial != null && filtro.RazaoSocial.Trim().Equals("") == false)
                 {

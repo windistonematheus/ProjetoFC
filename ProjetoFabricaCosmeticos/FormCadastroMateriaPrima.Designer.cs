@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonCadastrar = new System.Windows.Forms.Button();
+            this.buttonCadastrarMateriaPrima = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -41,14 +41,15 @@
             this.textBoxEstoqueAtual = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // buttonCadastrar
+            // buttonCadastrarMateriaPrima
             // 
-            this.buttonCadastrar.Location = new System.Drawing.Point(27, 197);
-            this.buttonCadastrar.Name = "buttonCadastrar";
-            this.buttonCadastrar.Size = new System.Drawing.Size(75, 23);
-            this.buttonCadastrar.TabIndex = 0;
-            this.buttonCadastrar.Text = "Cadastrar";
-            this.buttonCadastrar.UseVisualStyleBackColor = true;
+            this.buttonCadastrarMateriaPrima.Location = new System.Drawing.Point(27, 197);
+            this.buttonCadastrarMateriaPrima.Name = "buttonCadastrarMateriaPrima";
+            this.buttonCadastrarMateriaPrima.Size = new System.Drawing.Size(75, 23);
+            this.buttonCadastrarMateriaPrima.TabIndex = 0;
+            this.buttonCadastrarMateriaPrima.Text = "Cadastrar";
+            this.buttonCadastrarMateriaPrima.UseVisualStyleBackColor = true;
+            this.buttonCadastrarMateriaPrima.Click += new System.EventHandler(this.buttonCadastrarMateriaPrima_Click);
             // 
             // label1
             // 
@@ -145,7 +146,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.buttonCadastrar);
+            this.Controls.Add(this.buttonCadastrarMateriaPrima);
             this.Name = "FormCadastroMateriaPrima";
             this.Text = "FormCadastroMateriaPrima";
             this.ResumeLayout(false);
@@ -155,7 +156,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button buttonCadastrar;
+        private System.Windows.Forms.Button buttonCadastrarMateriaPrima;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;

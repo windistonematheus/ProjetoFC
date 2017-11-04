@@ -35,10 +35,10 @@
             this.consultaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.produtoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastroToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultaToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastroToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.consultaToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -99,9 +99,16 @@
             // cadastroToolStripMenuItem1
             // 
             this.cadastroToolStripMenuItem1.Name = "cadastroToolStripMenuItem1";
-            this.cadastroToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.cadastroToolStripMenuItem1.Size = new System.Drawing.Size(121, 22);
             this.cadastroToolStripMenuItem1.Text = "Cadastro";
             this.cadastroToolStripMenuItem1.Click += new System.EventHandler(this.cadastroToolStripMenuItem1_Click);
+            // 
+            // consultaToolStripMenuItem2
+            // 
+            this.consultaToolStripMenuItem2.Name = "consultaToolStripMenuItem2";
+            this.consultaToolStripMenuItem2.Size = new System.Drawing.Size(121, 22);
+            this.consultaToolStripMenuItem2.Text = "Consulta";
+            this.consultaToolStripMenuItem2.Click += new System.EventHandler(this.consultaToolStripMenuItem1_Click);
             // 
             // toolStripMenuItem2
             // 
@@ -115,21 +122,15 @@
             // cadastroToolStripMenuItem2
             // 
             this.cadastroToolStripMenuItem2.Name = "cadastroToolStripMenuItem2";
-            this.cadastroToolStripMenuItem2.Size = new System.Drawing.Size(121, 22);
+            this.cadastroToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
             this.cadastroToolStripMenuItem2.Text = "Cadastro";
+            this.cadastroToolStripMenuItem2.Click += new System.EventHandler(this.cadastroToolStripMenuItem2_Click);
             // 
             // consultaToolStripMenuItem1
             // 
             this.consultaToolStripMenuItem1.Name = "consultaToolStripMenuItem1";
-            this.consultaToolStripMenuItem1.Size = new System.Drawing.Size(121, 22);
+            this.consultaToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.consultaToolStripMenuItem1.Text = "Consulta";
-            // 
-            // consultaToolStripMenuItem2
-            // 
-            this.consultaToolStripMenuItem2.Name = "consultaToolStripMenuItem2";
-            this.consultaToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
-            this.consultaToolStripMenuItem2.Text = "Consulta";
-            this.consultaToolStripMenuItem2.Click += new System.EventHandler(this.consultaToolStripMenuItem1_Click);
             // 
             // FormPrincipal
             // 
@@ -140,7 +141,8 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormPrincipal";
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Fabrica Cosmésticos";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

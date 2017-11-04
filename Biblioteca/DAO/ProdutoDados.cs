@@ -136,7 +136,7 @@ namespace Biblioteca.DAO
 
                 if (filtro.Id > 0)
                 {
-                    sql += " and id like @id ";
+                    sql += " and id = @id ";
                 }
                 if (filtro.Nome != null && filtro.Nome.Trim().Equals("") == false)
                 {

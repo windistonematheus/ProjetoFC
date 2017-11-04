@@ -21,10 +21,10 @@ namespace Biblioteca.DAO
                 sql += " values(@Validade, @EstoqueAtual, @Lote, @Nome, @Descricao)";
                 SqlCommand cmd = new SqlCommand(sql, this.sqlcon);
 
-                cmd.Parameters.Add("@Validade", SqlDbType.VarChar);
+                cmd.Parameters.Add("@Validade", SqlDbType.Date);
                 cmd.Parameters["@Validade"].Value = materiaprima.Validade;
 
-                cmd.Parameters.Add("@EstoqueAtual", SqlDbType.VarChar);
+                cmd.Parameters.Add("@EstoqueAtual", SqlDbType.Int);
                 cmd.Parameters["@EstoqueAtual"].Value = materiaprima.EstoqueAtual;
 
                 cmd.Parameters.Add("@Lote", SqlDbType.VarChar);
@@ -114,16 +114,16 @@ namespace Biblioteca.DAO
             try
             {
                 this.Conectar();
-                string sql = "SELECT ID ,Validade, EstoqueAtual, Lote, Nome, Descricao, ";
+                string sql = "SELECT ID ,Validade, EstoqueAtual, Lote, Nome, Descricao ";
                 sql += " FROM MateriaPrima where ";
 
                 if (materiaprima.Id != 0)
                 {
-                    sql += " ID like @ID ";
+                    sql += " ID = @ID ";
                 }
                 else
                 {
-                    sql += " Nome like @Nome";
+                    sql += " Nome = @Nome";
                 }
 
                 SqlCommand cmd = new SqlCommand(sql, sqlcon);
@@ -131,8 +131,8 @@ namespace Biblioteca.DAO
                 cmd.Parameters.Add("@ID", SqlDbType.Int);
                 cmd.Parameters["@ID"].Value = materiaprima.Id;
 
-                cmd.Parameters.Add("@CNPJ", SqlDbType.VarChar);
-                cmd.Parameters["@CNPJ"].Value = materiaprima.Nome;
+                cmd.Parameters.Add("@Nome", SqlDbType.VarChar);
+                cmd.Parameters["@Nome"].Value = materiaprima.Nome;
 
                 SqlDataReader DbReader = cmd.ExecuteReader();
 
