@@ -55,5 +55,10 @@ namespace ProjetoFabricaCosmeticos
             FormCadastroMateriaPrima form = new FormCadastroMateriaPrima();
             form.ShowDialog();
         }
+        private void cadastroToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            FormConsultaMateriaPrima form = new FormConsultaMateriaPrima();
+            form.ShowDialog();
+        }
     }
 }

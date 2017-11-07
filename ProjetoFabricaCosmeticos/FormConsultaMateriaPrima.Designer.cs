@@ -36,6 +36,7 @@
             this.buttonListar = new System.Windows.Forms.Button();
             this.buttonAlterar = new System.Windows.Forms.Button();
             this.buttonRemover = new System.Windows.Forms.Button();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // label1
@@ -72,6 +73,8 @@
             // 
             // listViewMateriaPrima
             // 
+            this.listViewMateriaPrima.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1});
             this.listViewMateriaPrima.Location = new System.Drawing.Point(90, 93);
             this.listViewMateriaPrima.Name = "listViewMateriaPrima";
             this.listViewMateriaPrima.Size = new System.Drawing.Size(456, 97);
@@ -86,6 +89,7 @@
             this.buttonListar.TabIndex = 5;
             this.buttonListar.Text = "Listar";
             this.buttonListar.UseVisualStyleBackColor = true;
+            this.buttonListar.Click += new System.EventHandler(this.buttonListar_Click);
             // 
             // buttonAlterar
             // 
@@ -95,16 +99,21 @@
             this.buttonAlterar.TabIndex = 6;
             this.buttonAlterar.Text = "Alterar";
             this.buttonAlterar.UseVisualStyleBackColor = true;
+            this.buttonAlterar.Click += new System.EventHandler(this.buttonAlterar_Click);
             // 
             // buttonRemover
             // 
-            this.buttonRemover.Location = new System.Drawing.Point(366, 219);
+            this.buttonRemover.Location = new System.Drawing.Point(348, 219);
             this.buttonRemover.Name = "buttonRemover";
             this.buttonRemover.Size = new System.Drawing.Size(75, 23);
             this.buttonRemover.TabIndex = 7;
             this.buttonRemover.Text = "Remover";
             this.buttonRemover.UseVisualStyleBackColor = true;
-            this.buttonRemover.Click += new System.EventHandler(this.button2_Click);
+            this.buttonRemover.Click += new System.EventHandler(this.buttonRemover_Click);
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "ID";
             // 
             // FormConsultaMateriaPrima
             // 
@@ -136,5 +145,6 @@
         private System.Windows.Forms.Button buttonListar;
         private System.Windows.Forms.Button buttonAlterar;
         private System.Windows.Forms.Button buttonRemover;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
     }
 }

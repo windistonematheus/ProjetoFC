@@ -131,6 +131,7 @@
             this.consultaToolStripMenuItem1.Name = "consultaToolStripMenuItem1";
             this.consultaToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.consultaToolStripMenuItem1.Text = "Consulta";
+            this.consultaToolStripMenuItem1.Click += new System.EventHandler(this.cadastroToolStripMenuItem3_Click);
             // 
             // FormPrincipal
             // 
