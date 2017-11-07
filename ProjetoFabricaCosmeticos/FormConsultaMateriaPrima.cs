@@ -56,19 +56,14 @@ namespace ProjetoFabricaCosmeticos
                 filtro.Descricao = textBoxDescricao.Text;
                 listaMateriaPrima = dados.Select(filtro);
                 listViewMateriaPrima.Items.Clear();
-                foreach (MateriaPrima a in listaMateriaPrima)
+                foreach (MateriaPrima m in listaMateriaPrima)
                 {
-                    ListViewItem linha = listViewMateriaPrima.Items.Add(a.Id.ToString());
-                    linha.SubItems.Add(a.Cnpj);
-                    linha.SubItems.Add(a.RazaoSocial);
-                    linha.SubItems.Add(a.Logradouro);
-                    linha.SubItems.Add(a.Complemento);
-                    linha.SubItems.Add(a.Bairro);
-                    linha.SubItems.Add(a.Cidade);
-                    linha.SubItems.Add(a.Estado);
-                    linha.SubItems.Add(a.Cep);
-                    linha.SubItems.Add(a.Email);
-                    linha.SubItems.Add(a.Telefone);
+                    ListViewItem linha = listViewMateriaPrima.Items.Add(m.Id.ToString());
+                    linha.SubItems.Add(m.Nome);
+                    linha.SubItems.Add(m.Descricao);
+                    linha.SubItems.Add(m.Lote);
+                    linha.SubItems.Add(Convert.ToString(m.Validade));
+                    linha.SubItems.Add(Convert.ToString(m.EstoqueAtual));
                 }
 
 
@@ -81,12 +76,32 @@ namespace ProjetoFabricaCosmeticos
 
         private void buttonAlterar_Click(object sender, EventArgs e)
         {
-
+            AlterarMateriaPrima();
         }
 
         private void buttonRemover_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (listViewMateriaPrima.FocusedItem != null)
+                {
+                    int posicao = listViewMateriaPrima.FocusedItem.Index;
+                    MateriaPrima materiaprimaSelecionada = this.listaMateriaPrima.ElementAt(posicao);
+                    MateriaPrimaNegocio dados = new MateriaPrimaNegocio();
+                    dados.Delete(materiaprimaSelecionada);
+                    listViewMateriaPrima.Items.Clear();
+                    MessageBox.Show("Materia prima removida com sucesso");
 
+                }
+                else
+                {
+                    MessageBox.Show(" Favor selecionar a materia prima");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
