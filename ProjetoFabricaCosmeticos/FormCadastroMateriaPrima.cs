@@ -59,7 +59,7 @@ namespace ProjetoFabricaCosmeticos
                 {
                     m.Id = this.filtro;
                     dados.Update(m);
-                    MessageBox.Show("Fornecedor cadastrado com sucesso");
+                    MessageBox.Show("Materia Prima atualizada com sucesso");
                 }
 
                 textBoxNome.Clear();

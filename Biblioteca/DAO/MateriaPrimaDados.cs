@@ -52,7 +52,7 @@ namespace Biblioteca.DAO
         try
         {
             this.Conectar();
-            string sql = "update into MateriaPrima Validade=@validade, EstoqueAtual=@EstoqueAtual, Lote=@Lote, ";
+            string sql = "update MateriaPrima set Validade=@Validade, EstoqueAtual=@EstoqueAtual, Lote=@Lote, ";
             sql += " Nome=@nome, Descricao=@Descricao where ID=@ID";
             SqlCommand cmd = new SqlCommand(sql, this.sqlcon);
 

@@ -33,8 +33,8 @@
             this.textBoxNome = new System.Windows.Forms.TextBox();
             this.textBoxDescricao = new System.Windows.Forms.TextBox();
             this.listViewMateriaPrima = new System.Windows.Forms.ListView();
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -85,6 +85,7 @@
             this.columnHeader3,
             this.columnHeader4,
             this.columnHeader5});
+            this.listViewMateriaPrima.FullRowSelect = true;
             this.listViewMateriaPrima.Location = new System.Drawing.Point(12, 73);
             this.listViewMateriaPrima.Name = "listViewMateriaPrima";
             this.listViewMateriaPrima.Size = new System.Drawing.Size(513, 97);
@@ -92,15 +93,15 @@
             this.listViewMateriaPrima.UseCompatibleStateImageBehavior = false;
             this.listViewMateriaPrima.View = System.Windows.Forms.View.Details;
             // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Nome";
-            this.columnHeader6.Width = 91;
-            // 
             // columnHeader1
             // 
             this.columnHeader1.Text = "ID";
             this.columnHeader1.Width = 49;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Nome";
+            this.columnHeader6.Width = 91;
             // 
             // columnHeader2
             // 
