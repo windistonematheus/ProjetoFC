@@ -150,6 +150,7 @@
             this.Controls.Add(this.buttonListar);
             this.Controls.Add(this.listViewProduto);
             this.Name = "FormConsultaProduto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta Produto";
             this.ResumeLayout(false);
             this.PerformLayout();

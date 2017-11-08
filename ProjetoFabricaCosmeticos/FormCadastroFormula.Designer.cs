@@ -31,9 +31,9 @@
             this.comboBoxProduto = new System.Windows.Forms.ComboBox();
             this.comboBoxMateriaPrima = new System.Windows.Forms.ComboBox();
             this.listViewMateriaPrima = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.buttonAdicionarMateriaPrima = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.buttonCadastrar = new System.Windows.Forms.Button();
@@ -69,6 +69,11 @@
             this.listViewMateriaPrima.UseCompatibleStateImageBehavior = false;
             this.listViewMateriaPrima.View = System.Windows.Forms.View.Details;
             // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Matéria Prima";
+            this.columnHeader1.Width = 303;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -86,11 +91,6 @@
             this.label2.Size = new System.Drawing.Size(71, 13);
             this.label2.TabIndex = 4;
             this.label2.Text = "Matéria Prima";
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Matéria Prima";
-            this.columnHeader1.Width = 303;
             // 
             // buttonAdicionarMateriaPrima
             // 
@@ -134,6 +134,7 @@
             this.Controls.Add(this.comboBoxMateriaPrima);
             this.Controls.Add(this.comboBoxProduto);
             this.Name = "FormCadastroFormula";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastrar Formula";
             this.ResumeLayout(false);
             this.PerformLayout();

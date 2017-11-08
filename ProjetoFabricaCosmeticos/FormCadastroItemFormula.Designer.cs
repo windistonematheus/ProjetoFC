@@ -81,7 +81,7 @@
             this.label1.TabIndex = 11;
             this.label1.Text = "Produto";
             // 
-            // FormCadastrarItemFormula
+            // FormCadastroItemFormula
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -91,7 +91,8 @@
             this.Controls.Add(this.buttonCadastrar);
             this.Controls.Add(this.comboBoxMateriaPrima);
             this.Controls.Add(this.comboBoxProduto);
-            this.Name = "FormCadastrarItemFormula";
+            this.Name = "FormCadastroItemFormula";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastrar Item da Formula";
             this.ResumeLayout(false);
             this.PerformLayout();
