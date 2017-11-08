@@ -158,8 +158,9 @@ namespace Biblioteca.DAO
             List<MateriaPrima> retorno = new List<MateriaPrima>();
             try
             {
-                string sql = "update into MateriaPrima Validade=@validade, EstoqueAtual=@EstoqueAtual, Lote=@Lote, ";
-                sql += " Nome=@nome, Descricao=@Descricao where ID=@ID";
+                this.Conectar();
+                string sql = "SELECT ID ,Validade, EstoqueAtual, Lote, Nome, Descricao ";
+                sql += " FROM MateriaPrima where ID = ID";
 
                 if (filtro.Nome != null && filtro.Nome.Trim().Equals("") == false)
                 {
