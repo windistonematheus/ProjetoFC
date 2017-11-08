@@ -31,7 +31,7 @@ namespace ProjetoFabricaCosmeticos
             listViewMateriaPrima.Items.Clear();
             foreach (MateriaPrima materia in this.listaMateria)
             {
-                ListViewItem item = listViewMateriaPrima.Items.Add(materia.Nome.ToString());
+                ListViewItem item = listViewMateriaPrima.Items.Add(materia.Nome);
             }
         }
 
@@ -106,7 +106,7 @@ namespace ProjetoFabricaCosmeticos
 
 
 
-        private void buttonAdicionarNota_Click(object sender, EventArgs e)
+        private void buttonAdicionarMateriaPrima_Click(object sender, EventArgs e)
         {
             MateriaPrima ma = new MateriaPrima();
             int index = comboBoxMateriaPrima.SelectedIndex;

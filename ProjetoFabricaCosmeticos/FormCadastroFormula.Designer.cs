@@ -100,6 +100,7 @@
             this.buttonAdicionarMateriaPrima.TabIndex = 5;
             this.buttonAdicionarMateriaPrima.Text = "Add";
             this.buttonAdicionarMateriaPrima.UseVisualStyleBackColor = true;
+            this.buttonAdicionarMateriaPrima.Click += new System.EventHandler(this.buttonAdicionarMateriaPrima_Click);
             // 
             // button1
             // 
@@ -109,6 +110,7 @@
             this.button1.TabIndex = 6;
             this.button1.Text = "Remover";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // buttonCadastrar
             // 
