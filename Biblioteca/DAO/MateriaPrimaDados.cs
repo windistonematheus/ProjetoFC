@@ -148,7 +148,7 @@ namespace Biblioteca.DAO
             }
             catch (Exception ex)
             {
-                throw new Exception("Erro ao conecar e selecionar " + ex.Message);
+                throw new Exception("Erro ao conectar e selecionar " + ex.Message);
             }
             return retorno;
         }
@@ -158,39 +158,37 @@ namespace Biblioteca.DAO
             List<MateriaPrima> retorno = new List<MateriaPrima>();
             try
             {
-                string sql = "update into MateriaPrima Validade=@validade, EstoqueAtual=@EstoqueAtual, Lote=@Lote, ";
-                sql += " Nome=@nome, Descricao=@Descricao where ID=@ID";
+                this.Conectar();
+                string sql = "SELECT ID ,Nome, Descricao, Lote, Validade, EstoqueAtual  ";
+                sql += " FROM MateriaPrima where ID=ID  ";
 
-                if (filtro.Nome != null && filtro.Nome.Trim().Equals("") == false)
+                if (filtro.Nome != null)
                 {
                     sql += " and Nome like @Nome ";
                 }
-                if (filtro.Descricao != null && filtro.Descricao.Trim().Equals("") == false)
+                if(filtro.Descricao != null)
                 {
                     sql += " and Descricao like @Descricao";
                 }
+                
                 SqlCommand cmd = new SqlCommand(sql, sqlcon);
 
-                if (filtro.Nome != null && filtro.Nome.Trim().Equals("") == false)
-                {
-                    cmd.Parameters.Add("@Nome", SqlDbType.VarChar);
-                    cmd.Parameters["@Nome"].Value = filtro.Nome;
-                }
-                if (filtro.Descricao != null && filtro.Descricao.Trim().Equals("") == false)
-                {
-                    cmd.Parameters.Add("@Descricao", SqlDbType.VarChar);
-                    cmd.Parameters["@Descricao"].Value = filtro.Descricao;
-                }
+                cmd.Parameters.Add("@Nome", SqlDbType.VarChar);
+                cmd.Parameters["@Nome"].Value = filtro.Nome;
+
+                cmd.Parameters.Add("@Descricao", SqlDbType.VarChar);
+                cmd.Parameters["@Descricao"].Value = filtro.Descricao;
+                
                 SqlDataReader DbReader = cmd.ExecuteReader();
                 while (DbReader.Read())
                 {
                     MateriaPrima materiaprima = new MateriaPrima();
                     materiaprima.Id = DbReader.GetInt32(DbReader.GetOrdinal("Id"));
-                    materiaprima.Validade = DbReader.GetDateTime(DbReader.GetOrdinal("Validade"));
-                    materiaprima.EstoqueAtual = DbReader.GetInt32(DbReader.GetOrdinal("EstoqueAtual"));
-                    materiaprima.Lote = DbReader.GetString(DbReader.GetOrdinal("lote"));
                     materiaprima.Nome = DbReader.GetString(DbReader.GetOrdinal("Nome"));
                     materiaprima.Descricao = DbReader.GetString(DbReader.GetOrdinal("Descricao"));
+                    materiaprima.Lote = DbReader.GetString(DbReader.GetOrdinal("lote"));
+                    materiaprima.Validade = DbReader.GetDateTime(DbReader.GetOrdinal("Validade"));
+                    materiaprima.EstoqueAtual = DbReader.GetInt32(DbReader.GetOrdinal("EstoqueAtual"));           
                     retorno.Add(materiaprima);
                 }
 
@@ -200,7 +198,7 @@ namespace Biblioteca.DAO
             }
             catch (Exception ex)
             {
-                throw new Exception("Erro ao conecar e selecionar " + ex.Message);
+                throw new Exception("Erro ao conectar e selecionar " + ex.Message);
             }
             return retorno;
         }
