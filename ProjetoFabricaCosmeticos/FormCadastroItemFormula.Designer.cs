@@ -1,6 +1,6 @@
 ﻿namespace ProjetoFabricaCosmeticos
 {
-    partial class FormCadastrarItemFormula
+    partial class FormCadastroItemFormula
     {
         /// <summary>
         /// Required designer variable.

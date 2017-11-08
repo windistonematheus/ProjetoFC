@@ -13,12 +13,12 @@ using System.Windows.Forms;
 
 namespace ProjetoFabricaCosmeticos
 {
-    public partial class FormCadastrarItemFormula : Form
+    public partial class FormCadastroItemFormula : Form
     {
         List<MateriaPrima> listaMateria = new List<MateriaPrima>();
         List<Produto> listaProduto = new List<Produto>();
 
-        public FormCadastrarItemFormula()
+        public FormCadastroItemFormula()
         {
             InitializeComponent();
             ListarProdutoCombo();

@@ -41,6 +41,7 @@
             this.consultaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.formulaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastrarItemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -139,7 +140,8 @@
             // formulaToolStripMenuItem
             // 
             this.formulaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cadastrarToolStripMenuItem});
+            this.cadastrarToolStripMenuItem,
+            this.cadastrarItemToolStripMenuItem});
             this.formulaToolStripMenuItem.Name = "formulaToolStripMenuItem";
             this.formulaToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
             this.formulaToolStripMenuItem.Text = "Formula";
@@ -150,6 +152,13 @@
             this.cadastrarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.cadastrarToolStripMenuItem.Text = "Cadastrar";
             this.cadastrarToolStripMenuItem.Click += new System.EventHandler(this.cadastrarToolStripMenuItem_Click);
+            // 
+            // cadastrarItemToolStripMenuItem
+            // 
+            this.cadastrarItemToolStripMenuItem.Name = "cadastrarItemToolStripMenuItem";
+            this.cadastrarItemToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.cadastrarItemToolStripMenuItem.Text = "Cadastrar Item";
+            this.cadastrarItemToolStripMenuItem.Click += new System.EventHandler(this.cadastrarItemToolStripMenuItem_Click);
             // 
             // FormPrincipal
             // 
@@ -184,6 +193,7 @@
         private System.Windows.Forms.ToolStripMenuItem consultaToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem formulaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cadastrarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cadastrarItemToolStripMenuItem;
     }
 }
 
