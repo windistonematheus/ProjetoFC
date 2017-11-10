@@ -44,7 +44,9 @@
     <Compile Include="Classes Basicas\Compra.cs" />
     <Compile Include="Classes Basicas\Fornecedor.cs" />
     <Compile Include="Classes Basicas\MateriaPrima.cs" />
+    <Compile Include="DAO\CompraDados.cs" />
     <Compile Include="DAO\FormulaDados.cs" />
+    <Compile Include="DAO\InterfaceCompras.cs" />
     <Compile Include="DAO\InterfaceFormula.cs" />
     <Compile Include="DAO\InterfaceMateriaPrima.cs" />
     <Compile Include="DAO\MateriaPrimaDados.cs" />

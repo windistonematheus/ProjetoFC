@@ -148,6 +148,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonCadastrarMateriaPrima);
             this.Name = "FormCadastroMateriaPrima";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormCadastroMateriaPrima";
             this.ResumeLayout(false);
             this.PerformLayout();
