@@ -10,6 +10,11 @@ namespace Biblioteca.Negocio
 {
     public class CompraNegocio : InterfaceCompra
     {
+        public void Delete(Compra compra)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Insert(Compra compra)
         {
             if (compra == null)
@@ -52,13 +57,6 @@ namespace Biblioteca.Negocio
             dados.Insert(compra);
         }
 
-    }
-
-        public void Delete(Compra compra)
-        {
-            throw new NotImplementedException();
-        }
-
         public List<Compra> Select(Compra compra)
         {
             throw new NotImplementedException();
@@ -74,4 +72,7 @@ namespace Biblioteca.Negocio
             throw new NotImplementedException();
         }
     }
+
+        
+   
 }

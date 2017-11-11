@@ -1,5 +1,4 @@
-﻿using Biblioteca.Classes_Basicas;
-using Biblioteca.Negocio;
+﻿using ProjetoFabricaCosmeticos.localhost;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -48,14 +47,14 @@ namespace ProjetoFabricaCosmeticos
         {
             try
             {
-                FornecedorNegocio dados = new FornecedorNegocio();
+                Service1 dados = new Service1();
                 Fornecedor filtro = new Fornecedor();
                 if (textBoxCnpj.Text.Trim().Equals("") == false)
                 {
                     filtro.Cnpj = textBoxCnpj.Text.Trim();
                 }
                 filtro.RazaoSocial = textBoxRazaoSocial.Text;
-                listaFornecedor = dados.Select(filtro);
+                listaFornecedor = dados.Select(filtro).ToList();
                 listViewFornecedor.Items.Clear();
                 foreach (Fornecedor a in listaFornecedor)
                 {
@@ -98,7 +97,7 @@ namespace ProjetoFabricaCosmeticos
                 {
                     int posicao = listViewFornecedor.FocusedItem.Index;
                     Fornecedor fornecedorSelecionado = this.listaFornecedor.ElementAt(posicao);
-                    FornecedorNegocio dados = new FornecedorNegocio();
+                    Service1 dados = new Service1();
                     dados.Delete(fornecedorSelecionado);
                     listViewFornecedor.Items.Clear();
                     MessageBox.Show("Fornecedor removido com sucesso");

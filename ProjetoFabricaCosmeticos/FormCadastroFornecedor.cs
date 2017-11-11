@@ -1,5 +1,5 @@
-﻿using Biblioteca.Classes_Basicas;
-using Biblioteca.Negocio;
+﻿
+using ProjetoFabricaCosmeticos.localhost;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -59,10 +59,10 @@ namespace ProjetoFabricaCosmeticos
                 f.Bairro = textBoxBairro.Text;
                 f.Cidade = textBoxCidade.Text;
                 f.Estado = textBoxEstado.Text;
-                
 
 
-                FornecedorNegocio dados = new FornecedorNegocio();
+
+                Service1 dados = new Service1();
                 if (this.operacao == 0)
                 {
                     dados.Insert(f);
