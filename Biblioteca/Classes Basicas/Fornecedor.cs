@@ -29,7 +29,7 @@ namespace Biblioteca.Classes_Basicas
             List<Compra> compra = new List<Compra>();
         }
         //Métodos Gets e Sets
-        [DataMember(IsRequired = true)]
+        [DataMember]
         public int Id
         {
             get
@@ -43,7 +43,7 @@ namespace Biblioteca.Classes_Basicas
             }
         }
 
-        [DataMember(IsRequired = true)]
+        [DataMember]
         public string Cnpj
         {
             get
@@ -57,7 +57,7 @@ namespace Biblioteca.Classes_Basicas
             }
         }
 
-        [DataMember(IsRequired = true)]
+        [DataMember]
         public string Cep
         {
             get
@@ -71,7 +71,7 @@ namespace Biblioteca.Classes_Basicas
             }
         }
 
-        [DataMember(IsRequired = true)]
+        [DataMember]
         public string RazaoSocial
         {
             get
@@ -85,7 +85,7 @@ namespace Biblioteca.Classes_Basicas
             }
         }
 
-        [DataMember(IsRequired = true)]
+        [DataMember]
         public string Logradouro
         {
             get
@@ -99,7 +99,7 @@ namespace Biblioteca.Classes_Basicas
             }
         }
 
-        [DataMember(IsRequired = true)]
+        [DataMember]
         public string Cidade
         {
             get
@@ -113,7 +113,7 @@ namespace Biblioteca.Classes_Basicas
             }
         }
 
-        [DataMember(IsRequired = true)]
+        [DataMember]
         public string Estado
         {
             get
@@ -127,7 +127,7 @@ namespace Biblioteca.Classes_Basicas
             }
         }
 
-        [DataMember(IsRequired = true)]
+        [DataMember]
         public string Bairro
         {
             get
@@ -141,7 +141,7 @@ namespace Biblioteca.Classes_Basicas
             }
         }
 
-        [DataMember(IsRequired = true)]
+        [DataMember]
         public string Email
         {
             get
@@ -155,7 +155,7 @@ namespace Biblioteca.Classes_Basicas
             }
         }
 
-        [DataMember(IsRequired = true)]
+        [DataMember]
         public string Telefone
         {
             get
@@ -169,7 +169,7 @@ namespace Biblioteca.Classes_Basicas
             }
         }
 
-        [DataMember(IsRequired = true)]
+        [DataMember]
         public List<Compra> Compra
         {
             get
@@ -183,7 +183,7 @@ namespace Biblioteca.Classes_Basicas
             }
         }
 
-        [DataMember(IsRequired = true)]
+        [DataMember]
         public string Complemento
         {
             get

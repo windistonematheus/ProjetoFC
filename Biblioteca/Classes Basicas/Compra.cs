@@ -23,7 +23,7 @@ namespace Biblioteca.Classes_Basicas
         }
 
         //Métodos Gets e Sets
-        [DataMember(IsRequired = true)]
+        [DataMember]
         public double Preco
         {
             get
@@ -37,7 +37,7 @@ namespace Biblioteca.Classes_Basicas
             }
         }
 
-        [DataMember(IsRequired = true)]
+        [DataMember]
         public int Quantidade
         {
             get
@@ -51,7 +51,7 @@ namespace Biblioteca.Classes_Basicas
             }
         }
 
-        [DataMember(IsRequired = true)]
+        [DataMember]
         public Fornecedor Fornecedor
         {
             get
@@ -65,7 +65,7 @@ namespace Biblioteca.Classes_Basicas
             }
         }
 
-        [DataMember(IsRequired = true)]
+        [DataMember]
         public MateriaPrima MateriaPrima
         {
             get
@@ -79,7 +79,7 @@ namespace Biblioteca.Classes_Basicas
             }
         }
 
-        [DataMember(IsRequired = true)]
+        [DataMember]
         public Fornecedor Fornecedor1
         {
             get
@@ -92,7 +92,7 @@ namespace Biblioteca.Classes_Basicas
             }
         }
 
-        [DataMember(IsRequired = true)]
+        [DataMember]
         public MateriaPrima MateriaPrima1
         {
             get
@@ -105,7 +105,7 @@ namespace Biblioteca.Classes_Basicas
             }
         }
 
-        [DataMember(IsRequired = true)]
+        [DataMember]
         public Fornecedor Fornecedor2
         {
             get
@@ -118,7 +118,7 @@ namespace Biblioteca.Classes_Basicas
             }
         }
 
-        [DataMember(IsRequired = true)]
+        [DataMember]
         public MateriaPrima MateriaPrima2
         {
             get

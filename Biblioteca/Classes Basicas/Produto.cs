@@ -23,7 +23,7 @@ namespace Biblioteca.Classes_Basicas
         }
 
         //Métodos Gets e Sets
-        [DataMember(IsRequired = true)]
+        [DataMember]
         public int Id
         {
             get
@@ -37,7 +37,7 @@ namespace Biblioteca.Classes_Basicas
             }
         }
 
-        [DataMember(IsRequired = true)]
+        [DataMember]
         public string UnidadeFornecimento
         {
             get
@@ -51,7 +51,7 @@ namespace Biblioteca.Classes_Basicas
             }
         }
 
-        [DataMember(IsRequired = true)]
+        [DataMember]
         public List<MateriaPrima> MateriaPrima
         {
             get
@@ -65,7 +65,7 @@ namespace Biblioteca.Classes_Basicas
             }
         }
 
-        [DataMember(IsRequired = true)]
+        [DataMember]
         public string Descricao
         {
             get
@@ -79,7 +79,7 @@ namespace Biblioteca.Classes_Basicas
             }
         }
 
-        [DataMember(IsRequired = true)]
+        [DataMember]
         public string Nome
         {
             get
