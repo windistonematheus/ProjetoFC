@@ -48,13 +48,13 @@ namespace ProjetoFabricaCosmeticos
                 Service1 dados = new Service1();
                 if (this.operacao == 0)
                 {
-                    dados.Insert(p);
+                    dados.InsertProduto(p);
                     MessageBox.Show("Produto cadastrado com sucesso");
                 }
                 else
                 {
                     p.Id = this.filtro;
-                    dados.Update(p);
+                    dados.UpdateProduto(p);
                     MessageBox.Show("Produto alterado com sucesso");
                 }
                  

@@ -54,7 +54,7 @@ namespace ProjetoFabricaCosmeticos
                     filtro.Cnpj = textBoxCnpj.Text.Trim();
                 }
                 filtro.RazaoSocial = textBoxRazaoSocial.Text;
-                listaFornecedor = dados.Select(filtro).ToList();
+                listaFornecedor = dados.SelectFornecedor(filtro).ToList();
                 listViewFornecedor.Items.Clear();
                 foreach (Fornecedor a in listaFornecedor)
                 {
@@ -98,7 +98,7 @@ namespace ProjetoFabricaCosmeticos
                     int posicao = listViewFornecedor.FocusedItem.Index;
                     Fornecedor fornecedorSelecionado = this.listaFornecedor.ElementAt(posicao);
                     Service1 dados = new Service1();
-                    dados.Delete(fornecedorSelecionado);
+                    dados.DeleteFornecedor(fornecedorSelecionado);
                     listViewFornecedor.Items.Clear();
                     MessageBox.Show("Fornecedor removido com sucesso");
 

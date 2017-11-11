@@ -53,7 +53,7 @@ namespace ProjetoFabricaCosmeticos
                     filtro.Nome = textBoxNome.Text.Trim();
                 }
                 filtro.Descricao = textBoxDescricao.Text;
-                listaMateriaPrima = dados.Select(filtro);
+                listaMateriaPrima = dados.SelectMateriaPrima(filtro).ToList();
                 listViewMateriaPrima.Items.Clear();
                 foreach (MateriaPrima m in listaMateriaPrima)
                 {
@@ -87,7 +87,7 @@ namespace ProjetoFabricaCosmeticos
                     int posicao = listViewMateriaPrima.FocusedItem.Index;
                     MateriaPrima materiaprimaSelecionada = this.listaMateriaPrima.ElementAt(posicao);
                     Service1 dados = new Service1();
-                    dados.Delete(materiaprimaSelecionada);
+                    dados.DeleteMateriaPrima(materiaprimaSelecionada);
                     listViewMateriaPrima.Items.Clear();
                     MessageBox.Show("Materia prima removida com sucesso");
 

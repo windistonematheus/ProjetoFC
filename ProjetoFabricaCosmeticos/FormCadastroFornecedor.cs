@@ -65,13 +65,13 @@ namespace ProjetoFabricaCosmeticos
                 Service1 dados = new Service1();
                 if (this.operacao == 0)
                 {
-                    dados.Insert(f);
+                    dados.InsertFornecedor(f);
                     MessageBox.Show("Fornecedor cadastrado com sucesso");
                 }
                 else
                 {
                     f.Id = this.filtro;
-                    dados.Update(f);
+                    dados.UpdateFornecedor(f);
                     MessageBox.Show("Fornecedor alterado com sucesso");
                 }
 

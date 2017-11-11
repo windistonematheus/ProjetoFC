@@ -56,7 +56,7 @@ namespace ProjetoFabricaCosmeticos
                     filtro.Id = Int32.Parse(textBoxId.Text.Trim());
                 }
                 filtro.Nome = textBoxNome.Text;
-                listaProduto = dados.Select(filtro);
+                listaProduto = dados.SelectProduto(filtro).ToList();
 
                 listViewProduto.Items.Clear();
                 foreach (Produto p in listaProduto)
@@ -92,7 +92,7 @@ namespace ProjetoFabricaCosmeticos
                     int posicao = listViewProduto.FocusedItem.Index;
                     Produto ProdutoSelecionado = this.listaProduto.ElementAt(posicao);
                     Service1 dados = new Service1();
-                    dados.Delete(ProdutoSelecionado);
+                    dados.DeleteProduto(ProdutoSelecionado);
                     listViewProduto.Items.Clear();
                     MessageBox.Show("Produto removido com sucesso");
 

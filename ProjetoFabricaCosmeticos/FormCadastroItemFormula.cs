@@ -29,7 +29,7 @@ namespace ProjetoFabricaCosmeticos
             {
                 Service1 dados = new Service1();
                 Produto filtro = new Produto();
-                listaProduto = dados.Select(filtro);
+                listaProduto = dados.SelectProduto(filtro).ToList();
                 comboBoxProduto.Items.Clear();
                 foreach (Produto p in listaProduto)
                 {
@@ -48,7 +48,7 @@ namespace ProjetoFabricaCosmeticos
             {
                 Service1 dados = new Service1();
                 MateriaPrima filtro = new MateriaPrima();
-                listaMateria = dados.Select(filtro);
+                listaMateria = dados.SelectMateriaPrima(filtro).ToList();
                 comboBoxMateriaPrima.Items.Clear();
                 foreach (MateriaPrima m in listaMateria)
                 {
@@ -82,7 +82,7 @@ namespace ProjetoFabricaCosmeticos
                 }
 
                 Produto p = listaProduto.ElementAt(indexProduto);
-                p.MateriaPrima.Add(listaMateria.ElementAt(indexMateriaPrima));
+                //p.MateriaPrima.Add(listaMateria.ElementAt(indexMateriaPrima));
 
                 Service1 dados = new Service1();
                 dados.CadastrarFormula(p);

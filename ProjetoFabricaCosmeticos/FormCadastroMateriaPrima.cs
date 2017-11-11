@@ -51,13 +51,13 @@ namespace ProjetoFabricaCosmeticos
                 Service1 dados = new Service1();
                 if (this.operacao == 0)
                 {
-                    dados.Insert(m);
+                    dados.InsertMateriaPrima(m);
                     MessageBox.Show("Materia prima cadastrada com sucesso");
                 }
                 else
                 {
                     m.Id = this.filtro;
-                    dados.Update(m);
+                    dados.UpdateMateriaPrima(m);
                     MessageBox.Show("Materia Prima atualizada com sucesso");
                 }
 
