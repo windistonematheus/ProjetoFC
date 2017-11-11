@@ -32,7 +32,7 @@ namespace Biblioteca.Negocio
             dados.CadastrarFormula(produto);
         }
 
-        public Produto SelectFormula(Produto filtro)
+        public List<MateriaPrima> SelectFormula(Produto filtro)
         {
             if (filtro == null)
             {

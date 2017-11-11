@@ -101,7 +101,7 @@ namespace WcfService1
             new FormulaNegocio().CadastrarFormula(produto);
         }
 
-        public Produto SelectFormula(Produto filtro)
+        public List<MateriaPrima> SelectFormula(Produto filtro)
         {
             return new FormulaNegocio().SelectFormula(filtro);
         }

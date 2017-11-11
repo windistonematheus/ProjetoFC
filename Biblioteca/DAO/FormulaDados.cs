@@ -41,10 +41,9 @@ namespace Biblioteca.DAO
             }
         }
 
-        public Produto SelectFormula(Produto filtro)
+        public List<MateriaPrima> SelectFormula(Produto filtro)
         {
-            List<MateriaPrima> listaMateriaPrima = new List<MateriaPrima>();
-            Produto retorno = new Produto();
+            List<MateriaPrima> retorno = new List<MateriaPrima>();
             try
             {
                 this.Conectar();
@@ -71,9 +70,8 @@ namespace Biblioteca.DAO
                 {
                     MateriaPrima materiaPrima = new MateriaPrima();
                     materiaPrima.Nome = DbReader.GetString(DbReader.GetOrdinal("Nome"));
-                    listaMateriaPrima.Add(materiaPrima);
+                    retorno.Add(materiaPrima);
                 }
-                retorno.MateriaPrima = listaMateriaPrima;
 
                 DbReader.Close();
                 cmd.Dispose();
