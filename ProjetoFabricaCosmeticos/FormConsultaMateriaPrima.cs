@@ -1,5 +1,4 @@
-﻿using Biblioteca.Classes_Basicas;
-using Biblioteca.Negocio;
+﻿using ProjetoFabricaCosmeticos.localhost;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -47,7 +46,7 @@ namespace ProjetoFabricaCosmeticos
         {
             try
             {
-                MateriaPrimaNegocio dados = new MateriaPrimaNegocio();
+                Service1 dados = new Service1();
                 MateriaPrima filtro = new MateriaPrima();
                 if (textBoxNome.Text.Trim().Equals("") == false)
                 {
@@ -87,7 +86,7 @@ namespace ProjetoFabricaCosmeticos
                 {
                     int posicao = listViewMateriaPrima.FocusedItem.Index;
                     MateriaPrima materiaprimaSelecionada = this.listaMateriaPrima.ElementAt(posicao);
-                    MateriaPrimaNegocio dados = new MateriaPrimaNegocio();
+                    Service1 dados = new Service1();
                     dados.Delete(materiaprimaSelecionada);
                     listViewMateriaPrima.Items.Clear();
                     MessageBox.Show("Materia prima removida com sucesso");

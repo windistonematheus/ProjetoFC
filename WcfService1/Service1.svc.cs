@@ -64,5 +64,64 @@ namespace WcfService1
             return new ProdutoNegocio().Select(filtro);
         }
 
+        public void Insert(MateriaPrima materiaprima)
+        {
+            new MateriaPrimaNegocio().Insert(materiaprima);
+        }
+
+        public void Update(MateriaPrima materiaprima)
+        {
+            new MateriaPrimaNegocio().Update(materiaprima);
+        }
+
+        public void Delete(MateriaPrima materiaprima)
+        {
+            new MateriaPrimaNegocio().Delete(materiaprima);
+        }
+
+        public bool VerificarDuplicidade(MateriaPrima materiaprima)
+        {
+            return new MateriaPrimaNegocio().VerificarDuplicidade(materiaprima);
+        }
+
+        public List<MateriaPrima> Select(MateriaPrima filtro)
+        {
+            return new MateriaPrimaNegocio().Select(filtro);
+        }
+
+        public void CadastrarFormula(Produto p)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Produto SelectFormula(Produto filtro)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Insert(Compra compra)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update(Compra compra)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete(Compra compra)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool VerificarDuplicidade(Compra compra)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Compra> Select(Compra compra)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

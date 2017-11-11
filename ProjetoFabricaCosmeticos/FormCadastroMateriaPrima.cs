@@ -1,5 +1,4 @@
-﻿using Biblioteca.Classes_Basicas;
-using Biblioteca.Negocio;
+﻿using ProjetoFabricaCosmeticos.localhost;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -47,9 +46,9 @@ namespace ProjetoFabricaCosmeticos
                 m.Lote = textBoxLote.Text;
                 m.Validade = Convert.ToDateTime(textBoxValidade.Text);
                 m.EstoqueAtual = Convert.ToInt32(textBoxEstoqueAtual.Text);
-                
 
-                MateriaPrimaNegocio dados = new MateriaPrimaNegocio();
+
+                Service1 dados = new Service1();
                 if (this.operacao == 0)
                 {
                     dados.Insert(m);
