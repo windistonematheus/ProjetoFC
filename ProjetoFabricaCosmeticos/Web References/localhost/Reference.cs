@@ -860,8 +860,6 @@ namespace ProjetoFabricaCosmeticos.localhost {
         
         private int idField;
         
-        private bool idFieldSpecified;
-        
         private string logradouroField;
         
         private string razaoSocialField;
@@ -870,7 +868,7 @@ namespace ProjetoFabricaCosmeticos.localhost {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string Bairro {
+        public string bairro {
             get {
                 return this.bairroField;
             }
@@ -881,7 +879,7 @@ namespace ProjetoFabricaCosmeticos.localhost {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string Cep {
+        public string cep {
             get {
                 return this.cepField;
             }
@@ -892,7 +890,7 @@ namespace ProjetoFabricaCosmeticos.localhost {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string Cidade {
+        public string cidade {
             get {
                 return this.cidadeField;
             }
@@ -903,7 +901,7 @@ namespace ProjetoFabricaCosmeticos.localhost {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string Cnpj {
+        public string cnpj {
             get {
                 return this.cnpjField;
             }
@@ -914,7 +912,7 @@ namespace ProjetoFabricaCosmeticos.localhost {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string Complemento {
+        public string complemento {
             get {
                 return this.complementoField;
             }
@@ -925,7 +923,7 @@ namespace ProjetoFabricaCosmeticos.localhost {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
-        public Compra[] Compra {
+        public Compra[] compra {
             get {
                 return this.compraField;
             }
@@ -936,7 +934,7 @@ namespace ProjetoFabricaCosmeticos.localhost {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string Email {
+        public string email {
             get {
                 return this.emailField;
             }
@@ -947,7 +945,7 @@ namespace ProjetoFabricaCosmeticos.localhost {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string Estado {
+        public string estado {
             get {
                 return this.estadoField;
             }
@@ -957,7 +955,7 @@ namespace ProjetoFabricaCosmeticos.localhost {
         }
         
         /// <remarks/>
-        public int Id {
+        public int id {
             get {
                 return this.idField;
             }
@@ -967,19 +965,8 @@ namespace ProjetoFabricaCosmeticos.localhost {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool IdSpecified {
-            get {
-                return this.idFieldSpecified;
-            }
-            set {
-                this.idFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string Logradouro {
+        public string logradouro {
             get {
                 return this.logradouroField;
             }
@@ -990,7 +977,7 @@ namespace ProjetoFabricaCosmeticos.localhost {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string RazaoSocial {
+        public string razaoSocial {
             get {
                 return this.razaoSocialField;
             }
@@ -1001,7 +988,7 @@ namespace ProjetoFabricaCosmeticos.localhost {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string Telefone {
+        public string telefone {
             get {
                 return this.telefoneField;
             }
@@ -1021,27 +1008,15 @@ namespace ProjetoFabricaCosmeticos.localhost {
         
         private Fornecedor fornecedorField;
         
-        private Fornecedor fornecedor1Field;
-        
-        private Fornecedor fornecedor2Field;
-        
         private MateriaPrima materiaPrimaField;
-        
-        private MateriaPrima materiaPrima1Field;
-        
-        private MateriaPrima materiaPrima2Field;
         
         private double precoField;
         
-        private bool precoFieldSpecified;
-        
         private int quantidadeField;
-        
-        private bool quantidadeFieldSpecified;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public Fornecedor Fornecedor {
+        public Fornecedor fornecedor {
             get {
                 return this.fornecedorField;
             }
@@ -1052,29 +1027,7 @@ namespace ProjetoFabricaCosmeticos.localhost {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public Fornecedor Fornecedor1 {
-            get {
-                return this.fornecedor1Field;
-            }
-            set {
-                this.fornecedor1Field = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public Fornecedor Fornecedor2 {
-            get {
-                return this.fornecedor2Field;
-            }
-            set {
-                this.fornecedor2Field = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public MateriaPrima MateriaPrima {
+        public MateriaPrima materiaPrima {
             get {
                 return this.materiaPrimaField;
             }
@@ -1084,29 +1037,7 @@ namespace ProjetoFabricaCosmeticos.localhost {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public MateriaPrima MateriaPrima1 {
-            get {
-                return this.materiaPrima1Field;
-            }
-            set {
-                this.materiaPrima1Field = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public MateriaPrima MateriaPrima2 {
-            get {
-                return this.materiaPrima2Field;
-            }
-            set {
-                this.materiaPrima2Field = value;
-            }
-        }
-        
-        /// <remarks/>
-        public double Preco {
+        public double preco {
             get {
                 return this.precoField;
             }
@@ -1116,34 +1047,12 @@ namespace ProjetoFabricaCosmeticos.localhost {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool PrecoSpecified {
-            get {
-                return this.precoFieldSpecified;
-            }
-            set {
-                this.precoFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        public int Quantidade {
+        public int quantidade {
             get {
                 return this.quantidadeField;
             }
             set {
                 this.quantidadeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool QuantidadeSpecified {
-            get {
-                return this.quantidadeFieldSpecified;
-            }
-            set {
-                this.quantidadeFieldSpecified = value;
             }
         }
     }
@@ -1156,15 +1065,13 @@ namespace ProjetoFabricaCosmeticos.localhost {
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Biblioteca.Classes_Basicas")]
     public partial class MateriaPrima {
         
+        private Compra[] compraField;
+        
         private string descricaoField;
         
         private int estoqueAtualField;
         
-        private bool estoqueAtualFieldSpecified;
-        
         private int idField;
-        
-        private bool idFieldSpecified;
         
         private string loteField;
         
@@ -1172,15 +1079,22 @@ namespace ProjetoFabricaCosmeticos.localhost {
         
         private Produto[] produtoField;
         
-        private Produto produto1Field;
-        
         private System.DateTime validadeField;
         
-        private bool validadeFieldSpecified;
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        public Compra[] compra {
+            get {
+                return this.compraField;
+            }
+            set {
+                this.compraField = value;
+            }
+        }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string Descricao {
+        public string descricao {
             get {
                 return this.descricaoField;
             }
@@ -1190,7 +1104,7 @@ namespace ProjetoFabricaCosmeticos.localhost {
         }
         
         /// <remarks/>
-        public int EstoqueAtual {
+        public int estoqueAtual {
             get {
                 return this.estoqueAtualField;
             }
@@ -1200,18 +1114,7 @@ namespace ProjetoFabricaCosmeticos.localhost {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool EstoqueAtualSpecified {
-            get {
-                return this.estoqueAtualFieldSpecified;
-            }
-            set {
-                this.estoqueAtualFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        public int Id {
+        public int id {
             get {
                 return this.idField;
             }
@@ -1221,19 +1124,8 @@ namespace ProjetoFabricaCosmeticos.localhost {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool IdSpecified {
-            get {
-                return this.idFieldSpecified;
-            }
-            set {
-                this.idFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string Lote {
+        public string lote {
             get {
                 return this.loteField;
             }
@@ -1244,7 +1136,7 @@ namespace ProjetoFabricaCosmeticos.localhost {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string Nome {
+        public string nome {
             get {
                 return this.nomeField;
             }
@@ -1255,7 +1147,7 @@ namespace ProjetoFabricaCosmeticos.localhost {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
-        public Produto[] Produto {
+        public Produto[] produto {
             get {
                 return this.produtoField;
             }
@@ -1265,34 +1157,12 @@ namespace ProjetoFabricaCosmeticos.localhost {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public Produto Produto1 {
-            get {
-                return this.produto1Field;
-            }
-            set {
-                this.produto1Field = value;
-            }
-        }
-        
-        /// <remarks/>
-        public System.DateTime Validade {
+        public System.DateTime validade {
             get {
                 return this.validadeField;
             }
             set {
                 this.validadeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool ValidadeSpecified {
-            get {
-                return this.validadeFieldSpecified;
-            }
-            set {
-                this.validadeFieldSpecified = value;
             }
         }
     }
@@ -1309,8 +1179,6 @@ namespace ProjetoFabricaCosmeticos.localhost {
         
         private int idField;
         
-        private bool idFieldSpecified;
-        
         private MateriaPrima[] materiaPrimaField;
         
         private string nomeField;
@@ -1319,7 +1187,7 @@ namespace ProjetoFabricaCosmeticos.localhost {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string Descricao {
+        public string descricao {
             get {
                 return this.descricaoField;
             }
@@ -1329,7 +1197,7 @@ namespace ProjetoFabricaCosmeticos.localhost {
         }
         
         /// <remarks/>
-        public int Id {
+        public int id {
             get {
                 return this.idField;
             }
@@ -1339,19 +1207,8 @@ namespace ProjetoFabricaCosmeticos.localhost {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool IdSpecified {
-            get {
-                return this.idFieldSpecified;
-            }
-            set {
-                this.idFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
         [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
-        public MateriaPrima[] MateriaPrima {
+        public MateriaPrima[] materiaPrima {
             get {
                 return this.materiaPrimaField;
             }
@@ -1362,7 +1219,7 @@ namespace ProjetoFabricaCosmeticos.localhost {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string Nome {
+        public string nome {
             get {
                 return this.nomeField;
             }
@@ -1373,7 +1230,7 @@ namespace ProjetoFabricaCosmeticos.localhost {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string UnidadeFornecimento {
+        public string unidadeFornecimento {
             get {
                 return this.unidadeFornecimentoField;
             }
