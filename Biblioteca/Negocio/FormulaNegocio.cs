@@ -22,7 +22,7 @@ namespace Biblioteca.Negocio
                 throw new Exception("O Id do produto não poderá ser menor ou igual a zero");
             }
 
-            if (produto.MateriaPrima == null && produto.MateriaPrima.Any() != true)
+            if (produto.MateriaPrima == null)
             {
                 throw new Exception("Informar os dados da materia prima");
             }

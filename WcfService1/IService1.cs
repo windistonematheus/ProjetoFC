@@ -16,41 +16,41 @@ namespace WcfService1
     {
         #region ações Fornecedor
         [OperationContract]
-        void Insert(Fornecedor fornecedor);
+        void InsertFornecedor(Fornecedor fornecedor);
         [OperationContract]
-        void Update(Fornecedor fornecedor);
+        void UpdateFornecedor(Fornecedor fornecedor);
         [OperationContract]
-        void Delete(Fornecedor fornecedor);
+        void DeleteFornecedor(Fornecedor fornecedor);
         [OperationContract]
-        bool VerificarDuplicidade(Fornecedor fornecedor);
+        bool VerificarDuplicidadeFornecedor(Fornecedor fornecedor);
         [OperationContract]
-        List<Fornecedor> Select(Fornecedor filtro);
+        List<Fornecedor> SelectFornecedor(Fornecedor filtro);
         #endregion
 
         #region ações Produto
         [OperationContract]
-        void Insert(Produto produto);
+        void InsertProduto(Produto produto);
         [OperationContract]
-        void Update(Produto produto);
+        void UpdateProduto(Produto produto);
         [OperationContract]
-        void Delete(Produto produto);
+        void DeleteProduto(Produto produto);
         [OperationContract]
-        bool VerificarDuplicidade(Produto produto);
+        bool VerificarDuplicidadeProduto(Produto produto);
         [OperationContract]
-        List<Produto> Select(Produto filtro);
+        List<Produto> SelectProduto(Produto filtro);
         #endregion
 
         #region ações Materia Prima
         [OperationContract]
-        void Insert(MateriaPrima materiaprima);
+        void InsertMateriaPrima(MateriaPrima materiaprima);
         [OperationContract]
-        void Update(MateriaPrima materiaprima);
+        void UpdateMateriaPrima(MateriaPrima materiaprima);
         [OperationContract]
-        void Delete(MateriaPrima materiaprima);
+        void DeleteMateriaPrima(MateriaPrima materiaprima);
         [OperationContract]
-        bool VerificarDuplicidade(MateriaPrima materiaprima);
+        bool VerificarDuplicidadeMateriaPrima(MateriaPrima materiaprima);
         [OperationContract]
-        List<MateriaPrima> Select(MateriaPrima filtro);
+        List<MateriaPrima> SelectMateriaPrima(MateriaPrima filtro);
         #endregion
 
         #region ações Formula
@@ -62,15 +62,15 @@ namespace WcfService1
 
         #region ações Compra
         [OperationContract]
-        void Insert(Compra compra);
+        void InsertCompra(Compra compra);
         [OperationContract]
-        void Update(Compra compra);
+        void UpdateCompra(Compra compra);
         [OperationContract]
-        void Delete(Compra compra);
+        void DeleteCompra(Compra compra);
         [OperationContract]
-        bool VerificarDuplicidade(Compra compra);
+        bool VerificarDuplicidadeCompra(Compra compra);
         [OperationContract]
-        List<Compra> Select(Compra compra);
+        List<Compra> SelectCompra(Compra compra);
         #endregion
 
         // TODO: Add your service operations here
