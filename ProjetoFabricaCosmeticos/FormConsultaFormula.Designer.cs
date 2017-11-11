@@ -30,7 +30,7 @@
         {
             this.comboBoxProduto = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.listViewMateriaPrima = new System.Windows.Forms.ListView();
+            this.listViewFormula = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.buttonListar = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -53,17 +53,17 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Produto";
             // 
-            // listViewMateriaPrima
+            // listViewFormula
             // 
-            this.listViewMateriaPrima.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.listViewFormula.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1});
-            this.listViewMateriaPrima.FullRowSelect = true;
-            this.listViewMateriaPrima.Location = new System.Drawing.Point(75, 108);
-            this.listViewMateriaPrima.Name = "listViewMateriaPrima";
-            this.listViewMateriaPrima.Size = new System.Drawing.Size(398, 125);
-            this.listViewMateriaPrima.TabIndex = 2;
-            this.listViewMateriaPrima.UseCompatibleStateImageBehavior = false;
-            this.listViewMateriaPrima.View = System.Windows.Forms.View.Details;
+            this.listViewFormula.FullRowSelect = true;
+            this.listViewFormula.Location = new System.Drawing.Point(75, 108);
+            this.listViewFormula.Name = "listViewFormula";
+            this.listViewFormula.Size = new System.Drawing.Size(398, 125);
+            this.listViewFormula.TabIndex = 2;
+            this.listViewFormula.UseCompatibleStateImageBehavior = false;
+            this.listViewFormula.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader1
             // 
@@ -86,7 +86,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(517, 320);
             this.Controls.Add(this.buttonListar);
-            this.Controls.Add(this.listViewMateriaPrima);
+            this.Controls.Add(this.listViewFormula);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBoxProduto);
             this.Name = "FormConsultaFormula";
@@ -100,7 +100,7 @@
 
         private System.Windows.Forms.ComboBox comboBoxProduto;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListView listViewMateriaPrima;
+        private System.Windows.Forms.ListView listViewFormula;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.Button buttonListar;
     }

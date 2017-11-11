@@ -14,6 +14,7 @@ namespace ProjetoFabricaCosmeticos
     public partial class FormConsultaFormula : Form
     {
         List<Produto> listaProduto = new List<Produto>();
+        List<MateriaPrima> listaMateriaPrima = new List<MateriaPrima>();
 
         public FormConsultaFormula()
         {
@@ -27,8 +28,6 @@ namespace ProjetoFabricaCosmeticos
             {
                 Service1 dados = new Service1();
                 Produto filtro = new Produto();
-                filtro.Descricao = "";
-                filtro.Nome = "";
                 listaProduto = dados.SelectProduto(filtro).ToList();
                 comboBoxProduto.Items.Clear();
                 foreach (Produto p in listaProduto)
@@ -44,7 +43,31 @@ namespace ProjetoFabricaCosmeticos
 
         private void buttonListar_Click(object sender, EventArgs e)
         {
+            try
+            {
+                int index = comboBoxProduto.SelectedIndex;
+                if (index < 0)
+                {
+                    MessageBox.Show("Selecionar o produto");
+                    comboBoxProduto.Focus();
+                    return;
+                }
+                Produto filtro = listaProduto.ElementAt(index);
 
+                Service1 dados = new Service1();
+                listaMateriaPrima = dados.SelectFormula(filtro).ToList();
+                listViewFormula.Items.Clear();
+                foreach (MateriaPrima m in listaMateriaPrima)
+                {
+                    ListViewItem linha = listViewFormula.Items.Add(m.Nome);
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
