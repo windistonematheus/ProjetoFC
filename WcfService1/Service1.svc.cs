@@ -89,14 +89,14 @@ namespace WcfService1
             return new MateriaPrimaNegocio().Select(filtro);
         }
 
-        public void CadastrarFormula(Produto p)
+        public void CadastrarFormula(Produto produto)
         {
-            throw new NotImplementedException();
+            new FormulaNegocio().CadastrarFormula(produto);
         }
 
         public Produto SelectFormula(Produto filtro)
         {
-            throw new NotImplementedException();
+            return new FormulaNegocio().SelectFormula(filtro);
         }
 
         public void Insert(Compra compra)

@@ -1,6 +1,4 @@
-﻿using Biblioteca.Classes_Basicas;
-using Biblioteca.DAO;
-using Biblioteca.Negocio;
+﻿using ProjetoFabricaCosmeticos.localhost;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,7 +27,7 @@ namespace ProjetoFabricaCosmeticos
         {
             try
             {
-                ProdutoNegocio dados = new ProdutoNegocio();
+                Service1 dados = new Service1();
                 Produto filtro = new Produto();
                 listaProduto = dados.Select(filtro);
                 comboBoxProduto.Items.Clear();
@@ -48,7 +46,7 @@ namespace ProjetoFabricaCosmeticos
         {
             try
             {
-                MateriaPrimaNegocio dados = new MateriaPrimaNegocio();
+                Service1 dados = new Service1();
                 MateriaPrima filtro = new MateriaPrima();
                 listaMateria = dados.Select(filtro);
                 comboBoxMateriaPrima.Items.Clear();
@@ -86,7 +84,7 @@ namespace ProjetoFabricaCosmeticos
                 Produto p = listaProduto.ElementAt(indexProduto);
                 p.MateriaPrima.Add(listaMateria.ElementAt(indexMateriaPrima));
 
-                FormulaDados dados = new FormulaDados();
+                Service1 dados = new Service1();
                 dados.CadastrarFormula(p);
                 MessageBox.Show("Formula cadastrada com sucesso");
 

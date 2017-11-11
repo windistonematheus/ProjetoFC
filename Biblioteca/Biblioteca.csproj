@@ -56,6 +56,7 @@
     <Compile Include="DAO\InterfaceProduto.cs" />
     <Compile Include="DAO\ProdutoDados.cs" />
     <Compile Include="Negocio\CompraNegocio.cs" />
+    <Compile Include="Negocio\FormulaNegocio.cs" />
     <Compile Include="Negocio\MateriaPrimaNegocio.cs" />
     <Compile Include="Negocio\FornecedorNegocio.cs" />
     <Compile Include="Negocio\ProdutoNegocio.cs" />

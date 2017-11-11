@@ -55,7 +55,7 @@ namespace WcfService1
 
         #region ações Formula
         [OperationContract]
-        void CadastrarFormula(Produto p);
+        void CadastrarFormula(Produto produto);
         [OperationContract]
         Produto SelectFormula(Produto filtro);
         #endregion

@@ -1,5 +1,4 @@
 ﻿using System;
-using Biblioteca.Util;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,10 +19,7 @@ namespace ProjetoFabricaCosmeticos
 
         private void button1_Click(object sender, EventArgs e)
         {
-            GerenciadorConexaoSqlServer sqlconnection = new GerenciadorConexaoSqlServer();
-            sqlconnection.Conectar();
-            sqlconnection.Desconectar();
-            MessageBox.Show("OK");
+
         }
 
         private void cadastroToolStripMenuItem_Click(object sender, EventArgs e)
