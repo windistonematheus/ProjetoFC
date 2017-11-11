@@ -68,5 +68,11 @@ namespace ProjetoFabricaCosmeticos
             FormCadastroItemFormula form = new FormCadastroItemFormula();
             form.ShowDialog();
         }
+
+        private void consultarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormConsultaFormula form = new FormConsultaFormula();
+            form.Show();
+        }
     }
 }

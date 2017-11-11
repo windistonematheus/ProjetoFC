@@ -34,6 +34,15 @@ namespace Biblioteca.Negocio
 
         public Produto SelectFormula(Produto filtro)
         {
+            if (filtro == null)
+            {
+                throw new Exception("Informar os dados do produto");
+            }
+
+            if (filtro.Id <= 0)
+            {
+                throw new Exception("O Id do produto não poderá ser menor ou igual a zero");
+            }
             return new FormulaDados().SelectFormula(filtro);
         }
     }
