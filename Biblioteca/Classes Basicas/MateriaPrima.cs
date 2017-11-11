@@ -27,7 +27,7 @@ namespace Biblioteca.Classes_Basicas
         }
 
         //Métodos Gets e Sets
-        [DataMember]
+        [DataMember(IsRequired = true)]
         public int Id
         {
             get
@@ -41,7 +41,7 @@ namespace Biblioteca.Classes_Basicas
             }
         }
 
-        [DataMember]
+        [DataMember(IsRequired = true)]
         public DateTime Validade
         {
             get
@@ -55,7 +55,7 @@ namespace Biblioteca.Classes_Basicas
             }
         }
 
-        [DataMember]
+        [DataMember(IsRequired = true)]
         public string Descricao
         {
             get
@@ -69,7 +69,7 @@ namespace Biblioteca.Classes_Basicas
             }
         }
 
-        [DataMember]
+        [DataMember(IsRequired = true)]
         public string Lote
         {
             get
@@ -83,7 +83,7 @@ namespace Biblioteca.Classes_Basicas
             }
         }
 
-        [DataMember]
+        [DataMember(IsRequired = true)]
         public string Nome
         {
             get
@@ -97,7 +97,7 @@ namespace Biblioteca.Classes_Basicas
             }
         }
 
-        [DataMember]
+        [DataMember(IsRequired = true)]
         public int EstoqueAtual
         {
             get
@@ -111,7 +111,7 @@ namespace Biblioteca.Classes_Basicas
             }
         }
 
-        [DataMember]
+        [DataMember(IsRequired = true)]
         public List<Produto> Produto
         {
             get
@@ -125,7 +125,7 @@ namespace Biblioteca.Classes_Basicas
             }
         }
 
-        [DataMember]
+        [DataMember(IsRequired = true)]
         internal List<Compra> Compra
         {
             get
