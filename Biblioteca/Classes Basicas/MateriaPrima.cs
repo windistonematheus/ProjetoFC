@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Biblioteca.Classes_Basicas
 {
+    [Serializable]
     public class MateriaPrima
     {
         //Declaração dos atributos
@@ -25,6 +27,7 @@ namespace Biblioteca.Classes_Basicas
         }
 
         //Métodos Gets e Sets
+        [DataMember(IsRequired = true)]
         public int Id
         {
             get
@@ -38,6 +41,7 @@ namespace Biblioteca.Classes_Basicas
             }
         }
 
+        [DataMember(IsRequired = true)]
         public DateTime Validade
         {
             get
@@ -51,6 +55,7 @@ namespace Biblioteca.Classes_Basicas
             }
         }
 
+        [DataMember(IsRequired = true)]
         public string Descricao
         {
             get
@@ -64,6 +69,7 @@ namespace Biblioteca.Classes_Basicas
             }
         }
 
+        [DataMember(IsRequired = true)]
         public string Lote
         {
             get
@@ -77,6 +83,7 @@ namespace Biblioteca.Classes_Basicas
             }
         }
 
+        [DataMember(IsRequired = true)]
         public string Nome
         {
             get
@@ -90,6 +97,7 @@ namespace Biblioteca.Classes_Basicas
             }
         }
 
+        [DataMember(IsRequired = true)]
         public int EstoqueAtual
         {
             get
@@ -103,6 +111,7 @@ namespace Biblioteca.Classes_Basicas
             }
         }
 
+        [DataMember(IsRequired = true)]
         public List<Produto> Produto
         {
             get
@@ -116,6 +125,7 @@ namespace Biblioteca.Classes_Basicas
             }
         }
 
+        [DataMember(IsRequired = true)]
         internal List<Compra> Compra
         {
             get
@@ -129,16 +139,5 @@ namespace Biblioteca.Classes_Basicas
             }
         }
 
-        public Produto Produto1
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
-        }
     }
 }

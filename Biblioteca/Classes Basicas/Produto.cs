@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Biblioteca.Classes_Basicas
 {
+    [Serializable]
     public class Produto
     {
         //Declaração dos atributos
@@ -21,6 +23,7 @@ namespace Biblioteca.Classes_Basicas
         }
 
         //Métodos Gets e Sets
+        [DataMember(IsRequired = true)]
         public int Id
         {
             get
@@ -34,6 +37,7 @@ namespace Biblioteca.Classes_Basicas
             }
         }
 
+        [DataMember(IsRequired = true)]
         public string UnidadeFornecimento
         {
             get
@@ -47,6 +51,7 @@ namespace Biblioteca.Classes_Basicas
             }
         }
 
+        [DataMember(IsRequired = true)]
         public List<MateriaPrima> MateriaPrima
         {
             get
@@ -60,6 +65,7 @@ namespace Biblioteca.Classes_Basicas
             }
         }
 
+        [DataMember(IsRequired = true)]
         public string Descricao
         {
             get
@@ -73,6 +79,7 @@ namespace Biblioteca.Classes_Basicas
             }
         }
 
+        [DataMember(IsRequired = true)]
         public string Nome
         {
             get

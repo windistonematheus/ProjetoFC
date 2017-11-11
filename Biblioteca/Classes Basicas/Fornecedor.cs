@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Biblioteca.Classes_Basicas
 {
+    [Serializable]
     public class Fornecedor
     {
         //Declaração dos atributos
@@ -27,6 +29,7 @@ namespace Biblioteca.Classes_Basicas
             List<Compra> compra = new List<Compra>();
         }
         //Métodos Gets e Sets
+        [DataMember(IsRequired = true)]
         public int Id
         {
             get
@@ -40,6 +43,7 @@ namespace Biblioteca.Classes_Basicas
             }
         }
 
+        [DataMember(IsRequired = true)]
         public string Cnpj
         {
             get
@@ -53,6 +57,7 @@ namespace Biblioteca.Classes_Basicas
             }
         }
 
+        [DataMember(IsRequired = true)]
         public string Cep
         {
             get
@@ -66,6 +71,7 @@ namespace Biblioteca.Classes_Basicas
             }
         }
 
+        [DataMember(IsRequired = true)]
         public string RazaoSocial
         {
             get
@@ -79,6 +85,7 @@ namespace Biblioteca.Classes_Basicas
             }
         }
 
+        [DataMember(IsRequired = true)]
         public string Logradouro
         {
             get
@@ -92,6 +99,7 @@ namespace Biblioteca.Classes_Basicas
             }
         }
 
+        [DataMember(IsRequired = true)]
         public string Cidade
         {
             get
@@ -105,6 +113,7 @@ namespace Biblioteca.Classes_Basicas
             }
         }
 
+        [DataMember(IsRequired = true)]
         public string Estado
         {
             get
@@ -118,6 +127,7 @@ namespace Biblioteca.Classes_Basicas
             }
         }
 
+        [DataMember(IsRequired = true)]
         public string Bairro
         {
             get
@@ -131,6 +141,7 @@ namespace Biblioteca.Classes_Basicas
             }
         }
 
+        [DataMember(IsRequired = true)]
         public string Email
         {
             get
@@ -144,6 +155,7 @@ namespace Biblioteca.Classes_Basicas
             }
         }
 
+        [DataMember(IsRequired = true)]
         public string Telefone
         {
             get
@@ -157,6 +169,7 @@ namespace Biblioteca.Classes_Basicas
             }
         }
 
+        [DataMember(IsRequired = true)]
         public List<Compra> Compra
         {
             get
@@ -170,6 +183,7 @@ namespace Biblioteca.Classes_Basicas
             }
         }
 
+        [DataMember(IsRequired = true)]
         public string Complemento
         {
             get

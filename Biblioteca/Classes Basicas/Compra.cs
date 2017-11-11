@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Biblioteca.Classes_Basicas
 {
+    [Serializable]
     public class Compra
     {
         //Declaração dos atributos
@@ -21,6 +22,7 @@ namespace Biblioteca.Classes_Basicas
         }
 
         //Métodos Gets e Sets
+        [DataMember(IsRequired = true)]
         public double Preco
         {
             get
@@ -34,6 +36,7 @@ namespace Biblioteca.Classes_Basicas
             }
         }
 
+        [DataMember(IsRequired = true)]
         public int Quantidade
         {
             get
@@ -47,6 +50,7 @@ namespace Biblioteca.Classes_Basicas
             }
         }
 
+        [DataMember(IsRequired = true)]
         public Fornecedor Fornecedor
         {
             get
@@ -60,6 +64,7 @@ namespace Biblioteca.Classes_Basicas
             }
         }
 
+        [DataMember(IsRequired = true)]
         public MateriaPrima MateriaPrima
         {
             get
@@ -73,6 +78,7 @@ namespace Biblioteca.Classes_Basicas
             }
         }
 
+        [DataMember(IsRequired = true)]
         public Fornecedor Fornecedor1
         {
             get
@@ -85,6 +91,7 @@ namespace Biblioteca.Classes_Basicas
             }
         }
 
+        [DataMember(IsRequired = true)]
         public MateriaPrima MateriaPrima1
         {
             get
@@ -97,6 +104,7 @@ namespace Biblioteca.Classes_Basicas
             }
         }
 
+        [DataMember(IsRequired = true)]
         public Fornecedor Fornecedor2
         {
             get
@@ -109,6 +117,7 @@ namespace Biblioteca.Classes_Basicas
             }
         }
 
+        [DataMember(IsRequired = true)]
         public MateriaPrima MateriaPrima2
         {
             get
