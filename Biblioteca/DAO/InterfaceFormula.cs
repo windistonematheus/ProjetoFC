@@ -10,5 +10,6 @@ namespace Biblioteca.DAO
     interface InterfaceFormula
     {
         void CadastrarFormula(Produto p);
+        Produto SelectFormula(Produto filtro);
     }
 }
