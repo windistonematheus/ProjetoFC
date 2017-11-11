@@ -50,19 +50,19 @@ namespace ProjetoFabricaCosmeticos
                 MateriaPrima filtro = new MateriaPrima();
                 if (textBoxNome.Text.Trim().Equals("") == false)
                 {
-                    filtro.Nome = textBoxNome.Text.Trim();
+                    filtro.nome = textBoxNome.Text.Trim();
                 }
-                filtro.Descricao = textBoxDescricao.Text;
+                filtro.descricao = textBoxDescricao.Text;
                 listaMateriaPrima = dados.SelectMateriaPrima(filtro).ToList();
                 listViewMateriaPrima.Items.Clear();
                 foreach (MateriaPrima m in listaMateriaPrima)
                 {
-                    ListViewItem linha = listViewMateriaPrima.Items.Add(m.Id.ToString());
-                    linha.SubItems.Add(m.Nome);
-                    linha.SubItems.Add(m.Descricao);
-                    linha.SubItems.Add(m.Lote);
-                    linha.SubItems.Add(Convert.ToString(m.Validade));
-                    linha.SubItems.Add(Convert.ToString(m.EstoqueAtual));
+                    ListViewItem linha = listViewMateriaPrima.Items.Add(m.id.ToString());
+                    linha.SubItems.Add(m.nome);
+                    linha.SubItems.Add(m.descricao);
+                    linha.SubItems.Add(m.lote);
+                    linha.SubItems.Add(Convert.ToString(m.validade));
+                    linha.SubItems.Add(Convert.ToString(m.estoqueAtual));
                 }
 
 

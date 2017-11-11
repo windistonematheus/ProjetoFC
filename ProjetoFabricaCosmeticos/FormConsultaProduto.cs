@@ -53,18 +53,18 @@ namespace ProjetoFabricaCosmeticos
 
                 if (textBoxId.Text.Trim().Equals("") == false)
                 {
-                    filtro.Id = Int32.Parse(textBoxId.Text.Trim());
+                    filtro.id = Int32.Parse(textBoxId.Text.Trim());
                 }
-                filtro.Nome = textBoxNome.Text;
+                filtro.nome = textBoxNome.Text;
                 listaProduto = dados.SelectProduto(filtro).ToList();
 
                 listViewProduto.Items.Clear();
                 foreach (Produto p in listaProduto)
                 {
-                    ListViewItem linha = listViewProduto.Items.Add(p.Id.ToString());
-                    linha.SubItems.Add(p.Nome);
-                    linha.SubItems.Add(p.UnidadeFornecimento);
-                    linha.SubItems.Add(p.Descricao);
+                    ListViewItem linha = listViewProduto.Items.Add(p.id.ToString());
+                    linha.SubItems.Add(p.nome);
+                    linha.SubItems.Add(p.unidadeFornecimento);
+                    linha.SubItems.Add(p.descricao);
                 }
             }
             catch (Exception ex)

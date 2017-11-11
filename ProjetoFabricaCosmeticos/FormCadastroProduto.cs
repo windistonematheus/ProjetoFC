@@ -27,10 +27,10 @@ namespace ProjetoFabricaCosmeticos
         public FormCadastroProduto(Produto p)
         {
             InitializeComponent();
-            textBoxNome.Text = p.Nome;
-            textBoxUnidadeFornecimento.Text = p.UnidadeFornecimento;
-            textBoxDescricao.Text = p.Descricao;
-            this.filtro = p.Id;
+            textBoxNome.Text = p.nome;
+            textBoxUnidadeFornecimento.Text = p.unidadeFornecimento;
+            textBoxDescricao.Text = p.descricao;
+            this.filtro = p.id;
             this.operacao = 1;
             buttonCadastrar.Text = "Atualizar";
             this.Text = "Atualização de Produto";
@@ -41,9 +41,9 @@ namespace ProjetoFabricaCosmeticos
             try
             {
                 Produto p = new Produto();
-                p.Nome = textBoxNome.Text;
-                p.UnidadeFornecimento = textBoxUnidadeFornecimento.Text;
-                p.Descricao = textBoxDescricao.Text;
+                p.nome = textBoxNome.Text;
+                p.unidadeFornecimento = textBoxUnidadeFornecimento.Text;
+                p.descricao = textBoxDescricao.Text;
 
                 Service1 dados = new Service1();
                 if (this.operacao == 0)
@@ -53,7 +53,7 @@ namespace ProjetoFabricaCosmeticos
                 }
                 else
                 {
-                    p.Id = this.filtro;
+                    p.id = this.filtro;
                     dados.UpdateProduto(p);
                     MessageBox.Show("Produto alterado com sucesso");
                 }

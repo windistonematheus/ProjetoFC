@@ -29,7 +29,7 @@ namespace ProjetoFabricaCosmeticos
             listViewMateriaPrima.Items.Clear();
             foreach (MateriaPrima materia in this.listaMateria)
             {
-                ListViewItem item = listViewMateriaPrima.Items.Add(materia.Nome);
+                ListViewItem item = listViewMateriaPrima.Items.Add(materia.nome);
             }
         }
 
@@ -43,7 +43,7 @@ namespace ProjetoFabricaCosmeticos
                 comboBoxProduto.Items.Clear();
                 foreach (Produto p in listaProduto)
                 {
-                    comboBoxProduto.Items.Add(p.Nome);
+                    comboBoxProduto.Items.Add(p.nome);
                 }
             }
             catch (Exception ex)
@@ -62,7 +62,7 @@ namespace ProjetoFabricaCosmeticos
                 comboBoxMateriaPrima.Items.Clear();
                 foreach (MateriaPrima m in listaComboMateria)
                 {
-                    comboBoxMateriaPrima.Items.Add(m.Nome);
+                    comboBoxMateriaPrima.Items.Add(m.nome);
                 }
             }
             catch (Exception ex)
@@ -84,7 +84,7 @@ namespace ProjetoFabricaCosmeticos
                 }
 
                 Produto p = listaProduto.ElementAt(index);
-                p.MateriaPrima = listaMateria.ToArray();
+                p.materiaPrima = listaMateria.ToArray();
 
                 Service1 dados = new Service1();
                 dados.CadastrarFormula(p);

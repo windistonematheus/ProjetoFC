@@ -28,17 +28,17 @@ namespace ProjetoFabricaCosmeticos
         public FormCadastroFornecedor(Fornecedor f)
         {
             InitializeComponent();
-            textBoxCnpj.Text = f.Cnpj;
-            textBoxRazaoSocial.Text = f.RazaoSocial;
-            textBoxEmail.Text = f.Email;
-            textBoxTelefone.Text = f.Telefone;
-            textBoxCep.Text = f.Cep;
-            textBoxLogradouro.Text = f.Logradouro;
-            textBoxComplemento.Text = f.Complemento;
-            textBoxBairro.Text = f.Bairro;
-            textBoxCidade.Text = f.Cidade;
-            textBoxEstado.Text = f.Estado;
-            this.filtro = f.Id;
+            textBoxCnpj.Text = f.cnpj;
+            textBoxRazaoSocial.Text = f.razaoSocial;
+            textBoxEmail.Text = f.email;
+            textBoxTelefone.Text = f.telefone;
+            textBoxCep.Text = f.cep;
+            textBoxLogradouro.Text = f.logradouro;
+            textBoxComplemento.Text = f.complemento;
+            textBoxBairro.Text = f.bairro;
+            textBoxCidade.Text = f.cidade;
+            textBoxEstado.Text = f.estado;
+            this.filtro = f.id;
             this.operacao = 1;
             buttonCadastraFornecedor.Text = "Atualizar";
             this.Text = "Atualização de Fornecedor";
@@ -49,16 +49,16 @@ namespace ProjetoFabricaCosmeticos
             try
             {
                 Fornecedor f = new Fornecedor();
-                f.Cnpj = textBoxCnpj.Text;
-                f.RazaoSocial = textBoxRazaoSocial.Text;
-                f.Email = textBoxEmail.Text;
-                f.Telefone = textBoxTelefone.Text;
-                f.Cep = textBoxCep.Text;
-                f.Logradouro = textBoxLogradouro.Text;
-                f.Complemento = textBoxComplemento.Text;
-                f.Bairro = textBoxBairro.Text;
-                f.Cidade = textBoxCidade.Text;
-                f.Estado = textBoxEstado.Text;
+                f.cnpj = textBoxCnpj.Text;
+                f.razaoSocial = textBoxRazaoSocial.Text;
+                f.email = textBoxEmail.Text;
+                f.telefone = textBoxTelefone.Text;
+                f.cep = textBoxCep.Text;
+                f.logradouro = textBoxLogradouro.Text;
+                f.complemento = textBoxComplemento.Text;
+                f.bairro = textBoxBairro.Text;
+                f.cidade = textBoxCidade.Text;
+                f.estado = textBoxEstado.Text;
 
 
 
@@ -70,7 +70,7 @@ namespace ProjetoFabricaCosmeticos
                 }
                 else
                 {
-                    f.Id = this.filtro;
+                    f.id = this.filtro;
                     dados.UpdateFornecedor(f);
                     MessageBox.Show("Fornecedor alterado com sucesso");
                 }

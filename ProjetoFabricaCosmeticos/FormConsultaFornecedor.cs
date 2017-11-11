@@ -51,24 +51,24 @@ namespace ProjetoFabricaCosmeticos
                 Fornecedor filtro = new Fornecedor();
                 if (textBoxCnpj.Text.Trim().Equals("") == false)
                 {
-                    filtro.Cnpj = textBoxCnpj.Text.Trim();
+                    filtro.cnpj = textBoxCnpj.Text.Trim();
                 }
-                filtro.RazaoSocial = textBoxRazaoSocial.Text;
+                filtro.razaoSocial = textBoxRazaoSocial.Text;
                 listaFornecedor = dados.SelectFornecedor(filtro).ToList();
                 listViewFornecedor.Items.Clear();
                 foreach (Fornecedor a in listaFornecedor)
                 {
-                    ListViewItem linha = listViewFornecedor.Items.Add(a.Id.ToString());
-                    linha.SubItems.Add(a.Cnpj);
-                    linha.SubItems.Add(a.RazaoSocial);
-                    linha.SubItems.Add(a.Logradouro);
-                    linha.SubItems.Add(a.Complemento);
-                    linha.SubItems.Add(a.Bairro);
-                    linha.SubItems.Add(a.Cidade);
-                    linha.SubItems.Add(a.Estado);
-                    linha.SubItems.Add(a.Cep);
-                    linha.SubItems.Add(a.Email);
-                    linha.SubItems.Add(a.Telefone);
+                    ListViewItem linha = listViewFornecedor.Items.Add(a.id.ToString());
+                    linha.SubItems.Add(a.cnpj);
+                    linha.SubItems.Add(a.razaoSocial);
+                    linha.SubItems.Add(a.logradouro);
+                    linha.SubItems.Add(a.complemento);
+                    linha.SubItems.Add(a.bairro);
+                    linha.SubItems.Add(a.cidade);
+                    linha.SubItems.Add(a.estado);
+                    linha.SubItems.Add(a.cep);
+                    linha.SubItems.Add(a.email);
+                    linha.SubItems.Add(a.telefone);
                 }
 
                

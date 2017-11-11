@@ -33,7 +33,7 @@ namespace ProjetoFabricaCosmeticos
                 comboBoxProduto.Items.Clear();
                 foreach (Produto p in listaProduto)
                 {
-                    comboBoxProduto.Items.Add(p.Nome);
+                    comboBoxProduto.Items.Add(p.nome);
                 }
             }
             catch (Exception ex)
@@ -52,7 +52,7 @@ namespace ProjetoFabricaCosmeticos
                 comboBoxMateriaPrima.Items.Clear();
                 foreach (MateriaPrima m in listaMateria)
                 {
-                    comboBoxMateriaPrima.Items.Add(m.Nome);
+                    comboBoxMateriaPrima.Items.Add(m.nome);
                 }
             }
             catch (Exception ex)

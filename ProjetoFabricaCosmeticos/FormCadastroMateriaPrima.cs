@@ -25,12 +25,12 @@ namespace ProjetoFabricaCosmeticos
         public FormCadastroMateriaPrima(MateriaPrima m)
         {
             InitializeComponent();
-            textBoxNome.Text = m.Nome;
-            textBoxDescricao.Text = m.Descricao;
-            textBoxLote.Text = m.Lote;
-            textBoxValidade.Text = Convert.ToString(m.Validade);
-            textBoxEstoqueAtual.Text = Convert.ToString(m.EstoqueAtual);
-            this.filtro = m.Id;
+            textBoxNome.Text = m.nome;
+            textBoxDescricao.Text = m.descricao;
+            textBoxLote.Text = m.lote;
+            textBoxValidade.Text = Convert.ToString(m.validade);
+            textBoxEstoqueAtual.Text = Convert.ToString(m.estoqueAtual);
+            this.filtro = m.id;
             this.operacao = 1;
             buttonCadastrarMateriaPrima.Text = "Atualizar";
             this.Text = "Atualização da materia prima";
@@ -41,11 +41,11 @@ namespace ProjetoFabricaCosmeticos
             try
             {
                 MateriaPrima m = new MateriaPrima();
-                m.Nome = textBoxNome.Text;
-                m.Descricao = textBoxDescricao.Text;
-                m.Lote = textBoxLote.Text;
-                m.Validade = Convert.ToDateTime(textBoxValidade.Text);
-                m.EstoqueAtual = Convert.ToInt32(textBoxEstoqueAtual.Text);
+                m.nome = textBoxNome.Text;
+                m.descricao = textBoxDescricao.Text;
+                m.lote = textBoxLote.Text;
+                m.validade = Convert.ToDateTime(textBoxValidade.Text);
+                m.estoqueAtual = Convert.ToInt32(textBoxEstoqueAtual.Text);
 
 
                 Service1 dados = new Service1();
@@ -56,7 +56,7 @@ namespace ProjetoFabricaCosmeticos
                 }
                 else
                 {
-                    m.Id = this.filtro;
+                    m.id = this.filtro;
                     dados.UpdateMateriaPrima(m);
                     MessageBox.Show("Materia Prima atualizada com sucesso");
                 }
