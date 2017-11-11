@@ -9,7 +9,7 @@ using System.Data;
 
 namespace Biblioteca.DAO
 {
-    public class CompraDados : Util.GerenciadorConexaoSqlServer, InterfaceCompras
+    public class CompraDados : Util.GerenciadorConexaoSqlServer, InterfaceCompra
     {
         
 

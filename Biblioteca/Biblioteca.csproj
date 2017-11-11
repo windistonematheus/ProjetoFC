@@ -46,7 +46,7 @@
     <Compile Include="Classes Basicas\MateriaPrima.cs" />
     <Compile Include="DAO\CompraDados.cs" />
     <Compile Include="DAO\FormulaDados.cs" />
-    <Compile Include="DAO\InterfaceCompras.cs" />
+    <Compile Include="DAO\InterfaceCompra.cs" />
     <Compile Include="DAO\InterfaceFormula.cs" />
     <Compile Include="DAO\InterfaceMateriaPrima.cs" />
     <Compile Include="DAO\MateriaPrimaDados.cs" />
@@ -54,6 +54,7 @@
     <Compile Include="DAO\InterfaceFornecedor.cs" />
     <Compile Include="DAO\InterfaceProduto.cs" />
     <Compile Include="DAO\ProdutoDados.cs" />
+    <Compile Include="Negocio\CompraNegocio.cs" />
     <Compile Include="Negocio\MateriaPrimaNegocio.cs" />
     <Compile Include="Negocio\FornecedorNegocio.cs" />
     <Compile Include="Negocio\ProdutoNegocio.cs" />
