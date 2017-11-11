@@ -38,5 +38,31 @@ namespace WcfService1
         {
             throw new NotImplementedException();
         }
+
+        public void Insert(Produto produto)
+        {
+            new ProdutoNegocio().Insert(produto);
+        }
+
+        public void Update(Produto produto)
+        {
+            new ProdutoNegocio().Update(produto);
+        }
+
+        public void Delete(Produto produto)
+        {
+            new ProdutoNegocio().Delete(produto);
+        }
+
+        public bool VerificarDuplicidade(Produto produto)
+        {
+            return new ProdutoNegocio().VerificarDuplicidade(produto);
+        }
+
+        public List<Produto> Select(Produto filtro)
+        {
+            return new ProdutoNegocio().Select(filtro);
+        }
+
     }
 }

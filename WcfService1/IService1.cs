@@ -14,9 +14,8 @@ namespace WcfService1
     [ServiceContract]
     public interface IService1
     {
-
+        #region ações Fornecedor
         [OperationContract]
-        
         void Insert(Fornecedor fornecedor);
         [OperationContract]
         void Update(Fornecedor fornecedor);
@@ -26,7 +25,7 @@ namespace WcfService1
         bool VerificarDuplicidade(Fornecedor fornecedor);
         [OperationContract]
         List<Fornecedor> Select(Fornecedor filtro);
-
+        #endregion
 
         #region ações Produto
         [OperationContract]
@@ -41,7 +40,6 @@ namespace WcfService1
         List<Produto> Select(Produto filtro);
         #endregion
 
-
         #region ações Materia Prima
         [OperationContract]
         void Insert(MateriaPrima materiaprima);
@@ -55,14 +53,26 @@ namespace WcfService1
         List<MateriaPrima> Select(MateriaPrima filtro);
         #endregion
 
+        #region ações Formula
+        [OperationContract]
         void CadastrarFormula(Produto p);
+        [OperationContract]
         Produto SelectFormula(Produto filtro);
+        #endregion
 
+        #region ações Compra
+        [OperationContract]
         void Insert(Compra compra);
+        [OperationContract]
         void Update(Compra compra);
+        [OperationContract]
         void Delete(Compra compra);
+        [OperationContract]
         bool VerificarDuplicidade(Compra compra);
+        [OperationContract]
         List<Compra> Select(Compra compra);
+        #endregion
+
         // TODO: Add your service operations here
     }
 

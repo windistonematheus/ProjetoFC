@@ -1,5 +1,4 @@
-﻿using Biblioteca.Classes_Basicas;
-using Biblioteca.Negocio;
+﻿using ProjetoFabricaCosmeticos.localhost;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -46,7 +45,7 @@ namespace ProjetoFabricaCosmeticos
                 p.UnidadeFornecimento = textBoxUnidadeFornecimento.Text;
                 p.Descricao = textBoxDescricao.Text;
 
-                ProdutoNegocio dados = new ProdutoNegocio();
+                Service1 dados = new Service1();
                 if (this.operacao == 0)
                 {
                     dados.Insert(p);

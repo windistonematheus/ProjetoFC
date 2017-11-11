@@ -1,5 +1,4 @@
-﻿using Biblioteca.Classes_Basicas;
-using Biblioteca.Negocio;
+﻿using ProjetoFabricaCosmeticos.localhost;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -49,7 +48,7 @@ namespace ProjetoFabricaCosmeticos
 
             try
             {
-                ProdutoNegocio dados = new ProdutoNegocio();
+                Service1 dados = new Service1();
                 Produto filtro = new Produto();
 
                 if (textBoxId.Text.Trim().Equals("") == false)
@@ -92,7 +91,7 @@ namespace ProjetoFabricaCosmeticos
                 {
                     int posicao = listViewProduto.FocusedItem.Index;
                     Produto ProdutoSelecionado = this.listaProduto.ElementAt(posicao);
-                    ProdutoNegocio dados = new ProdutoNegocio();
+                    Service1 dados = new Service1();
                     dados.Delete(ProdutoSelecionado);
                     listViewProduto.Items.Clear();
                     MessageBox.Show("Produto removido com sucesso");
