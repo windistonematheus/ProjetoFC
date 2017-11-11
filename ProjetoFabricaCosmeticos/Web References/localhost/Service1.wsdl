@@ -7,62 +7,232 @@
       <xsd:import schemaLocation="http://localhost:63161/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Biblioteca.Classes_Basicas" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="IService1_Insert_InputMessage">
-    <wsdl:part name="parameters" element="tns:Insert" />
+  <wsdl:message name="IService1_InsertFornecedor_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertFornecedor" />
   </wsdl:message>
-  <wsdl:message name="IService1_Insert_OutputMessage">
-    <wsdl:part name="parameters" element="tns:InsertResponse" />
+  <wsdl:message name="IService1_InsertFornecedor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertFornecedorResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_Update_InputMessage">
-    <wsdl:part name="parameters" element="tns:Update" />
+  <wsdl:message name="IService1_UpdateFornecedor_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFornecedor" />
   </wsdl:message>
-  <wsdl:message name="IService1_Update_OutputMessage">
-    <wsdl:part name="parameters" element="tns:UpdateResponse" />
+  <wsdl:message name="IService1_UpdateFornecedor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFornecedorResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_Delete_InputMessage">
-    <wsdl:part name="parameters" element="tns:Delete" />
+  <wsdl:message name="IService1_DeleteFornecedor_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFornecedor" />
   </wsdl:message>
-  <wsdl:message name="IService1_Delete_OutputMessage">
-    <wsdl:part name="parameters" element="tns:DeleteResponse" />
+  <wsdl:message name="IService1_DeleteFornecedor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFornecedorResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_VerificarDuplicidade_InputMessage">
-    <wsdl:part name="parameters" element="tns:VerificarDuplicidade" />
+  <wsdl:message name="IService1_VerificarDuplicidadeFornecedor_InputMessage">
+    <wsdl:part name="parameters" element="tns:VerificarDuplicidadeFornecedor" />
   </wsdl:message>
-  <wsdl:message name="IService1_VerificarDuplicidade_OutputMessage">
-    <wsdl:part name="parameters" element="tns:VerificarDuplicidadeResponse" />
+  <wsdl:message name="IService1_VerificarDuplicidadeFornecedor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VerificarDuplicidadeFornecedorResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_Select_InputMessage">
-    <wsdl:part name="parameters" element="tns:Select" />
+  <wsdl:message name="IService1_SelectFornecedor_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectFornecedor" />
   </wsdl:message>
-  <wsdl:message name="IService1_Select_OutputMessage">
-    <wsdl:part name="parameters" element="tns:SelectResponse" />
+  <wsdl:message name="IService1_SelectFornecedor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectFornecedorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertProduto_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertProduto" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertProduto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertProdutoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateProduto_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProduto" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateProduto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProdutoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteProduto_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProduto" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteProduto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProdutoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_VerificarDuplicidadeProduto_InputMessage">
+    <wsdl:part name="parameters" element="tns:VerificarDuplicidadeProduto" />
+  </wsdl:message>
+  <wsdl:message name="IService1_VerificarDuplicidadeProduto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VerificarDuplicidadeProdutoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SelectProduto_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectProduto" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SelectProduto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectProdutoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertMateriaPrima_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertMateriaPrima" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertMateriaPrima_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertMateriaPrimaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateMateriaPrima_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMateriaPrima" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateMateriaPrima_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMateriaPrimaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteMateriaPrima_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMateriaPrima" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteMateriaPrima_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMateriaPrimaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_VerificarDuplicidadeMateriaPrima_InputMessage">
+    <wsdl:part name="parameters" element="tns:VerificarDuplicidadeMateriaPrima" />
+  </wsdl:message>
+  <wsdl:message name="IService1_VerificarDuplicidadeMateriaPrima_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VerificarDuplicidadeMateriaPrimaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SelectMateriaPrima_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectMateriaPrima" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SelectMateriaPrima_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectMateriaPrimaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CadastrarFormula_InputMessage">
+    <wsdl:part name="parameters" element="tns:CadastrarFormula" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CadastrarFormula_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CadastrarFormulaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SelectFormula_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectFormula" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SelectFormula_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectFormulaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertCompra_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCompra" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertCompra_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCompraResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateCompra_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCompra" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateCompra_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCompraResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteCompra_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCompra" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteCompra_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCompraResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_VerificarDuplicidadeCompra_InputMessage">
+    <wsdl:part name="parameters" element="tns:VerificarDuplicidadeCompra" />
+  </wsdl:message>
+  <wsdl:message name="IService1_VerificarDuplicidadeCompra_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VerificarDuplicidadeCompraResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SelectCompra_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectCompra" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SelectCompra_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectCompraResponse" />
   </wsdl:message>
   <wsdl:portType name="IService1">
-    <wsdl:operation name="Insert">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Insert" message="tns:IService1_Insert_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/InsertResponse" message="tns:IService1_Insert_OutputMessage" />
+    <wsdl:operation name="InsertFornecedor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/InsertFornecedor" message="tns:IService1_InsertFornecedor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/InsertFornecedorResponse" message="tns:IService1_InsertFornecedor_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="Update">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Update" message="tns:IService1_Update_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateResponse" message="tns:IService1_Update_OutputMessage" />
+    <wsdl:operation name="UpdateFornecedor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateFornecedor" message="tns:IService1_UpdateFornecedor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateFornecedorResponse" message="tns:IService1_UpdateFornecedor_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="Delete">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Delete" message="tns:IService1_Delete_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DeleteResponse" message="tns:IService1_Delete_OutputMessage" />
+    <wsdl:operation name="DeleteFornecedor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DeleteFornecedor" message="tns:IService1_DeleteFornecedor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DeleteFornecedorResponse" message="tns:IService1_DeleteFornecedor_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="VerificarDuplicidade">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/VerificarDuplicidade" message="tns:IService1_VerificarDuplicidade_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/VerificarDuplicidadeResponse" message="tns:IService1_VerificarDuplicidade_OutputMessage" />
+    <wsdl:operation name="VerificarDuplicidadeFornecedor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/VerificarDuplicidadeFornecedor" message="tns:IService1_VerificarDuplicidadeFornecedor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/VerificarDuplicidadeFornecedorResponse" message="tns:IService1_VerificarDuplicidadeFornecedor_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="Select">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Select" message="tns:IService1_Select_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SelectResponse" message="tns:IService1_Select_OutputMessage" />
+    <wsdl:operation name="SelectFornecedor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SelectFornecedor" message="tns:IService1_SelectFornecedor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SelectFornecedorResponse" message="tns:IService1_SelectFornecedor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertProduto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/InsertProduto" message="tns:IService1_InsertProduto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/InsertProdutoResponse" message="tns:IService1_InsertProduto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProduto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateProduto" message="tns:IService1_UpdateProduto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateProdutoResponse" message="tns:IService1_UpdateProduto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProduto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DeleteProduto" message="tns:IService1_DeleteProduto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DeleteProdutoResponse" message="tns:IService1_DeleteProduto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VerificarDuplicidadeProduto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/VerificarDuplicidadeProduto" message="tns:IService1_VerificarDuplicidadeProduto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/VerificarDuplicidadeProdutoResponse" message="tns:IService1_VerificarDuplicidadeProduto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectProduto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SelectProduto" message="tns:IService1_SelectProduto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SelectProdutoResponse" message="tns:IService1_SelectProduto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertMateriaPrima">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/InsertMateriaPrima" message="tns:IService1_InsertMateriaPrima_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/InsertMateriaPrimaResponse" message="tns:IService1_InsertMateriaPrima_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMateriaPrima">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateMateriaPrima" message="tns:IService1_UpdateMateriaPrima_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateMateriaPrimaResponse" message="tns:IService1_UpdateMateriaPrima_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMateriaPrima">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DeleteMateriaPrima" message="tns:IService1_DeleteMateriaPrima_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DeleteMateriaPrimaResponse" message="tns:IService1_DeleteMateriaPrima_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VerificarDuplicidadeMateriaPrima">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/VerificarDuplicidadeMateriaPrima" message="tns:IService1_VerificarDuplicidadeMateriaPrima_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/VerificarDuplicidadeMateriaPrimaResponse" message="tns:IService1_VerificarDuplicidadeMateriaPrima_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectMateriaPrima">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SelectMateriaPrima" message="tns:IService1_SelectMateriaPrima_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SelectMateriaPrimaResponse" message="tns:IService1_SelectMateriaPrima_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CadastrarFormula">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/CadastrarFormula" message="tns:IService1_CadastrarFormula_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/CadastrarFormulaResponse" message="tns:IService1_CadastrarFormula_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectFormula">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SelectFormula" message="tns:IService1_SelectFormula_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SelectFormulaResponse" message="tns:IService1_SelectFormula_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertCompra">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/InsertCompra" message="tns:IService1_InsertCompra_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/InsertCompraResponse" message="tns:IService1_InsertCompra_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCompra">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateCompra" message="tns:IService1_UpdateCompra_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateCompraResponse" message="tns:IService1_UpdateCompra_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCompra">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DeleteCompra" message="tns:IService1_DeleteCompra_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DeleteCompraResponse" message="tns:IService1_DeleteCompra_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VerificarDuplicidadeCompra">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/VerificarDuplicidadeCompra" message="tns:IService1_VerificarDuplicidadeCompra_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/VerificarDuplicidadeCompraResponse" message="tns:IService1_VerificarDuplicidadeCompra_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectCompra">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SelectCompra" message="tns:IService1_SelectCompra_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SelectCompraResponse" message="tns:IService1_SelectCompra_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="Insert">
-      <soap:operation soapAction="http://tempuri.org/IService1/Insert" style="document" />
+    <wsdl:operation name="InsertFornecedor">
+      <soap:operation soapAction="http://tempuri.org/IService1/InsertFornecedor" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -70,8 +240,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Update">
-      <soap:operation soapAction="http://tempuri.org/IService1/Update" style="document" />
+    <wsdl:operation name="UpdateFornecedor">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdateFornecedor" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -79,8 +249,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Delete">
-      <soap:operation soapAction="http://tempuri.org/IService1/Delete" style="document" />
+    <wsdl:operation name="DeleteFornecedor">
+      <soap:operation soapAction="http://tempuri.org/IService1/DeleteFornecedor" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -88,8 +258,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="VerificarDuplicidade">
-      <soap:operation soapAction="http://tempuri.org/IService1/VerificarDuplicidade" style="document" />
+    <wsdl:operation name="VerificarDuplicidadeFornecedor">
+      <soap:operation soapAction="http://tempuri.org/IService1/VerificarDuplicidadeFornecedor" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -97,8 +267,161 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Select">
-      <soap:operation soapAction="http://tempuri.org/IService1/Select" style="document" />
+    <wsdl:operation name="SelectFornecedor">
+      <soap:operation soapAction="http://tempuri.org/IService1/SelectFornecedor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertProduto">
+      <soap:operation soapAction="http://tempuri.org/IService1/InsertProduto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProduto">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdateProduto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProduto">
+      <soap:operation soapAction="http://tempuri.org/IService1/DeleteProduto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerificarDuplicidadeProduto">
+      <soap:operation soapAction="http://tempuri.org/IService1/VerificarDuplicidadeProduto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectProduto">
+      <soap:operation soapAction="http://tempuri.org/IService1/SelectProduto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertMateriaPrima">
+      <soap:operation soapAction="http://tempuri.org/IService1/InsertMateriaPrima" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMateriaPrima">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdateMateriaPrima" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMateriaPrima">
+      <soap:operation soapAction="http://tempuri.org/IService1/DeleteMateriaPrima" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerificarDuplicidadeMateriaPrima">
+      <soap:operation soapAction="http://tempuri.org/IService1/VerificarDuplicidadeMateriaPrima" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectMateriaPrima">
+      <soap:operation soapAction="http://tempuri.org/IService1/SelectMateriaPrima" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CadastrarFormula">
+      <soap:operation soapAction="http://tempuri.org/IService1/CadastrarFormula" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectFormula">
+      <soap:operation soapAction="http://tempuri.org/IService1/SelectFormula" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCompra">
+      <soap:operation soapAction="http://tempuri.org/IService1/InsertCompra" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCompra">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdateCompra" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCompra">
+      <soap:operation soapAction="http://tempuri.org/IService1/DeleteCompra" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerificarDuplicidadeCompra">
+      <soap:operation soapAction="http://tempuri.org/IService1/VerificarDuplicidadeCompra" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectCompra">
+      <soap:operation soapAction="http://tempuri.org/IService1/SelectCompra" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
