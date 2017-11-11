@@ -110,27 +110,27 @@ namespace WcfService1
         #region ações Compra
         public void InsertCompra(Compra compra)
         {
-            throw new NotImplementedException();
+            new CompraNegocio().Insert(compra);
         }
 
         public void UpdateCompra(Compra compra)
         {
-            throw new NotImplementedException();
+            new CompraNegocio().Update(compra);
         }
 
         public void DeleteCompra(Compra compra)
         {
-            throw new NotImplementedException();
+            new CompraNegocio().Delete(compra);
         }
 
         public bool VerificarDuplicidadeCompra(Compra compra)
         {
-            throw new NotImplementedException();
+            return new CompraNegocio().VerificarDuplicidade(compra);
         }
 
         public List<Compra> SelectCompra(Compra compra)
         {
-            throw new NotImplementedException();
+            return new CompraNegocio().Select(compra);
         }
         #endregion
 
