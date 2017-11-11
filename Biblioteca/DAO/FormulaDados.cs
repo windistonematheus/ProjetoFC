@@ -40,5 +40,48 @@ namespace Biblioteca.DAO
                 throw new Exception("Erro ao conecar e inserir " + ex.Message);
             }
         }
+
+        public Produto SelectFormula(Produto filtro)
+        {
+            Produto retorno = new Produto();
+            try
+            {
+                this.Conectar();
+                string sql = "SELECT MateriaPrima.Nome AS NomeMateriaPrima FROM Compoe ";
+                sql += " INNER JOIN MateriaPrima ON Compoe.Id_MateriaPrima = MateriaPrima.Id where ";
+
+                if (filtro.Id > 0)
+                {
+                    sql += " and compoe.Id_Produto = @Id_Produto ";
+                }
+
+                SqlCommand cmd = new SqlCommand(sql, sqlcon);
+
+                if (filtro.Id > 0)
+                {
+                    cmd.Parameters.Add("@Id_Produto", SqlDbType.Int);
+                    cmd.Parameters["@Id_Produto"].Value = filtro.Id;
+                }
+
+                SqlDataReader DbReader = cmd.ExecuteReader();
+
+                while (DbReader.Read())
+                {
+                    MateriaPrima materiaPrima = new MateriaPrima();
+                    materiaPrima.Id = DbReader.GetInt32(DbReader.GetOrdinal("Id_MateriaPrima"));
+                    materiaPrima.Nome = DbReader.GetString(DbReader.GetOrdinal("NomeMateriaPrima"));
+                    retorno.MateriaPrima.Add(materiaPrima);
+                }
+
+                DbReader.Close();
+                cmd.Dispose();
+                this.Desconectar();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao conecar e selecionar " + ex.Message);
+            }
+            return retorno;
+        }
     }
 }
