@@ -43,12 +43,14 @@ namespace Biblioteca.DAO
 
         public Produto SelectFormula(Produto filtro)
         {
+            List<MateriaPrima> listaMateriaPrima = new List<MateriaPrima>();
             Produto retorno = new Produto();
             try
             {
                 this.Conectar();
-                string sql = "SELECT MateriaPrima.Nome AS NomeMateriaPrima FROM Compoe ";
-                sql += " INNER JOIN MateriaPrima ON Compoe.Id_MateriaPrima = MateriaPrima.Id where ";
+                string sql = "SELECT MateriaPrima.Nome FROM Compoe ";
+                sql += " INNER JOIN MateriaPrima ON Compoe.Id_MateriaPrima = MateriaPrima.Id ";
+                sql += " where compoe.Id_Produto = compoe.Id_Produto";
 
                 if (filtro.Id > 0)
                 {
@@ -64,14 +66,14 @@ namespace Biblioteca.DAO
                 }
 
                 SqlDataReader DbReader = cmd.ExecuteReader();
-
+                
                 while (DbReader.Read())
                 {
                     MateriaPrima materiaPrima = new MateriaPrima();
-                    materiaPrima.Id = DbReader.GetInt32(DbReader.GetOrdinal("Id_MateriaPrima"));
-                    materiaPrima.Nome = DbReader.GetString(DbReader.GetOrdinal("NomeMateriaPrima"));
-                    retorno.MateriaPrima.Add(materiaPrima);
+                    materiaPrima.Nome = DbReader.GetString(DbReader.GetOrdinal("Nome"));
+                    listaMateriaPrima.Add(materiaPrima);
                 }
+                retorno.MateriaPrima = listaMateriaPrima;
 
                 DbReader.Close();
                 cmd.Dispose();
