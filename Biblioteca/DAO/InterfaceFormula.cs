@@ -11,7 +11,7 @@ namespace Biblioteca.DAO
     {
         void CadastrarFormula(Produto produto);
         void DeleteFormula(Produto produto);
-        bool VerificarFormula(Produto produto);
+        bool VerificarDuplicidadeFormula(Produto produto);
         List<MateriaPrima> SelectFormula(Produto filtro);
     }
 }

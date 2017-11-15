@@ -114,7 +114,7 @@ namespace Biblioteca.DAO
             return retorno;
         }
 
-        public bool VerificarFormula(Produto produto)
+        public bool VerificarDuplicidadeFormula(Produto produto)
         {
             bool retorno = false;
             try

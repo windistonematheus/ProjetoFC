@@ -101,6 +101,16 @@ namespace WcfService1
             new FormulaNegocio().CadastrarFormula(produto);
         }
 
+        public void DeleteFormula(Produto produto)
+        {
+            new FormulaNegocio().CadastrarFormula(produto);
+        }
+
+        public bool VerificarDuplicidadeFormula(Produto produto)
+        {
+            return new FormulaNegocio().VerificarDuplicidadeFormula(produto);
+        }
+
         public List<MateriaPrima> SelectFormula(Produto filtro)
         {
             return new FormulaNegocio().SelectFormula(filtro);
