@@ -38,10 +38,10 @@
             this.textBoxLote = new System.Windows.Forms.TextBox();
             this.textBoxValidade = new System.Windows.Forms.TextBox();
             this.textBoxQuantidade = new System.Windows.Forms.TextBox();
-            this.listBoxCompra = new System.Windows.Forms.ListBox();
             this.buttonAdicionar = new System.Windows.Forms.Button();
             this.buttonCadastrar = new System.Windows.Forms.Button();
             this.buttonRemover = new System.Windows.Forms.Button();
+            this.listViewCompra = new System.Windows.Forms.ListView();
             this.SuspendLayout();
             // 
             // label1
@@ -126,14 +126,6 @@
             this.textBoxQuantidade.Size = new System.Drawing.Size(140, 20);
             this.textBoxQuantidade.TabIndex = 9;
             // 
-            // listBoxCompra
-            // 
-            this.listBoxCompra.FormattingEnabled = true;
-            this.listBoxCompra.Location = new System.Drawing.Point(100, 149);
-            this.listBoxCompra.Name = "listBoxCompra";
-            this.listBoxCompra.Size = new System.Drawing.Size(413, 134);
-            this.listBoxCompra.TabIndex = 10;
-            // 
             // buttonAdicionar
             // 
             this.buttonAdicionar.Location = new System.Drawing.Point(26, 294);
@@ -161,15 +153,23 @@
             this.buttonRemover.Text = "Remover";
             this.buttonRemover.UseVisualStyleBackColor = true;
             // 
+            // listViewCompra
+            // 
+            this.listViewCompra.Location = new System.Drawing.Point(100, 162);
+            this.listViewCompra.Name = "listViewCompra";
+            this.listViewCompra.Size = new System.Drawing.Size(313, 97);
+            this.listViewCompra.TabIndex = 14;
+            this.listViewCompra.UseCompatibleStateImageBehavior = false;
+            // 
             // FormCadastroCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(524, 345);
+            this.Controls.Add(this.listViewCompra);
             this.Controls.Add(this.buttonRemover);
             this.Controls.Add(this.buttonCadastrar);
             this.Controls.Add(this.buttonAdicionar);
-            this.Controls.Add(this.listBoxCompra);
             this.Controls.Add(this.textBoxQuantidade);
             this.Controls.Add(this.textBoxValidade);
             this.Controls.Add(this.textBoxLote);
@@ -199,9 +199,9 @@
         private System.Windows.Forms.TextBox textBoxLote;
         private System.Windows.Forms.TextBox textBoxValidade;
         private System.Windows.Forms.TextBox textBoxQuantidade;
-        private System.Windows.Forms.ListBox listBoxCompra;
         private System.Windows.Forms.Button buttonAdicionar;
         private System.Windows.Forms.Button buttonCadastrar;
         private System.Windows.Forms.Button buttonRemover;
+        private System.Windows.Forms.ListView listViewCompra;
     }
 }
