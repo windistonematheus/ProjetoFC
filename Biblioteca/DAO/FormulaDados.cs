@@ -47,7 +47,7 @@ namespace Biblioteca.DAO
             try
             {
                 this.Conectar();
-                string sql = "SELECT MateriaPrima.Nome FROM Compoe ";
+                string sql = "SELECT MateriaPrima.Id AS IdMateriaPrima, MateriaPrima.Nome AS NomeMateriaPrima FROM Compoe ";
                 sql += " INNER JOIN MateriaPrima ON Compoe.Id_MateriaPrima = MateriaPrima.Id ";
                 sql += " where compoe.Id_Produto = compoe.Id_Produto";
 
@@ -69,7 +69,8 @@ namespace Biblioteca.DAO
                 while (DbReader.Read())
                 {
                     MateriaPrima materiaPrima = new MateriaPrima();
-                    materiaPrima.Nome = DbReader.GetString(DbReader.GetOrdinal("Nome"));
+                    materiaPrima.Id = DbReader.GetInt32(DbReader.GetOrdinal("IdMateriaPrima"));
+                    materiaPrima.Nome = DbReader.GetString(DbReader.GetOrdinal("NomeMateriaPrima"));
                     retorno.Add(materiaPrima);
                 }
 
