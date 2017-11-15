@@ -82,7 +82,8 @@ namespace ProjetoFabricaCosmeticos
                 }
 
                 Produto p = listaProduto.ElementAt(indexProduto);
-                p.materiaPrima.ToList().Add(listaMateria.ElementAt(indexMateriaPrima));
+                p.materiaPrima = new MateriaPrima[1];
+                p.materiaPrima[0] = (listaMateria.ElementAt(indexMateriaPrima));
 
                 Service1 dados = new Service1();
                 dados.CadastrarFormula(p);
