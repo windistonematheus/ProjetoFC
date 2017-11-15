@@ -128,11 +128,16 @@ namespace Biblioteca.DAO
 
                 SqlCommand cmd = new SqlCommand(sql, sqlcon);
 
-                cmd.Parameters.Add("@ID", SqlDbType.Int);
-                cmd.Parameters["@ID"].Value = materiaprima.Id;
-
-                cmd.Parameters.Add("@Nome", SqlDbType.VarChar);
-                cmd.Parameters["@Nome"].Value = materiaprima.Nome;
+                if (materiaprima.Id != 0)
+                {
+                    cmd.Parameters.Add("@ID", SqlDbType.Int);
+                    cmd.Parameters["@ID"].Value = materiaprima.Id;
+                }
+                else
+                {
+                    cmd.Parameters.Add("@Nome", SqlDbType.VarChar);
+                    cmd.Parameters["@Nome"].Value = materiaprima.Nome;
+                }
 
                 SqlDataReader DbReader = cmd.ExecuteReader();
 
