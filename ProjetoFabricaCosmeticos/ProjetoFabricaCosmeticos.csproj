@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormCadastroCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadastroCompra.Designer.cs">
+      <DependentUpon>FormCadastroCompra.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCadastroItemFormula.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +122,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FormCadastroCompra.resx">
+      <DependentUpon>FormCadastroCompra.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCadastroItemFormula.resx">
       <DependentUpon>FormCadastroItemFormula.cs</DependentUpon>
     </EmbeddedResource>
