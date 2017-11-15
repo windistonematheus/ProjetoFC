@@ -69,5 +69,30 @@ namespace ProjetoFabricaCosmeticos
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void buttonRemoverFormula_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int index = comboBoxProduto.SelectedIndex;
+                if (index < 0)
+                {
+                    MessageBox.Show("Selecionar o produto");
+                    comboBoxProduto.Focus();
+                    return;
+                }
+                Produto ProdutoSelecionado = listaProduto.ElementAt(index);
+                    Service1 dados = new Service1();
+                    dados.DeleteFormula(ProdutoSelecionado);
+                    listViewFormula.Items.Clear();
+                    comboBoxProduto.SelectedIndex = -1;
+                    MessageBox.Show("Produto removido com sucesso");
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
