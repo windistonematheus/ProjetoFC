@@ -103,7 +103,7 @@ namespace WcfService1
 
         public void DeleteFormula(Produto produto)
         {
-            new FormulaNegocio().CadastrarFormula(produto);
+            new FormulaNegocio().DeleteFormula(produto);
         }
 
         public bool VerificarDuplicidadeFormula(Produto produto)

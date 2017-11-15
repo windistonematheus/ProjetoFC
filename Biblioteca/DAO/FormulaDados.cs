@@ -46,11 +46,11 @@ namespace Biblioteca.DAO
             try
             {
                 this.Conectar();
-                string sql = "delete from Compoe where ID_Produto = @ID_Prodjuto ";
+                string sql = "delete from Compoe where ID_Produto = @ID_Produto ";
                 SqlCommand cmd = new SqlCommand(sql, this.sqlcon);
 
-                cmd.Parameters.Add("@ID_Prodjuto", SqlDbType.Int);
-                cmd.Parameters["@ID_Prodjuto"].Value = produto.Id;
+                cmd.Parameters.Add("@ID_Produto", SqlDbType.Int);
+                cmd.Parameters["@ID_Produto"].Value = produto.Id;
 
                 cmd.ExecuteNonQuery();
                 cmd.Dispose();
