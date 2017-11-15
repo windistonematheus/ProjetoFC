@@ -205,24 +205,50 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="DeleteFormula">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Biblioteca.Classes_Basicas" minOccurs="0" name="produto" nillable="true" type="q20:Produto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteFormulaResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerificarDuplicidadeFormula">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Biblioteca.Classes_Basicas" minOccurs="0" name="produto" nillable="true" type="q21:Produto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerificarDuplicidadeFormulaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="VerificarDuplicidadeFormulaResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="SelectFormula">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Biblioteca.Classes_Basicas" minOccurs="0" name="filtro" nillable="true" type="q20:Produto" />
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Biblioteca.Classes_Basicas" minOccurs="0" name="filtro" nillable="true" type="q22:Produto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="SelectFormulaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Biblioteca.Classes_Basicas" minOccurs="0" name="SelectFormulaResult" nillable="true" type="q21:ArrayOfMateriaPrima" />
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Biblioteca.Classes_Basicas" minOccurs="0" name="SelectFormulaResult" nillable="true" type="q23:ArrayOfMateriaPrima" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="InsertCompra">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Biblioteca.Classes_Basicas" minOccurs="0" name="compra" nillable="true" type="q22:Compra" />
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Biblioteca.Classes_Basicas" minOccurs="0" name="compra" nillable="true" type="q24:Compra" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -234,7 +260,7 @@
   <xs:element name="UpdateCompra">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Biblioteca.Classes_Basicas" minOccurs="0" name="compra" nillable="true" type="q23:Compra" />
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Biblioteca.Classes_Basicas" minOccurs="0" name="compra" nillable="true" type="q25:Compra" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -246,7 +272,7 @@
   <xs:element name="DeleteCompra">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Biblioteca.Classes_Basicas" minOccurs="0" name="compra" nillable="true" type="q24:Compra" />
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Biblioteca.Classes_Basicas" minOccurs="0" name="compra" nillable="true" type="q26:Compra" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -258,7 +284,7 @@
   <xs:element name="VerificarDuplicidadeCompra">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Biblioteca.Classes_Basicas" minOccurs="0" name="compra" nillable="true" type="q25:Compra" />
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Biblioteca.Classes_Basicas" minOccurs="0" name="compra" nillable="true" type="q27:Compra" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -272,14 +298,14 @@
   <xs:element name="SelectCompra">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Biblioteca.Classes_Basicas" minOccurs="0" name="compra" nillable="true" type="q26:Compra" />
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/Biblioteca.Classes_Basicas" minOccurs="0" name="compra" nillable="true" type="q28:Compra" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="SelectCompraResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Biblioteca.Classes_Basicas" minOccurs="0" name="SelectCompraResult" nillable="true" type="q27:ArrayOfCompra" />
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/Biblioteca.Classes_Basicas" minOccurs="0" name="SelectCompraResult" nillable="true" type="q29:ArrayOfCompra" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

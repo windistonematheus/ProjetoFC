@@ -103,6 +103,18 @@
   <wsdl:message name="IService1_CadastrarFormula_OutputMessage">
     <wsdl:part name="parameters" element="tns:CadastrarFormulaResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_DeleteFormula_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFormula" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteFormula_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFormulaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_VerificarDuplicidadeFormula_InputMessage">
+    <wsdl:part name="parameters" element="tns:VerificarDuplicidadeFormula" />
+  </wsdl:message>
+  <wsdl:message name="IService1_VerificarDuplicidadeFormula_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VerificarDuplicidadeFormulaResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_SelectFormula_InputMessage">
     <wsdl:part name="parameters" element="tns:SelectFormula" />
   </wsdl:message>
@@ -203,6 +215,14 @@
     <wsdl:operation name="CadastrarFormula">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/CadastrarFormula" message="tns:IService1_CadastrarFormula_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/CadastrarFormulaResponse" message="tns:IService1_CadastrarFormula_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFormula">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DeleteFormula" message="tns:IService1_DeleteFormula_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DeleteFormulaResponse" message="tns:IService1_DeleteFormula_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VerificarDuplicidadeFormula">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/VerificarDuplicidadeFormula" message="tns:IService1_VerificarDuplicidadeFormula_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/VerificarDuplicidadeFormulaResponse" message="tns:IService1_VerificarDuplicidadeFormula_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="SelectFormula">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/SelectFormula" message="tns:IService1_SelectFormula_InputMessage" />
@@ -368,6 +388,24 @@
     </wsdl:operation>
     <wsdl:operation name="CadastrarFormula">
       <soap:operation soapAction="http://tempuri.org/IService1/CadastrarFormula" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFormula">
+      <soap:operation soapAction="http://tempuri.org/IService1/DeleteFormula" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerificarDuplicidadeFormula">
+      <soap:operation soapAction="http://tempuri.org/IService1/VerificarDuplicidadeFormula" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
