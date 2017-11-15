@@ -12,11 +12,11 @@ namespace Biblioteca.DAO
 {
     public class FormulaDados : GerenciadorConexaoSqlServer, InterfaceFormula
     {
-        public void CadastrarFormula(Produto p)
+        public void CadastrarFormula(Produto produto)
         {
             try
             {
-                foreach (MateriaPrima ma in p.MateriaPrima)
+                foreach (MateriaPrima materiaPrima in produto.MateriaPrima)
                 {
                 this.Conectar();
                 string sql = "insert into Compoe (ID_Produto, ID_MateriaPrima) ";
@@ -25,10 +25,10 @@ namespace Biblioteca.DAO
                 SqlCommand cmd = new SqlCommand(sql, this.sqlcon);
 
                 cmd.Parameters.Add("@IdProduto", SqlDbType.Int);
-                cmd.Parameters["@IdProduto"].Value = p.Id;
+                cmd.Parameters["@IdProduto"].Value = produto.Id;
 
                 cmd.Parameters.Add("@IdMateriaPrima", SqlDbType.Int);
-                cmd.Parameters["@IdMateriaPrima"].Value = ma.Id;
+                cmd.Parameters["@IdMateriaPrima"].Value = materiaPrima.Id;
 
                 cmd.ExecuteNonQuery();
                 cmd.Dispose();
@@ -38,6 +38,27 @@ namespace Biblioteca.DAO
             catch (Exception ex)
             {
                 throw new Exception("Erro ao conecar e inserir " + ex.Message);
+            }
+        }
+
+        public void DeleteFormula(Produto produto)
+        {
+            try
+            {
+                this.Conectar();
+                string sql = "delete from Compoe where ID_Produto = @ID_Prodjuto ";
+                SqlCommand cmd = new SqlCommand(sql, this.sqlcon);
+
+                cmd.Parameters.Add("@ID_Prodjuto", SqlDbType.Int);
+                cmd.Parameters["@ID_Prodjuto"].Value = produto.Id;
+
+                cmd.ExecuteNonQuery();
+                cmd.Dispose();
+                this.Desconectar();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao conectar e remover " + ex.Message);
             }
         }
 
@@ -80,6 +101,39 @@ namespace Biblioteca.DAO
                     produto.Nome = DbReader.GetString(DbReader.GetOrdinal("NomeProduto"));
                     materiaPrima.Produto.Add(produto);
                     retorno.Add(materiaPrima);
+                }
+
+                DbReader.Close();
+                cmd.Dispose();
+                this.Desconectar();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao conecar e selecionar " + ex.Message);
+            }
+            return retorno;
+        }
+
+        public bool VerificarFormula(Produto produto)
+        {
+            bool retorno = false;
+            try
+            {
+                this.Conectar();
+                string sql = "SELECT ID_Produto, ID_MateriaPrima ";
+                sql += " FROM Compoe where ID_Produto = @ID_Produto ";
+
+                SqlCommand cmd = new SqlCommand(sql, sqlcon);
+
+                cmd.Parameters.Add("@ID_Produto", SqlDbType.Int);
+                cmd.Parameters["@ID_Produto"].Value = produto.Id;
+
+                SqlDataReader DbReader = cmd.ExecuteReader();
+
+                while (DbReader.Read())
+                {
+                    retorno = true;
+                    break;
                 }
 
                 DbReader.Close();
