@@ -17,20 +17,13 @@ namespace ProjetoFabricaCosmeticos
         List<MateriaPrima> listaMateriaPrima = new List<MateriaPrima>();
         List<MateriaPrima> listaComboMateriaPrima = new List<MateriaPrima>();
 
+
         public FormCadastroCompra()
         {
             InitializeComponent();
-            ListarMateriaPrima();
             ListarFornecedorCombo();
             ListarMateriaCombo();
-        }
-        private void ListarMateriaPrima()
-        {
-            listViewCompra.Items.Clear();
-            foreach (MateriaPrima materia in this.listaMateriaPrima)
-            {
-                ListViewItem item = listViewCompra.Items.Add(materia.nome);
-            }
+
         }
 
         private void ListarFornecedorCombo()
@@ -71,6 +64,38 @@ namespace ProjetoFabricaCosmeticos
             }
         }
 
+        private void buttonCadastrar_Click(object sender, EventArgs e)
+        {
+            int indexFornecedor = comboBoxFornecedor.SelectedIndex;
+            if (indexFornecedor < 0)
+            {
+                MessageBox.Show("Selecionar o produto");
+                comboBoxFornecedor.Focus();
+                return;
+            }
 
+            int indexMateriaPrima = comboBoxMateriaPrima.SelectedIndex;
+            if (indexMateriaPrima < 0)
+            {
+                MessageBox.Show("Selecionar a matéria prima");
+                comboBoxMateriaPrima.Focus();
+                return;
+            }
+            Compra compra = new Compra();
+            compra.fornecedor = listaFornecedor.ElementAt(indexFornecedor);
+            compra.materiaPrima = listaMateriaPrima.ElementAt(indexMateriaPrima);
+            compra.preco = Convert.ToDouble(textBoxPreco.Text);
+            compra.quantidade = Convert.ToInt32(textBoxQuantidade.Text);
+
+            Service1 dados = new Service1();
+
+            dados.InsertCompra(compra);
+            MessageBox.Show("Compra cadastrada com sucesso");
+
+            comboBoxFornecedor.SelectedIndex = -1;
+            comboBoxMateriaPrima.SelectedIndex = -1;
+            textBoxPreco.Clear();
+            textBoxQuantidade.Clear();
+        }
     }
 }

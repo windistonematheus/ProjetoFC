@@ -33,15 +33,10 @@
             this.comboBoxMateriaPrima = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBoxLote = new System.Windows.Forms.TextBox();
-            this.textBoxValidade = new System.Windows.Forms.TextBox();
+            this.textBoxPreco = new System.Windows.Forms.TextBox();
             this.textBoxQuantidade = new System.Windows.Forms.TextBox();
-            this.buttonAdicionar = new System.Windows.Forms.Button();
             this.buttonCadastrar = new System.Windows.Forms.Button();
-            this.buttonRemover = new System.Windows.Forms.Button();
-            this.listViewCompra = new System.Windows.Forms.ListView();
             this.SuspendLayout();
             // 
             // label1
@@ -83,98 +78,52 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(23, 65);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(28, 13);
+            this.label3.Size = new System.Drawing.Size(35, 13);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Lote";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(23, 94);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(48, 13);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Validade";
+            this.label3.Text = "Preço";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(26, 123);
+            this.label5.Location = new System.Drawing.Point(26, 91);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(62, 13);
             this.label5.TabIndex = 6;
             this.label5.Text = "Quantidade";
             // 
-            // textBoxLote
+            // textBoxPreco
             // 
-            this.textBoxLote.Location = new System.Drawing.Point(100, 65);
-            this.textBoxLote.Name = "textBoxLote";
-            this.textBoxLote.Size = new System.Drawing.Size(140, 20);
-            this.textBoxLote.TabIndex = 7;
-            // 
-            // textBoxValidade
-            // 
-            this.textBoxValidade.Location = new System.Drawing.Point(100, 94);
-            this.textBoxValidade.Name = "textBoxValidade";
-            this.textBoxValidade.Size = new System.Drawing.Size(140, 20);
-            this.textBoxValidade.TabIndex = 8;
+            this.textBoxPreco.Location = new System.Drawing.Point(100, 65);
+            this.textBoxPreco.Name = "textBoxPreco";
+            this.textBoxPreco.Size = new System.Drawing.Size(140, 20);
+            this.textBoxPreco.TabIndex = 7;
             // 
             // textBoxQuantidade
             // 
-            this.textBoxQuantidade.Location = new System.Drawing.Point(100, 123);
+            this.textBoxQuantidade.Location = new System.Drawing.Point(100, 91);
             this.textBoxQuantidade.Name = "textBoxQuantidade";
             this.textBoxQuantidade.Size = new System.Drawing.Size(140, 20);
             this.textBoxQuantidade.TabIndex = 9;
             // 
-            // buttonAdicionar
-            // 
-            this.buttonAdicionar.Location = new System.Drawing.Point(26, 294);
-            this.buttonAdicionar.Name = "buttonAdicionar";
-            this.buttonAdicionar.Size = new System.Drawing.Size(75, 23);
-            this.buttonAdicionar.TabIndex = 11;
-            this.buttonAdicionar.Text = "Adicionar";
-            this.buttonAdicionar.UseVisualStyleBackColor = true;
-            // 
             // buttonCadastrar
             // 
-            this.buttonCadastrar.Location = new System.Drawing.Point(172, 294);
+            this.buttonCadastrar.Location = new System.Drawing.Point(29, 117);
             this.buttonCadastrar.Name = "buttonCadastrar";
             this.buttonCadastrar.Size = new System.Drawing.Size(75, 23);
             this.buttonCadastrar.TabIndex = 12;
             this.buttonCadastrar.Text = "Cadastrar";
             this.buttonCadastrar.UseVisualStyleBackColor = true;
-            // 
-            // buttonRemover
-            // 
-            this.buttonRemover.Location = new System.Drawing.Point(338, 294);
-            this.buttonRemover.Name = "buttonRemover";
-            this.buttonRemover.Size = new System.Drawing.Size(75, 23);
-            this.buttonRemover.TabIndex = 13;
-            this.buttonRemover.Text = "Remover";
-            this.buttonRemover.UseVisualStyleBackColor = true;
-            // 
-            // listViewCompra
-            // 
-            this.listViewCompra.Location = new System.Drawing.Point(100, 162);
-            this.listViewCompra.Name = "listViewCompra";
-            this.listViewCompra.Size = new System.Drawing.Size(313, 97);
-            this.listViewCompra.TabIndex = 14;
-            this.listViewCompra.UseCompatibleStateImageBehavior = false;
+            this.buttonCadastrar.Click += new System.EventHandler(this.buttonCadastrar_Click);
             // 
             // FormCadastroCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(524, 345);
-            this.Controls.Add(this.listViewCompra);
-            this.Controls.Add(this.buttonRemover);
+            this.ClientSize = new System.Drawing.Size(346, 155);
             this.Controls.Add(this.buttonCadastrar);
-            this.Controls.Add(this.buttonAdicionar);
             this.Controls.Add(this.textBoxQuantidade);
-            this.Controls.Add(this.textBoxValidade);
-            this.Controls.Add(this.textBoxLote);
+            this.Controls.Add(this.textBoxPreco);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBoxMateriaPrima);
@@ -194,14 +143,9 @@
         private System.Windows.Forms.ComboBox comboBoxMateriaPrima;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBoxLote;
-        private System.Windows.Forms.TextBox textBoxValidade;
+        private System.Windows.Forms.TextBox textBoxPreco;
         private System.Windows.Forms.TextBox textBoxQuantidade;
-        private System.Windows.Forms.Button buttonAdicionar;
         private System.Windows.Forms.Button buttonCadastrar;
-        private System.Windows.Forms.Button buttonRemover;
-        private System.Windows.Forms.ListView listViewCompra;
     }
 }

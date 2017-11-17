@@ -18,7 +18,7 @@ namespace Biblioteca.DAO
           try
             {
                 this.Conectar();
-                string sql = "insert into Compras(Preco,Quantidade,ID_Fornecedor,ID_MateriaPrima) ";
+                string sql = "insert into Compra (Preco,Quantidade,ID_Fornecedor,ID_MateriaPrima) ";
                 sql += " values(@Preco,@Quantidade,@ID_Fornecedor,@ID_MateriaPrima)";
                 SqlCommand cmd = new SqlCommand(sql, this.sqlcon);
 
