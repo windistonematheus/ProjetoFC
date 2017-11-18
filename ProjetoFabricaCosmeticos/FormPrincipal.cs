@@ -17,11 +17,6 @@ namespace ProjetoFabricaCosmeticos
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void cadastroToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormCadastroFornecedor form = new FormCadastroFornecedor();
@@ -78,6 +73,12 @@ namespace ProjetoFabricaCosmeticos
         private void cadastroToolStripMenuItem3_Click_1(object sender, EventArgs e)
         {
             FormCadastroCompra form = new FormCadastroCompra();
+            form.Show();
+        }
+
+        private void consultaToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            FormConsultaCompra form = new FormConsultaCompra();
             form.Show();
         }
     }

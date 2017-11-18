@@ -165,7 +165,7 @@ namespace Biblioteca.DAO
             {
                 this.Conectar();
                 string sql = "SELECT ID ,Validade, EstoqueAtual, Lote, Nome, Descricao ";
-                sql += " FROM MateriaPrima where ID = ID";
+                sql += " FROM MateriaPrima where ID = ID ";
 
                 if (filtro.Nome != null && filtro.Nome.Trim().Equals("") == false)
                 {
@@ -173,19 +173,19 @@ namespace Biblioteca.DAO
                 }
                 if (filtro.Descricao != null && filtro.Descricao.Trim().Equals("") == false)
                 {
-                    sql += " and Descricao like @Descricao";
+                    sql += " and Descricao like @Descricao ";
                 }
                 SqlCommand cmd = new SqlCommand(sql, sqlcon);
 
                 if (filtro.Nome != null && filtro.Nome.Trim().Equals("") == false)
                 {
                     cmd.Parameters.Add("@Nome", SqlDbType.VarChar);
-                    cmd.Parameters["@Nome"].Value = filtro.Nome;
+                    cmd.Parameters["@Nome"].Value = "%" + filtro.Nome + "%";
                 }
                 if (filtro.Descricao != null && filtro.Descricao.Trim().Equals("") == false)
                 {
                     cmd.Parameters.Add("@Descricao", SqlDbType.VarChar);
-                    cmd.Parameters["@Descricao"].Value = filtro.Descricao;
+                    cmd.Parameters["@Descricao"].Value = "%"+filtro.Descricao+"%";
                 }
                 SqlDataReader DbReader = cmd.ExecuteReader();
                 while (DbReader.Read())

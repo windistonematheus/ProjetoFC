@@ -50,6 +50,7 @@
             // 
             // comboBoxFornecedor
             // 
+            this.comboBoxFornecedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxFornecedor.FormattingEnabled = true;
             this.comboBoxFornecedor.Location = new System.Drawing.Point(100, 9);
             this.comboBoxFornecedor.Name = "comboBoxFornecedor";
@@ -58,6 +59,7 @@
             // 
             // comboBoxMateriaPrima
             // 
+            this.comboBoxMateriaPrima.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxMateriaPrima.FormattingEnabled = true;
             this.comboBoxMateriaPrima.Location = new System.Drawing.Point(100, 37);
             this.comboBoxMateriaPrima.Name = "comboBoxMateriaPrima";
