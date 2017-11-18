@@ -86,7 +86,7 @@ namespace ProjetoFabricaCosmeticos
                 p.materiaPrima[0] = (listaMateria.ElementAt(indexMateriaPrima));
 
                 Service1 dados = new Service1();
-                dados.CadastrarFormula(p);
+                dados.CadastrarItemFormula(p);
                 MessageBox.Show("Formula cadastrada com sucesso");
 
                 comboBoxProduto.SelectedIndex = -1;

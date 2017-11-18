@@ -147,7 +147,7 @@ namespace Biblioteca.Negocio
                 throw new Exception("O item da fórmula não esta cadastrado");
             }
 
-            dados.DeleteFormula(produto);
+            dados.DeleteItemFormula(produto);
         }
 
         public List<MateriaPrima> SelectFormula(Produto filtro)
