@@ -191,6 +191,7 @@
             this.Controls.Add(this.textBoxRazaoSocial);
             this.Controls.Add(this.textBoxCnpj);
             this.Name = "FormConsultaFornecedor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta Fornecedor";
             this.ResumeLayout(false);
             this.PerformLayout();
