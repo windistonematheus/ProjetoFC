@@ -57,7 +57,11 @@ namespace WcfService1
         [OperationContract]
         void CadastrarFormula(Produto produto);
         [OperationContract]
+        void CadastrarItemFormula(Produto produto);
+        [OperationContract]
         void DeleteFormula(Produto produto);
+        [OperationContract]
+        void DeleteItemFormula(Produto produto);
         [OperationContract]
         bool VerificarDuplicidadeFormula(Produto produto);
         [OperationContract]

@@ -61,7 +61,11 @@ namespace ProjetoFabricaCosmeticos.localhost {
         
         private System.Threading.SendOrPostCallback CadastrarFormulaOperationCompleted;
         
+        private System.Threading.SendOrPostCallback CadastrarItemFormulaOperationCompleted;
+        
         private System.Threading.SendOrPostCallback DeleteFormulaOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback DeleteItemFormulaOperationCompleted;
         
         private System.Threading.SendOrPostCallback VerificarDuplicidadeFormulaOperationCompleted;
         
@@ -164,7 +168,13 @@ namespace ProjetoFabricaCosmeticos.localhost {
         public event CadastrarFormulaCompletedEventHandler CadastrarFormulaCompleted;
         
         /// <remarks/>
+        public event CadastrarItemFormulaCompletedEventHandler CadastrarItemFormulaCompleted;
+        
+        /// <remarks/>
         public event DeleteFormulaCompletedEventHandler DeleteFormulaCompleted;
+        
+        /// <remarks/>
+        public event DeleteItemFormulaCompletedEventHandler DeleteItemFormulaCompleted;
         
         /// <remarks/>
         public event VerificarDuplicidadeFormulaCompletedEventHandler VerificarDuplicidadeFormulaCompleted;
@@ -651,6 +661,34 @@ namespace ProjetoFabricaCosmeticos.localhost {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/CadastrarItemFormula", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void CadastrarItemFormula([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] Produto produto) {
+            this.Invoke("CadastrarItemFormula", new object[] {
+                        produto});
+        }
+        
+        /// <remarks/>
+        public void CadastrarItemFormulaAsync(Produto produto) {
+            this.CadastrarItemFormulaAsync(produto, null);
+        }
+        
+        /// <remarks/>
+        public void CadastrarItemFormulaAsync(Produto produto, object userState) {
+            if ((this.CadastrarItemFormulaOperationCompleted == null)) {
+                this.CadastrarItemFormulaOperationCompleted = new System.Threading.SendOrPostCallback(this.OnCadastrarItemFormulaOperationCompleted);
+            }
+            this.InvokeAsync("CadastrarItemFormula", new object[] {
+                        produto}, this.CadastrarItemFormulaOperationCompleted, userState);
+        }
+        
+        private void OnCadastrarItemFormulaOperationCompleted(object arg) {
+            if ((this.CadastrarItemFormulaCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.CadastrarItemFormulaCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/DeleteFormula", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         public void DeleteFormula([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] Produto produto) {
             this.Invoke("DeleteFormula", new object[] {
@@ -675,6 +713,34 @@ namespace ProjetoFabricaCosmeticos.localhost {
             if ((this.DeleteFormulaCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.DeleteFormulaCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/DeleteItemFormula", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void DeleteItemFormula([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] Produto produto) {
+            this.Invoke("DeleteItemFormula", new object[] {
+                        produto});
+        }
+        
+        /// <remarks/>
+        public void DeleteItemFormulaAsync(Produto produto) {
+            this.DeleteItemFormulaAsync(produto, null);
+        }
+        
+        /// <remarks/>
+        public void DeleteItemFormulaAsync(Produto produto, object userState) {
+            if ((this.DeleteItemFormulaOperationCompleted == null)) {
+                this.DeleteItemFormulaOperationCompleted = new System.Threading.SendOrPostCallback(this.OnDeleteItemFormulaOperationCompleted);
+            }
+            this.InvokeAsync("DeleteItemFormula", new object[] {
+                        produto}, this.DeleteItemFormulaOperationCompleted, userState);
+        }
+        
+        private void OnDeleteItemFormulaOperationCompleted(object arg) {
+            if ((this.DeleteItemFormulaCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.DeleteItemFormulaCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -1531,7 +1597,15 @@ namespace ProjetoFabricaCosmeticos.localhost {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void CadastrarItemFormulaCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void DeleteFormulaCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void DeleteItemFormulaCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
