@@ -81,13 +81,38 @@ namespace ProjetoFabricaCosmeticos
                     comboBoxProduto.Focus();
                     return;
                 }
-                Produto ProdutoSelecionado = listaProduto.ElementAt(index);
+                Produto formulaSelecionada = listaProduto.ElementAt(index);
                     Service1 dados = new Service1();
-                    dados.DeleteFormula(ProdutoSelecionado);
+                    dados.DeleteFormula(formulaSelecionada);
                     listViewFormula.Items.Clear();
                     comboBoxProduto.SelectedIndex = -1;
-                    MessageBox.Show("Produto removido com sucesso");
+                    MessageBox.Show("Fórmula removida com sucesso");
                 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void buttonRemoverItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (listViewFormula.FocusedItem != null)
+                {
+                    int posicao = listViewFormula.FocusedItem.Index;
+                    MateriaPrima itemSelecionado = this.listaMateriaPrima.ElementAt(posicao);
+                    Service1 dados = new Service1();
+                    dados.DeleteItemFormula(itemSelecionado);
+                    listViewFormula.Items.Clear();
+                    MessageBox.Show("Item da fórmula removida com sucesso");
+
+                }
+                else
+                {
+                    MessageBox.Show(" Favor selecionar um item da fórmula");
+                }
             }
             catch (Exception ex)
             {
