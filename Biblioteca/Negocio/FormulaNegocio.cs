@@ -52,49 +52,48 @@ namespace Biblioteca.Negocio
             dados.CadastrarFormula(produto);
         }
 
-        public void CadastrarItemFormula(Produto produto)
+        public void CadastrarItemFormula(MateriaPrima materiaPrima)
         {
-            if (produto == null)
+            if (materiaPrima == null)
             {
                 throw new Exception("Informar os dados da fórmula");
             }
 
-            if (produto.Id <= 0)
+            if (materiaPrima.Id <= 0)
             {
-                throw new Exception("O Id do produto não poderá ser menor ou igual a zero");
+                throw new Exception("O Id da matéria prima não poderá ser menor ou igual a zero");
             }
 
-            if (produto.MateriaPrima == null)
+            if (materiaPrima.Produto == null)
             {
                 throw new Exception("Informar os dados da materia prima");
             }
 
-            if (produto.MateriaPrima.First().Id <= 0)
+            if (materiaPrima.Produto.First().Id <= 0)
             {
-                throw new Exception("O Id da matéria prima não poderá ser menor ou igual a zero");
+                throw new Exception("O Id do produto não poderá ser menor ou igual a zero");
             }
 
             FormulaDados dados = new FormulaDados();
             ProdutoNegocio dadosProduto = new ProdutoNegocio();
             MateriaPrimaNegocio dadosMateriaPrima = new MateriaPrimaNegocio();
 
-            if (dadosProduto.VerificarDuplicidade(produto) == false)
+            if (dadosProduto.VerificarDuplicidade(materiaPrima.Produto.First()) == false)
             {
                 throw new Exception("O produto não esta cadastrado");
             }
 
-            
-            if (dadosMateriaPrima.VerificarDuplicidade(produto.MateriaPrima.First()) == false)
+            if (dadosMateriaPrima.VerificarDuplicidade(materiaPrima) == false)
             {
                 throw new Exception("A matéria prima não esta cadastrada");
             }
 
-            if (this.VerificarDuplicidadeItemFormula(produto) == true)
+            if (this.VerificarDuplicidadeItemFormula(materiaPrima) == true)
             {
                 throw new Exception("O item da fórmula já se encontra cadastrado");
             }
 
-            dados.CadastrarFormula(produto);
+            dados.CadastrarItemFormula(materiaPrima);
         }
 
         public void DeleteFormula(Produto produto)
@@ -117,37 +116,37 @@ namespace Biblioteca.Negocio
             dados.DeleteFormula(produto);
         }
 
-        public void DeleteItemFormula(Produto produto)
+        public void DeleteItemFormula(MateriaPrima materiaPrima)
         {
-            if (produto == null)
+            if (materiaPrima == null)
             {
                 throw new Exception("Informar os dados da Fórmula");
             }
-            if (produto.Id <= 0)
-            {
-                throw new Exception("O Id do produto não poderá ser menor ou igual a zero");
-            }
-            if (produto.MateriaPrima == null)
-            {
-                throw new Exception("Informar os dados da materia prima");
-            }
-            if (produto.MateriaPrima.First().Id <= 0)
+            if (materiaPrima.Id <= 0)
             {
                 throw new Exception("O Id da matéria prima não poderá ser menor ou igual a zero");
             }
+            if (materiaPrima.Produto == null)
+            {
+                throw new Exception("Informar os dados da materia prima");
+            }
+            if (materiaPrima.Produto.First().Id <= 0)
+            {
+                throw new Exception("O Id do produto não poderá ser menor ou igual a zero");
+            }
             FormulaDados dados = new FormulaDados();
 
-            if (this.VerificarDuplicidadeFormula(produto) == false)
+            if (this.VerificarDuplicidadeFormula(materiaPrima.Produto.First()) == false)
             {
                 throw new Exception("A fórmula não esta cadastrada");
             }
 
-            if (this.VerificarDuplicidadeItemFormula(produto) == false)
+            if (this.VerificarDuplicidadeItemFormula(materiaPrima) == false)
             {
                 throw new Exception("O item da fórmula não esta cadastrado");
             }
 
-            dados.DeleteItemFormula(produto);
+            dados.DeleteItemFormula(materiaPrima);
         }
 
         public List<MateriaPrima> SelectFormula(Produto filtro)
@@ -164,9 +163,9 @@ namespace Biblioteca.Negocio
             return new FormulaDados().SelectFormula(filtro);
         }
 
-        public bool VerificarDuplicidadeItemFormula(Produto produto)
+        public bool VerificarDuplicidadeItemFormula(MateriaPrima materiaPrima)
         {
-            return new FormulaDados().VerificarDuplicidadeItemFormula(produto);
+            return new FormulaDados().VerificarDuplicidadeItemFormula(materiaPrima);
         }
 
         public bool VerificarDuplicidadeFormula(Produto produto)

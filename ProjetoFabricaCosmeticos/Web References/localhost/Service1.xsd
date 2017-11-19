@@ -208,7 +208,7 @@
   <xs:element name="CadastrarItemFormula">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Biblioteca.Classes_Basicas" minOccurs="0" name="produto" nillable="true" type="q20:Produto" />
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Biblioteca.Classes_Basicas" minOccurs="0" name="materiaPrima" nillable="true" type="q20:MateriaPrima" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -232,7 +232,7 @@
   <xs:element name="DeleteItemFormula">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Biblioteca.Classes_Basicas" minOccurs="0" name="produto" nillable="true" type="q22:Produto" />
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Biblioteca.Classes_Basicas" minOccurs="0" name="materiaPrima" nillable="true" type="q22:MateriaPrima" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
