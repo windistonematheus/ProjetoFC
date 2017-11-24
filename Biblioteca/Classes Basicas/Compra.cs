@@ -78,57 +78,6 @@ namespace Biblioteca.Classes_Basicas
                 materiaPrima = value;
             }
         }
-
-        [DataMember(IsRequired = true)]
-        public Fornecedor Fornecedor1
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
-        }
-
-        [DataMember(IsRequired = true)]
-        public MateriaPrima MateriaPrima1
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
-        }
-
-        [DataMember(IsRequired = true)]
-        public Fornecedor Fornecedor2
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
-        }
-
-        [DataMember(IsRequired = true)]
-        public MateriaPrima MateriaPrima2
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
-        }
+        
     }
 }

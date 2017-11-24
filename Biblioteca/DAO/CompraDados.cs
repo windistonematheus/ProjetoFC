@@ -6,10 +6,11 @@ using System.Text;
 using System.Threading.Tasks;
 using Biblioteca.Classes_Basicas;
 using System.Data;
+using Biblioteca.Util;
 
 namespace Biblioteca.DAO
 {
-    public class CompraDados : Util.GerenciadorConexaoSqlServer, InterfaceCompra
+    public class CompraDados : GerenciadorConexaoSqlServer, InterfaceCompra
     {
         
 
@@ -140,31 +141,47 @@ namespace Biblioteca.DAO
             try
             {
                 this.Conectar();
-                string sql = " select MateriaPrima.Nome AS NomeMateriaPrima, Fornecedor.RazaoSocial AS NomeFornecedor, ";
-                sql += " Compra.Preco, Compra.Quantidade from Compra ";
+                string sql = "SELECT Compra.Quantidade, Compra.Preco, Compra.ID_Fornecedor, Compra.ID_MateriaPrima, ";
+                sql += " MateriaPrima.Nome AS NomeMateriaPrima, Fornecedor.RazaoSocial AS RazaoSocialFornecedor FROM Compra ";
                 sql += " inner join MateriaPrima on Compra.ID_MateriaPrima = MateriaPrima.ID ";
                 sql += " inner join Fornecedor on Compra.ID_Fornecedor = Fornecedor.ID ";
-               
-                if (filtro.MateriaPrima.Nome != null && filtro.MateriaPrima.Nome.Trim().Equals("") == false)
+
+                if (filtro.Fornecedor.Id > 0)
                 {
-                    sql += " where MateriaPrima.Nome = @NomeMateriaPrima";
+                    sql += " and compra.ID_Fornecedor = @IdFornecedor ";
                 }
+
+                if (filtro.MateriaPrima.Id > 0)
+                {
+                    sql += " and compra.ID_MateriaPrima = @IdMateriaPrima ";
+                }
+
                 SqlCommand cmd = new SqlCommand(sql, sqlcon);
 
-                if (filtro.MateriaPrima.Nome != null && filtro.MateriaPrima.Nome.Trim().Equals("") == false)
+                if (filtro.Fornecedor.Id > 0)
                 {
-                    cmd.Parameters.Add("@NomeMateriaPrima", SqlDbType.VarChar);
-                    cmd.Parameters["@NomeMateriaPrima"].Value = filtro.MateriaPrima.Nome;
+                    cmd.Parameters.Add("@IdFornecedor", SqlDbType.Int);
+                    cmd.Parameters["@IdFornecedor"].Value = filtro.Fornecedor.Id;
+                }
+
+                if (filtro.MateriaPrima.Id > 0)
+                {
+                    cmd.Parameters.Add("@IdMateriaPrima", SqlDbType.Int);
+                    cmd.Parameters["@IdMateriaPrima"].Value = filtro.MateriaPrima.Id;
                 }
 
                 SqlDataReader DbReader = cmd.ExecuteReader();
                 while (DbReader.Read())
                 {
                     Compra compra = new Compra();
-                    compra.Preco = DbReader.GetDouble(DbReader.GetOrdinal("Preco"));
+                    compra.Fornecedor = new Fornecedor();
+                    compra.MateriaPrima = new MateriaPrima();
                     compra.Quantidade = DbReader.GetInt32(DbReader.GetOrdinal("Quantidade"));
-                    compra.Fornecedor.RazaoSocial = DbReader.GetString(DbReader.GetOrdinal("RazaoSocial"));
-                    compra.MateriaPrima.Nome = DbReader.GetString(DbReader.GetOrdinal("Materia Prima"));
+                    compra.Preco = Convert.ToDouble(DbReader.GetDecimal(DbReader.GetOrdinal("Preco")));
+                    compra.Fornecedor.Id = DbReader.GetInt32(DbReader.GetOrdinal("ID_Fornecedor"));
+                    compra.Fornecedor.RazaoSocial = DbReader.GetString(DbReader.GetOrdinal("RazaoSocialFornecedor"));
+                    compra.MateriaPrima.Id = DbReader.GetInt32(DbReader.GetOrdinal("ID_MateriaPrima"));
+                    compra.MateriaPrima.Nome = DbReader.GetString(DbReader.GetOrdinal("NomeMateriaPrima"));
                     retorno.Add(compra);
                 }
 

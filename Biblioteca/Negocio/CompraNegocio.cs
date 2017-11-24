@@ -59,17 +59,19 @@ namespace Biblioteca.Negocio
 
         public List<Compra> Select(Compra compra)
         {
-            throw new NotImplementedException();
+             return new CompraDados().Select(compra);
         }
 
         public void Update(Compra compra)
         {
-            throw new NotImplementedException();
+            CompraDados dados = new CompraDados();
+
+            dados.Update(compra);
         }
 
         public bool VerificarDuplicidade(Compra compra)
         {
-            throw new NotImplementedException();
+            return new CompraDados().VerificarDuplicidade(compra);
         }
     }
 
