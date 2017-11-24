@@ -73,11 +73,27 @@ namespace ProjetoFabricaCosmeticos
             {
                 Service1 dados = new Service1();
                 Compra filtro = new Compra();
+                if (comboBoxMateriaPrima.Text.Trim().Equals("") == false)
+                {
+                    filtro.materiaPrima.nome = comboBoxMateriaPrima.Text;
+                }
+                else
+                {
+                    if (comboBoxFornecedor.Text.Trim().Equals("") == false)
+                    {
+                        filtro.fornecedor.razaoSocial = comboBoxFornecedor.Text;
+                    }
+
+                }
                 listaCompra = dados.SelectCompra(filtro).ToList();
                 comboBoxMateriaPrima.Items.Clear();
-                foreach (Compra m in listaCompra)
+                foreach (Compra c in listaCompra)
                 {
-                    listViewCompra.Items.Add;
+                    ListViewItem linha = listViewCompra.Items.Add(c.fornecedor.razaoSocial);
+                    listViewCompra.Items.Add(c.materiaPrima.nome);
+                    listViewCompra.Items.Add(Convert.ToString(c.preco));
+                    listViewCompra.Items.Add(Convert.ToString(c.quantidade));
+
                 }
             }
             catch (Exception ex)
