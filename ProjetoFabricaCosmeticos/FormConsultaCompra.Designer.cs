@@ -80,8 +80,8 @@
             // listViewCompra
             // 
             this.listViewCompra.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
             this.columnHeader2,
+            this.columnHeader1,
             this.columnHeader3,
             this.columnHeader4});
             this.listViewCompra.Location = new System.Drawing.Point(27, 81);
@@ -119,6 +119,7 @@
             this.buttonConsultar.TabIndex = 5;
             this.buttonConsultar.Text = "Consultar";
             this.buttonConsultar.UseVisualStyleBackColor = true;
+            this.buttonConsultar.Click += new System.EventHandler(this.buttonConsultar_Click);
             // 
             // buttonAlterar
             // 

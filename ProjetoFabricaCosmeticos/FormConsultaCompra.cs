@@ -15,7 +15,7 @@ namespace ProjetoFabricaCosmeticos
     {
         List<Fornecedor> listaFornecedor = new List<Fornecedor>();
         List<MateriaPrima> listaMateriaPrima = new List<MateriaPrima>();
-        List<MateriaPrima> listaComboMateriaPrima = new List<MateriaPrima>();
+        List<Compra> listaCompra = new List<Compra>();
 
         public FormConsultaCompra()
         {
@@ -59,11 +59,31 @@ namespace ProjetoFabricaCosmeticos
             {
                 MessageBox.Show(ex.Message);
             }
+
         }
 
         private void buttonRemover_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonConsultar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Service1 dados = new Service1();
+                Compra filtro = new Compra();
+                listaCompra = dados.SelectCompra(filtro).ToList();
+                comboBoxMateriaPrima.Items.Clear();
+                foreach (Compra m in listaCompra)
+                {
+                    listViewCompra.Items.Add;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

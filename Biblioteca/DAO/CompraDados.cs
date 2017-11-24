@@ -147,7 +147,7 @@ namespace Biblioteca.DAO
                
                 if (filtro.MateriaPrima.Nome != null && filtro.MateriaPrima.Nome.Trim().Equals("") == false)
                 {
-                    sql += " where and MateriaPrima.Nome = @NomeMateriaPrima";
+                    sql += " where MateriaPrima.Nome = @NomeMateriaPrima";
                 }
                 SqlCommand cmd = new SqlCommand(sql, sqlcon);
 
