@@ -41,7 +41,7 @@ namespace Biblioteca.DAO
             }
         }
 
-        public void CadastrarItemFormula(Produto produto)
+        public void CadastrarItemFormula(MateriaPrima materiPrima)
         {
             try
             {
@@ -52,10 +52,10 @@ namespace Biblioteca.DAO
                 SqlCommand cmd = new SqlCommand(sql, this.sqlcon);
 
                 cmd.Parameters.Add("@IdProduto", SqlDbType.Int);
-                cmd.Parameters["@IdProduto"].Value = produto.Id;
+                cmd.Parameters["@IdProduto"].Value = materiPrima.Produto.First().Id;
 
                 cmd.Parameters.Add("@IdMateriaPrima", SqlDbType.Int);
-                cmd.Parameters["@IdMateriaPrima"].Value = produto.MateriaPrima.First().Id;
+                cmd.Parameters["@IdMateriaPrima"].Value = materiPrima.Id;
 
                 cmd.ExecuteNonQuery();
                 cmd.Dispose();
@@ -88,7 +88,7 @@ namespace Biblioteca.DAO
             }
         }
 
-        public void DeleteItemFormula(Produto produto)
+        public void DeleteItemFormula(MateriaPrima materiPrima)
         {
             try
             {
@@ -98,10 +98,10 @@ namespace Biblioteca.DAO
                 SqlCommand cmd = new SqlCommand(sql, this.sqlcon);
 
                 cmd.Parameters.Add("@ID_Produto", SqlDbType.Int);
-                cmd.Parameters["@ID_Produto"].Value = produto.Id;
+                cmd.Parameters["@ID_Produto"].Value = materiPrima.Produto.First().Id;
 
                 cmd.Parameters.Add("@ID_MateriaPrima", SqlDbType.Int);
-                cmd.Parameters["@ID_MateriaPrima"].Value = produto.MateriaPrima.First().Id;
+                cmd.Parameters["@ID_MateriaPrima"].Value = materiPrima.Id;
 
                 cmd.ExecuteNonQuery();
                 cmd.Dispose();
@@ -198,7 +198,7 @@ namespace Biblioteca.DAO
             return retorno;
         }
 
-        public bool VerificarDuplicidadeItemFormula(Produto produto)
+        public bool VerificarDuplicidadeItemFormula(MateriaPrima materiaPrima)
         {
             bool retorno = false;
             try
@@ -211,10 +211,10 @@ namespace Biblioteca.DAO
                 SqlCommand cmd = new SqlCommand(sql, sqlcon);
 
                 cmd.Parameters.Add("@ID_Produto", SqlDbType.Int);
-                cmd.Parameters["@ID_Produto"].Value = produto.Id;
+                cmd.Parameters["@ID_Produto"].Value = materiaPrima.Produto.First().Id;
 
                 cmd.Parameters.Add("@ID_MateriaPrima", SqlDbType.Int);
-                cmd.Parameters["@ID_MateriaPrima"].Value = produto.MateriaPrima.First().Id;
+                cmd.Parameters["@ID_MateriaPrima"].Value = materiaPrima.Id;
 
                 SqlDataReader DbReader = cmd.ExecuteReader();
 

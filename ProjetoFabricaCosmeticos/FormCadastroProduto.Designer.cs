@@ -40,6 +40,7 @@
             // textBoxNome
             // 
             this.textBoxNome.Location = new System.Drawing.Point(150, 12);
+            this.textBoxNome.MaxLength = 50;
             this.textBoxNome.Name = "textBoxNome";
             this.textBoxNome.Size = new System.Drawing.Size(333, 20);
             this.textBoxNome.TabIndex = 0;
@@ -47,6 +48,7 @@
             // textBoxUnidadeFornecimento
             // 
             this.textBoxUnidadeFornecimento.Location = new System.Drawing.Point(150, 44);
+            this.textBoxUnidadeFornecimento.MaxLength = 10;
             this.textBoxUnidadeFornecimento.Name = "textBoxUnidadeFornecimento";
             this.textBoxUnidadeFornecimento.Size = new System.Drawing.Size(100, 20);
             this.textBoxUnidadeFornecimento.TabIndex = 1;
@@ -54,6 +56,7 @@
             // textBoxDescricao
             // 
             this.textBoxDescricao.Location = new System.Drawing.Point(150, 79);
+            this.textBoxDescricao.MaxLength = 300;
             this.textBoxDescricao.Name = "textBoxDescricao";
             this.textBoxDescricao.Size = new System.Drawing.Size(333, 20);
             this.textBoxDescricao.TabIndex = 2;
@@ -90,7 +93,7 @@
             this.buttonCadastrar.Location = new System.Drawing.Point(216, 123);
             this.buttonCadastrar.Name = "buttonCadastrar";
             this.buttonCadastrar.Size = new System.Drawing.Size(75, 23);
-            this.buttonCadastrar.TabIndex = 7;
+            this.buttonCadastrar.TabIndex = 3;
             this.buttonCadastrar.Text = "Cadastrar";
             this.buttonCadastrar.UseVisualStyleBackColor = true;
             this.buttonCadastrar.Click += new System.EventHandler(this.buttonCadastrar_Click);

@@ -101,9 +101,9 @@ namespace WcfService1
             new FormulaNegocio().CadastrarFormula(produto);
         }
 
-        public void CadastrarItemFormula(Produto produto)
+        public void CadastrarItemFormula(MateriaPrima materiaPrima)
         {
-            new FormulaNegocio().CadastrarItemFormula(produto);
+            new FormulaNegocio().CadastrarItemFormula(materiaPrima);
         }
 
         public void DeleteFormula(Produto produto)
@@ -111,9 +111,9 @@ namespace WcfService1
             new FormulaNegocio().DeleteFormula(produto);
         }
 
-        public void DeleteItemFormula(Produto produto)
+        public void DeleteItemFormula(MateriaPrima materiaPrima)
         {
-            new FormulaNegocio().DeleteItemFormula(produto);
+            new FormulaNegocio().DeleteItemFormula(materiaPrima);
         }
 
         public bool VerificarDuplicidadeFormula(Produto produto)

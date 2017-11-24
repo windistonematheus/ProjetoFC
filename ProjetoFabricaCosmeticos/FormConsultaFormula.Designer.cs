@@ -34,6 +34,7 @@
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.buttonListar = new System.Windows.Forms.Button();
             this.buttonRemoverFormula = new System.Windows.Forms.Button();
+            this.buttonRemoverItem = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // comboBoxProduto
@@ -75,7 +76,7 @@
             // 
             this.buttonListar.Location = new System.Drawing.Point(75, 259);
             this.buttonListar.Name = "buttonListar";
-            this.buttonListar.Size = new System.Drawing.Size(75, 23);
+            this.buttonListar.Size = new System.Drawing.Size(75, 34);
             this.buttonListar.TabIndex = 3;
             this.buttonListar.Text = "Listar";
             this.buttonListar.UseVisualStyleBackColor = true;
@@ -83,25 +84,37 @@
             // 
             // buttonRemoverFormula
             // 
-            this.buttonRemoverFormula.Location = new System.Drawing.Point(179, 259);
+            this.buttonRemoverFormula.Location = new System.Drawing.Point(398, 259);
             this.buttonRemoverFormula.Name = "buttonRemoverFormula";
-            this.buttonRemoverFormula.Size = new System.Drawing.Size(75, 23);
+            this.buttonRemoverFormula.Size = new System.Drawing.Size(75, 34);
             this.buttonRemoverFormula.TabIndex = 4;
             this.buttonRemoverFormula.Text = "Remover Formula";
             this.buttonRemoverFormula.UseVisualStyleBackColor = true;
             this.buttonRemoverFormula.Click += new System.EventHandler(this.buttonRemoverFormula_Click);
+            // 
+            // buttonRemoverItem
+            // 
+            this.buttonRemoverItem.Location = new System.Drawing.Point(237, 259);
+            this.buttonRemoverItem.Name = "buttonRemoverItem";
+            this.buttonRemoverItem.Size = new System.Drawing.Size(75, 34);
+            this.buttonRemoverItem.TabIndex = 5;
+            this.buttonRemoverItem.Text = "Remover Item";
+            this.buttonRemoverItem.UseVisualStyleBackColor = true;
+            this.buttonRemoverItem.Click += new System.EventHandler(this.buttonRemoverItem_Click);
             // 
             // FormConsultaFormula
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(517, 320);
+            this.Controls.Add(this.buttonRemoverItem);
             this.Controls.Add(this.buttonRemoverFormula);
             this.Controls.Add(this.buttonListar);
             this.Controls.Add(this.listViewFormula);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBoxProduto);
             this.Name = "FormConsultaFormula";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -116,5 +129,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.Button buttonListar;
         private System.Windows.Forms.Button buttonRemoverFormula;
+        private System.Windows.Forms.Button buttonRemoverItem;
     }
 }

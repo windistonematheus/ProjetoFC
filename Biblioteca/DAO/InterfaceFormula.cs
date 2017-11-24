@@ -10,11 +10,11 @@ namespace Biblioteca.DAO
     interface InterfaceFormula
     {
         void CadastrarFormula(Produto produto);
-        void CadastrarItemFormula(Produto produto);
+        void CadastrarItemFormula(MateriaPrima materiaPrima);
         void DeleteFormula(Produto produto);
-        void DeleteItemFormula(Produto produto);
+        void DeleteItemFormula(MateriaPrima materiaPrima);
         bool VerificarDuplicidadeFormula(Produto produto);
-        bool VerificarDuplicidadeItemFormula(Produto produto);
+        bool VerificarDuplicidadeItemFormula(MateriaPrima materiaPrima);
         List<MateriaPrima> SelectFormula(Produto filtro);
     }
 }
