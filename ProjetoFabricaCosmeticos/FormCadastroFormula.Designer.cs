@@ -65,7 +65,7 @@
             this.listViewMateriaPrima.Location = new System.Drawing.Point(118, 115);
             this.listViewMateriaPrima.Name = "listViewMateriaPrima";
             this.listViewMateriaPrima.Size = new System.Drawing.Size(354, 141);
-            this.listViewMateriaPrima.TabIndex = 2;
+            this.listViewMateriaPrima.TabIndex = 5;
             this.listViewMateriaPrima.UseCompatibleStateImageBehavior = false;
             this.listViewMateriaPrima.View = System.Windows.Forms.View.Details;
             // 
@@ -80,7 +80,7 @@
             this.label1.Location = new System.Drawing.Point(29, 34);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 13);
-            this.label1.TabIndex = 3;
+            this.label1.TabIndex = 6;
             this.label1.Text = "Produto";
             // 
             // label2
@@ -89,7 +89,7 @@
             this.label2.Location = new System.Drawing.Point(29, 75);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(71, 13);
-            this.label2.TabIndex = 4;
+            this.label2.TabIndex = 7;
             this.label2.Text = "Matéria Prima";
             // 
             // buttonAdicionarMateriaPrima
@@ -97,7 +97,7 @@
             this.buttonAdicionarMateriaPrima.Location = new System.Drawing.Point(429, 70);
             this.buttonAdicionarMateriaPrima.Name = "buttonAdicionarMateriaPrima";
             this.buttonAdicionarMateriaPrima.Size = new System.Drawing.Size(43, 23);
-            this.buttonAdicionarMateriaPrima.TabIndex = 5;
+            this.buttonAdicionarMateriaPrima.TabIndex = 2;
             this.buttonAdicionarMateriaPrima.Text = "Add";
             this.buttonAdicionarMateriaPrima.UseVisualStyleBackColor = true;
             this.buttonAdicionarMateriaPrima.Click += new System.EventHandler(this.buttonAdicionarMateriaPrima_Click);
@@ -107,7 +107,7 @@
             this.button1.Location = new System.Drawing.Point(118, 262);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 6;
+            this.button1.TabIndex = 3;
             this.button1.Text = "Remover";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -117,7 +117,7 @@
             this.buttonCadastrar.Location = new System.Drawing.Point(230, 310);
             this.buttonCadastrar.Name = "buttonCadastrar";
             this.buttonCadastrar.Size = new System.Drawing.Size(75, 23);
-            this.buttonCadastrar.TabIndex = 7;
+            this.buttonCadastrar.TabIndex = 4;
             this.buttonCadastrar.Text = "Cadastrar";
             this.buttonCadastrar.UseVisualStyleBackColor = true;
             this.buttonCadastrar.Click += new System.EventHandler(this.buttonCadastrar_Click);

@@ -40,7 +40,7 @@
             this.buttonCadastrar.Location = new System.Drawing.Point(232, 119);
             this.buttonCadastrar.Name = "buttonCadastrar";
             this.buttonCadastrar.Size = new System.Drawing.Size(75, 23);
-            this.buttonCadastrar.TabIndex = 10;
+            this.buttonCadastrar.TabIndex = 2;
             this.buttonCadastrar.Text = "Cadastrar";
             this.buttonCadastrar.UseVisualStyleBackColor = true;
             this.buttonCadastrar.Click += new System.EventHandler(this.buttonCadastrar_Click);
@@ -52,7 +52,7 @@
             this.comboBoxMateriaPrima.Location = new System.Drawing.Point(89, 64);
             this.comboBoxMateriaPrima.Name = "comboBoxMateriaPrima";
             this.comboBoxMateriaPrima.Size = new System.Drawing.Size(354, 21);
-            this.comboBoxMateriaPrima.TabIndex = 9;
+            this.comboBoxMateriaPrima.TabIndex = 1;
             // 
             // comboBoxProduto
             // 
@@ -61,7 +61,7 @@
             this.comboBoxProduto.Location = new System.Drawing.Point(89, 23);
             this.comboBoxProduto.Name = "comboBoxProduto";
             this.comboBoxProduto.Size = new System.Drawing.Size(354, 21);
-            this.comboBoxProduto.TabIndex = 8;
+            this.comboBoxProduto.TabIndex = 0;
             // 
             // label2
             // 
@@ -69,7 +69,7 @@
             this.label2.Location = new System.Drawing.Point(12, 67);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(71, 13);
-            this.label2.TabIndex = 12;
+            this.label2.TabIndex = 4;
             this.label2.Text = "Matéria Prima";
             // 
             // label1
@@ -78,7 +78,7 @@
             this.label1.Location = new System.Drawing.Point(12, 26);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 13);
-            this.label1.TabIndex = 11;
+            this.label1.TabIndex = 3;
             this.label1.Text = "Produto";
             // 
             // FormCadastroItemFormula

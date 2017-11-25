@@ -45,7 +45,7 @@
             this.label1.Location = new System.Drawing.Point(23, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(61, 13);
-            this.label1.TabIndex = 0;
+            this.label1.TabIndex = 5;
             this.label1.Text = "Fornecedor";
             // 
             // comboBoxFornecedor
@@ -55,7 +55,7 @@
             this.comboBoxFornecedor.Location = new System.Drawing.Point(100, 9);
             this.comboBoxFornecedor.Name = "comboBoxFornecedor";
             this.comboBoxFornecedor.Size = new System.Drawing.Size(242, 21);
-            this.comboBoxFornecedor.TabIndex = 1;
+            this.comboBoxFornecedor.TabIndex = 0;
             // 
             // comboBoxMateriaPrima
             // 
@@ -64,7 +64,7 @@
             this.comboBoxMateriaPrima.Location = new System.Drawing.Point(100, 37);
             this.comboBoxMateriaPrima.Name = "comboBoxMateriaPrima";
             this.comboBoxMateriaPrima.Size = new System.Drawing.Size(242, 21);
-            this.comboBoxMateriaPrima.TabIndex = 2;
+            this.comboBoxMateriaPrima.TabIndex = 1;
             // 
             // label2
             // 
@@ -72,7 +72,7 @@
             this.label2.Location = new System.Drawing.Point(23, 40);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(71, 13);
-            this.label2.TabIndex = 3;
+            this.label2.TabIndex = 6;
             this.label2.Text = "Materia Prima";
             // 
             // label3
@@ -81,7 +81,7 @@
             this.label3.Location = new System.Drawing.Point(23, 65);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 4;
+            this.label3.TabIndex = 7;
             this.label3.Text = "Preço";
             // 
             // label5
@@ -90,7 +90,7 @@
             this.label5.Location = new System.Drawing.Point(26, 91);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(62, 13);
-            this.label5.TabIndex = 6;
+            this.label5.TabIndex = 8;
             this.label5.Text = "Quantidade";
             // 
             // textBoxPreco
@@ -98,21 +98,21 @@
             this.textBoxPreco.Location = new System.Drawing.Point(100, 65);
             this.textBoxPreco.Name = "textBoxPreco";
             this.textBoxPreco.Size = new System.Drawing.Size(140, 20);
-            this.textBoxPreco.TabIndex = 7;
+            this.textBoxPreco.TabIndex = 2;
             // 
             // textBoxQuantidade
             // 
             this.textBoxQuantidade.Location = new System.Drawing.Point(100, 91);
             this.textBoxQuantidade.Name = "textBoxQuantidade";
             this.textBoxQuantidade.Size = new System.Drawing.Size(140, 20);
-            this.textBoxQuantidade.TabIndex = 9;
+            this.textBoxQuantidade.TabIndex = 3;
             // 
             // buttonCadastrar
             // 
             this.buttonCadastrar.Location = new System.Drawing.Point(29, 117);
             this.buttonCadastrar.Name = "buttonCadastrar";
             this.buttonCadastrar.Size = new System.Drawing.Size(75, 23);
-            this.buttonCadastrar.TabIndex = 12;
+            this.buttonCadastrar.TabIndex = 4;
             this.buttonCadastrar.Text = "Cadastrar";
             this.buttonCadastrar.UseVisualStyleBackColor = true;
             this.buttonCadastrar.Click += new System.EventHandler(this.buttonCadastrar_Click);
