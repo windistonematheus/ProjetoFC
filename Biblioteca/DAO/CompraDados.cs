@@ -83,12 +83,16 @@ namespace Biblioteca.DAO
             try
             {
                 this.Conectar();
-                string sql = "delete from MateriaPrima where ID_Fornecedor = @ID_Fornecedor and ID_MateriaPrima = @ID_MateriaPrima";
+                string sql = "delete from Compra where ID_Fornecedor = @ID_Fornecedor and ID_MateriaPrima = @ID_MateriaPrima";
+
                 SqlCommand cmd = new SqlCommand(sql, this.sqlcon);
+
                 cmd.Parameters.Add("@ID_Fornecedor", SqlDbType.Int);
                 cmd.Parameters["@ID_Fornecedor"].Value = compra.Fornecedor.Id;
-                cmd.Parameters.Add("@ID_MateriaPrima", SqlDbType.Int);
+
+                cmd.Parameters.Add("@ID_MateriaPrima", SqlDbType.VarChar);
                 cmd.Parameters["@ID_MateriaPrima"].Value = compra.MateriaPrima.Id;
+
                 cmd.ExecuteNonQuery();
                 cmd.Dispose();
                 this.Desconectar();
@@ -106,7 +110,7 @@ namespace Biblioteca.DAO
             {
                 this.Conectar();
                 string sql = "SELECT Preco,Quantidade,ID_Fornecedor,ID_MateriaPrima ";
-                sql += " FROM Compras where ID_Fornecedor=@ID_Fornecedor ";
+                sql += " FROM Compra where ID_Fornecedor=@ID_Fornecedor ";
                 sql += " and ID_MateriaPrima=@ID_MateriaPrima";
 
                 SqlCommand cmd = new SqlCommand(sql, sqlcon);
@@ -114,8 +118,8 @@ namespace Biblioteca.DAO
                 cmd.Parameters.Add("@ID_Fornecedor", SqlDbType.Int);
                 cmd.Parameters["@ID_Fornecedor"].Value = compra.Fornecedor.Id;
 
-                cmd.Parameters.Add("@ID_Fornecedor", SqlDbType.VarChar);
-                cmd.Parameters["@ID_Fornecedor"].Value = compra.MateriaPrima.Id;
+                cmd.Parameters.Add("@ID_MateriaPrima", SqlDbType.VarChar);
+                cmd.Parameters["@ID_MateriaPrima"].Value = compra.MateriaPrima.Id;
 
                 SqlDataReader DbReader = cmd.ExecuteReader();
 

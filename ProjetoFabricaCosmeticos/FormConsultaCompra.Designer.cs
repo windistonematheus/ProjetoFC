@@ -66,6 +66,7 @@
             this.columnHeader1,
             this.columnHeader3,
             this.columnHeader4});
+            this.listViewCompra.FullRowSelect = true;
             this.listViewCompra.Location = new System.Drawing.Point(27, 81);
             this.listViewCompra.Name = "listViewCompra";
             this.listViewCompra.Size = new System.Drawing.Size(387, 112);

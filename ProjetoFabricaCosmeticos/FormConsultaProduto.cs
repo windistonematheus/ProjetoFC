@@ -90,12 +90,13 @@ namespace ProjetoFabricaCosmeticos
                 if (listViewProduto.FocusedItem != null)
                 {
                     int posicao = listViewProduto.FocusedItem.Index;
-                    Produto ProdutoSelecionado = this.listaProduto.ElementAt(posicao);
+                    Produto produtoSelecionado = this.listaProduto.ElementAt(posicao);
+
                     Service1 dados = new Service1();
-                    dados.DeleteProduto(ProdutoSelecionado);
+                    dados.DeleteProduto(produtoSelecionado);
+
                     listViewProduto.Items.Clear();
                     MessageBox.Show("Produto removido com sucesso");
-
                 }
                 else
                 {

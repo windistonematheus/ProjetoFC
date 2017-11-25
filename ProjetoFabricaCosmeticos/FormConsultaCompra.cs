@@ -46,7 +46,28 @@ namespace ProjetoFabricaCosmeticos
 
         private void buttonRemover_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (listViewCompra.FocusedItem != null)
+                {
+                    int posicao = listViewCompra.FocusedItem.Index;
+                    Compra compraSelecionado = this.listaCompra.ElementAt(posicao);
 
+                    Service1 dados = new Service1();
+                    dados.DeleteCompra(compraSelecionado);
+
+                    listViewCompra.Items.Clear();
+                    MessageBox.Show("Compra removida com sucesso");
+                }
+                else
+                {
+                    MessageBox.Show("Favor selecionar a compra");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void buttonConsultar_Click(object sender, EventArgs e)
@@ -56,13 +77,13 @@ namespace ProjetoFabricaCosmeticos
                 Compra filtro = new Compra();
                 
                 int indexFornecedor = comboBoxFornecedor.SelectedIndex;
-                if (indexFornecedor > 0)
+                if (indexFornecedor >= 0)
                 {
                     filtro.fornecedor = listaFornecedor.ElementAt(indexFornecedor);
                 }
 
                 int indexMateriaPrima = comboBoxMateriaPrima.SelectedIndex;
-                if (indexMateriaPrima > 0)
+                if (indexMateriaPrima >= 0)
                 {
                     filtro.materiaPrima = listaMateriaPrima.ElementAt(indexMateriaPrima);
                 }
@@ -70,7 +91,7 @@ namespace ProjetoFabricaCosmeticos
                 Service1 dados = new Service1();
                 listaCompra = dados.SelectCompra(filtro).ToList();
 
-                comboBoxMateriaPrima.Items.Clear();
+                listViewCompra.Items.Clear();
 
                 foreach (Compra c in listaCompra)
                 {

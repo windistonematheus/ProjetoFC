@@ -12,7 +12,34 @@ namespace Biblioteca.Negocio
     {
         public void Delete(Compra compra)
         {
-            throw new NotImplementedException();
+            if (compra == null)
+            {
+                throw new Exception("Informar os dados da compra");
+            }
+            if (compra.Fornecedor == null)
+            {
+                throw new Exception("Informar os dados do fornecedor");
+            }
+            if (compra.MateriaPrima == null)
+            {
+                throw new Exception("Informar os dados da matéria prima");
+            }
+            if (compra.Fornecedor.Id <= 0)
+            {
+                throw new Exception("O Id do fornecedor não poderá ser menor ou igual a zero");
+            }
+            if (compra.MateriaPrima.Id <= 0)
+            {
+                throw new Exception("O Id da matéria prima não poderá ser menor ou igual a zero");
+            }
+            CompraDados dados = new CompraDados();
+
+            if (this.VerificarDuplicidade(compra) == false)
+            {
+                throw new Exception("A compra não esta cadastrado");
+            }
+
+            dados.Delete(compra);
         }
 
         public void Insert(Compra compra)
