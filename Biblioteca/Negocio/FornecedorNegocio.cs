@@ -83,16 +83,6 @@ namespace Biblioteca.Negocio
                 throw new Exception("O Logradouro do fornecedor não pode ter mais de 100 caracteres");
             }
 
-            if (fornecedor.Complemento == null)
-            {
-                throw new Exception("Informar o Complemento do fornecedor");
-            }
-
-            if (fornecedor.Complemento.Trim().Equals("") == true)
-            {
-                throw new Exception("Informar o Complemento do fornecedor");
-            }
-
             if (fornecedor.Complemento.Length > 20)
             {
                 throw new Exception("O Complemento do fornecedor não pode ter mais de 20 caracteres");
@@ -253,16 +243,6 @@ namespace Biblioteca.Negocio
             if (fornecedor.Logradouro.Length > 100)
             {
                 throw new Exception("O Logradouro do fornecedor não pode ter mais de 100 caracteres");
-            }
-
-            if (fornecedor.Complemento == null)
-            {
-                throw new Exception("Informar o Complemento do fornecedor");
-            }
-
-            if (fornecedor.Complemento.Trim().Equals("") == true)
-            {
-                throw new Exception("Informar o Complemento do fornecedor");
             }
 
             if (fornecedor.Complemento.Length > 20)

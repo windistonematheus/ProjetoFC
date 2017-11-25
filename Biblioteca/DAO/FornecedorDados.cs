@@ -209,7 +209,7 @@ namespace Biblioteca.DAO
                 if (filtro.RazaoSocial != null && filtro.RazaoSocial.Trim().Equals("") == false)
                 {
                     cmd.Parameters.Add("@RazaoSocial", SqlDbType.VarChar);
-                    cmd.Parameters["@RazaoSocial"].Value = filtro.RazaoSocial;
+                    cmd.Parameters["@RazaoSocial"].Value = "%"+filtro.RazaoSocial+"%";
                 }
                 SqlDataReader DbReader = cmd.ExecuteReader();
                 while (DbReader.Read())
