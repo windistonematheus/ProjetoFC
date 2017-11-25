@@ -99,6 +99,7 @@
             // textBoxNome
             // 
             this.textBoxNome.Location = new System.Drawing.Point(152, 11);
+            this.textBoxNome.MaxLength = 30;
             this.textBoxNome.Name = "textBoxNome";
             this.textBoxNome.Size = new System.Drawing.Size(288, 20);
             this.textBoxNome.TabIndex = 6;
@@ -106,6 +107,7 @@
             // textBoxDescricao
             // 
             this.textBoxDescricao.Location = new System.Drawing.Point(152, 47);
+            this.textBoxDescricao.MaxLength = 50;
             this.textBoxDescricao.Name = "textBoxDescricao";
             this.textBoxDescricao.Size = new System.Drawing.Size(288, 20);
             this.textBoxDescricao.TabIndex = 7;
@@ -113,6 +115,7 @@
             // textBoxLote
             // 
             this.textBoxLote.Location = new System.Drawing.Point(152, 82);
+            this.textBoxLote.MaxLength = 10;
             this.textBoxLote.Name = "textBoxLote";
             this.textBoxLote.Size = new System.Drawing.Size(100, 20);
             this.textBoxLote.TabIndex = 8;
