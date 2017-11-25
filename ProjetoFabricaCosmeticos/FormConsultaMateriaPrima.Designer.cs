@@ -94,6 +94,7 @@
             this.listViewMateriaPrima.TabIndex = 2;
             this.listViewMateriaPrima.UseCompatibleStateImageBehavior = false;
             this.listViewMateriaPrima.View = System.Windows.Forms.View.Details;
+            this.listViewMateriaPrima.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listViewMateriaPrima_MouseDoubleClick);
             // 
             // columnHeader1
             // 

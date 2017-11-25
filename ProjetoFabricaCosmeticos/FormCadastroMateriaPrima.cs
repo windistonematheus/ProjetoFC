@@ -64,9 +64,8 @@ namespace ProjetoFabricaCosmeticos
                 textBoxNome.Clear();
                 textBoxDescricao.Clear();
                 textBoxLote.Clear();
-                textBoxValidade.Clear();
                 textBoxEstoqueAtual.Clear();
-               
+                dateTimePickerValidade.ResetText();
             }
             catch (Exception ex)
             {
