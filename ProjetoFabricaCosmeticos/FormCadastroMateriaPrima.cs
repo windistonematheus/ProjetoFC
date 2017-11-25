@@ -28,7 +28,7 @@ namespace ProjetoFabricaCosmeticos
             textBoxNome.Text = m.nome;
             textBoxDescricao.Text = m.descricao;
             textBoxLote.Text = m.lote;
-            textBoxValidade.Text = Convert.ToString(m.validade);
+            dateTimePickerValidade.Value = m.validade;
             textBoxEstoqueAtual.Text = Convert.ToString(m.estoqueAtual);
             this.filtro = m.id;
             this.operacao = 1;
@@ -44,7 +44,7 @@ namespace ProjetoFabricaCosmeticos
                 m.nome = textBoxNome.Text;
                 m.descricao = textBoxDescricao.Text;
                 m.lote = textBoxLote.Text;
-                m.validade = Convert.ToDateTime(textBoxValidade.Text);
+                m.validade = dateTimePickerValidade.Value;
                 m.estoqueAtual = Convert.ToInt32(textBoxEstoqueAtual.Text);
 
 

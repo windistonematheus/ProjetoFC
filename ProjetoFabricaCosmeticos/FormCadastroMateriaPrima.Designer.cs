@@ -37,8 +37,8 @@
             this.textBoxNome = new System.Windows.Forms.TextBox();
             this.textBoxDescricao = new System.Windows.Forms.TextBox();
             this.textBoxLote = new System.Windows.Forms.TextBox();
-            this.textBoxValidade = new System.Windows.Forms.TextBox();
             this.textBoxEstoqueAtual = new System.Windows.Forms.TextBox();
+            this.dateTimePickerValidade = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // buttonCadastrarMateriaPrima
@@ -46,7 +46,7 @@
             this.buttonCadastrarMateriaPrima.Location = new System.Drawing.Point(27, 197);
             this.buttonCadastrarMateriaPrima.Name = "buttonCadastrarMateriaPrima";
             this.buttonCadastrarMateriaPrima.Size = new System.Drawing.Size(75, 23);
-            this.buttonCadastrarMateriaPrima.TabIndex = 0;
+            this.buttonCadastrarMateriaPrima.TabIndex = 5;
             this.buttonCadastrarMateriaPrima.Text = "Cadastrar";
             this.buttonCadastrarMateriaPrima.UseVisualStyleBackColor = true;
             this.buttonCadastrarMateriaPrima.Click += new System.EventHandler(this.buttonCadastrarMateriaPrima_Click);
@@ -57,7 +57,7 @@
             this.label1.Location = new System.Drawing.Point(24, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 1;
+            this.label1.TabIndex = 6;
             this.label1.Text = "Nome";
             // 
             // label2
@@ -66,7 +66,7 @@
             this.label2.Location = new System.Drawing.Point(24, 50);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 13);
-            this.label2.TabIndex = 2;
+            this.label2.TabIndex = 7;
             this.label2.Text = "Descrição";
             // 
             // label3
@@ -75,7 +75,7 @@
             this.label3.Location = new System.Drawing.Point(24, 82);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(28, 13);
-            this.label3.TabIndex = 3;
+            this.label3.TabIndex = 8;
             this.label3.Text = "Lote";
             // 
             // label4
@@ -84,7 +84,7 @@
             this.label4.Location = new System.Drawing.Point(24, 118);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(48, 13);
-            this.label4.TabIndex = 4;
+            this.label4.TabIndex = 9;
             this.label4.Text = "Validade";
             // 
             // label5
@@ -93,7 +93,7 @@
             this.label5.Location = new System.Drawing.Point(24, 151);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(72, 13);
-            this.label5.TabIndex = 5;
+            this.label5.TabIndex = 10;
             this.label5.Text = "Estoque atual";
             // 
             // textBoxNome
@@ -102,7 +102,7 @@
             this.textBoxNome.MaxLength = 30;
             this.textBoxNome.Name = "textBoxNome";
             this.textBoxNome.Size = new System.Drawing.Size(288, 20);
-            this.textBoxNome.TabIndex = 6;
+            this.textBoxNome.TabIndex = 0;
             // 
             // textBoxDescricao
             // 
@@ -110,7 +110,7 @@
             this.textBoxDescricao.MaxLength = 50;
             this.textBoxDescricao.Name = "textBoxDescricao";
             this.textBoxDescricao.Size = new System.Drawing.Size(288, 20);
-            this.textBoxDescricao.TabIndex = 7;
+            this.textBoxDescricao.TabIndex = 1;
             // 
             // textBoxLote
             // 
@@ -118,29 +118,30 @@
             this.textBoxLote.MaxLength = 10;
             this.textBoxLote.Name = "textBoxLote";
             this.textBoxLote.Size = new System.Drawing.Size(100, 20);
-            this.textBoxLote.TabIndex = 8;
-            // 
-            // textBoxValidade
-            // 
-            this.textBoxValidade.Location = new System.Drawing.Point(152, 118);
-            this.textBoxValidade.Name = "textBoxValidade";
-            this.textBoxValidade.Size = new System.Drawing.Size(100, 20);
-            this.textBoxValidade.TabIndex = 9;
+            this.textBoxLote.TabIndex = 2;
             // 
             // textBoxEstoqueAtual
             // 
             this.textBoxEstoqueAtual.Location = new System.Drawing.Point(152, 151);
             this.textBoxEstoqueAtual.Name = "textBoxEstoqueAtual";
             this.textBoxEstoqueAtual.Size = new System.Drawing.Size(100, 20);
-            this.textBoxEstoqueAtual.TabIndex = 10;
+            this.textBoxEstoqueAtual.TabIndex = 4;
+            // 
+            // dateTimePickerValidade
+            // 
+            this.dateTimePickerValidade.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerValidade.Location = new System.Drawing.Point(152, 112);
+            this.dateTimePickerValidade.Name = "dateTimePickerValidade";
+            this.dateTimePickerValidade.Size = new System.Drawing.Size(100, 20);
+            this.dateTimePickerValidade.TabIndex = 3;
             // 
             // FormCadastroMateriaPrima
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(581, 261);
+            this.Controls.Add(this.dateTimePickerValidade);
             this.Controls.Add(this.textBoxEstoqueAtual);
-            this.Controls.Add(this.textBoxValidade);
             this.Controls.Add(this.textBoxLote);
             this.Controls.Add(this.textBoxDescricao);
             this.Controls.Add(this.textBoxNome);
@@ -169,7 +170,7 @@
         private System.Windows.Forms.TextBox textBoxNome;
         private System.Windows.Forms.TextBox textBoxDescricao;
         private System.Windows.Forms.TextBox textBoxLote;
-        private System.Windows.Forms.TextBox textBoxValidade;
         private System.Windows.Forms.TextBox textBoxEstoqueAtual;
+        private System.Windows.Forms.DateTimePicker dateTimePickerValidade;
     }
 }
