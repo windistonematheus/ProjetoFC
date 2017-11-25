@@ -53,7 +53,7 @@
             this.listViewProduto.Location = new System.Drawing.Point(53, 93);
             this.listViewProduto.Name = "listViewProduto";
             this.listViewProduto.Size = new System.Drawing.Size(270, 97);
-            this.listViewProduto.TabIndex = 0;
+            this.listViewProduto.TabIndex = 2;
             this.listViewProduto.UseCompatibleStateImageBehavior = false;
             this.listViewProduto.View = System.Windows.Forms.View.Details;
             this.listViewProduto.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listViewProduto_MouseDoubleClick);
@@ -79,7 +79,7 @@
             this.buttonListar.Location = new System.Drawing.Point(53, 210);
             this.buttonListar.Name = "buttonListar";
             this.buttonListar.Size = new System.Drawing.Size(75, 23);
-            this.buttonListar.TabIndex = 1;
+            this.buttonListar.TabIndex = 3;
             this.buttonListar.Text = "Listar";
             this.buttonListar.UseVisualStyleBackColor = true;
             this.buttonListar.Click += new System.EventHandler(this.buttonListar_Click);
@@ -89,7 +89,7 @@
             this.buttonAlterar.Location = new System.Drawing.Point(155, 210);
             this.buttonAlterar.Name = "buttonAlterar";
             this.buttonAlterar.Size = new System.Drawing.Size(75, 23);
-            this.buttonAlterar.TabIndex = 2;
+            this.buttonAlterar.TabIndex = 4;
             this.buttonAlterar.Text = "Alterar";
             this.buttonAlterar.UseVisualStyleBackColor = true;
             this.buttonAlterar.Click += new System.EventHandler(this.buttonAlterar_Click);
@@ -99,7 +99,7 @@
             this.buttonRemover.Location = new System.Drawing.Point(258, 210);
             this.buttonRemover.Name = "buttonRemover";
             this.buttonRemover.Size = new System.Drawing.Size(75, 23);
-            this.buttonRemover.TabIndex = 3;
+            this.buttonRemover.TabIndex = 5;
             this.buttonRemover.Text = "Remover";
             this.buttonRemover.UseVisualStyleBackColor = true;
             this.buttonRemover.Click += new System.EventHandler(this.buttonRemover_Click);
@@ -109,14 +109,15 @@
             this.textBoxId.Location = new System.Drawing.Point(138, 20);
             this.textBoxId.Name = "textBoxId";
             this.textBoxId.Size = new System.Drawing.Size(100, 20);
-            this.textBoxId.TabIndex = 4;
+            this.textBoxId.TabIndex = 0;
             // 
             // textBoxNome
             // 
             this.textBoxNome.Location = new System.Drawing.Point(138, 46);
+            this.textBoxNome.MaxLength = 50;
             this.textBoxNome.Name = "textBoxNome";
             this.textBoxNome.Size = new System.Drawing.Size(100, 20);
-            this.textBoxNome.TabIndex = 5;
+            this.textBoxNome.TabIndex = 1;
             // 
             // label1
             // 

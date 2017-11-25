@@ -52,6 +52,7 @@
             // textBoxCnpj
             // 
             this.textBoxCnpj.Location = new System.Drawing.Point(103, 28);
+            this.textBoxCnpj.MaxLength = 14;
             this.textBoxCnpj.Name = "textBoxCnpj";
             this.textBoxCnpj.Size = new System.Drawing.Size(100, 20);
             this.textBoxCnpj.TabIndex = 0;
@@ -59,6 +60,7 @@
             // textBoxRazaoSocial
             // 
             this.textBoxRazaoSocial.Location = new System.Drawing.Point(103, 68);
+            this.textBoxRazaoSocial.MaxLength = 100;
             this.textBoxRazaoSocial.Name = "textBoxRazaoSocial";
             this.textBoxRazaoSocial.Size = new System.Drawing.Size(100, 20);
             this.textBoxRazaoSocial.TabIndex = 1;
@@ -135,7 +137,7 @@
             this.label1.Location = new System.Drawing.Point(12, 31);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(34, 13);
-            this.label1.TabIndex = 3;
+            this.label1.TabIndex = 6;
             this.label1.Text = "CNPJ";
             // 
             // label2
@@ -144,7 +146,7 @@
             this.label2.Location = new System.Drawing.Point(12, 71);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 13);
-            this.label2.TabIndex = 4;
+            this.label2.TabIndex = 7;
             this.label2.Text = "Razão Social";
             // 
             // buttonListar
@@ -152,7 +154,7 @@
             this.buttonListar.Location = new System.Drawing.Point(15, 269);
             this.buttonListar.Name = "buttonListar";
             this.buttonListar.Size = new System.Drawing.Size(75, 23);
-            this.buttonListar.TabIndex = 5;
+            this.buttonListar.TabIndex = 3;
             this.buttonListar.Text = "Listar";
             this.buttonListar.UseVisualStyleBackColor = true;
             this.buttonListar.Click += new System.EventHandler(this.buttonListar_Click);
@@ -162,7 +164,7 @@
             this.buttonAlterar.Location = new System.Drawing.Point(164, 268);
             this.buttonAlterar.Name = "buttonAlterar";
             this.buttonAlterar.Size = new System.Drawing.Size(75, 23);
-            this.buttonAlterar.TabIndex = 6;
+            this.buttonAlterar.TabIndex = 4;
             this.buttonAlterar.Text = "Alterar";
             this.buttonAlterar.UseVisualStyleBackColor = true;
             this.buttonAlterar.Click += new System.EventHandler(this.buttonAlterar_Click);
@@ -172,7 +174,7 @@
             this.buttonRemover.Location = new System.Drawing.Point(320, 267);
             this.buttonRemover.Name = "buttonRemover";
             this.buttonRemover.Size = new System.Drawing.Size(75, 23);
-            this.buttonRemover.TabIndex = 7;
+            this.buttonRemover.TabIndex = 5;
             this.buttonRemover.Text = "Remover";
             this.buttonRemover.UseVisualStyleBackColor = true;
             this.buttonRemover.Click += new System.EventHandler(this.buttonRemover_Click);

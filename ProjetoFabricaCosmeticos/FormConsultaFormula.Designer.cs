@@ -52,7 +52,7 @@
             this.label1.Location = new System.Drawing.Point(25, 45);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 13);
-            this.label1.TabIndex = 1;
+            this.label1.TabIndex = 5;
             this.label1.Text = "Produto";
             // 
             // listViewFormula
@@ -63,7 +63,7 @@
             this.listViewFormula.Location = new System.Drawing.Point(75, 108);
             this.listViewFormula.Name = "listViewFormula";
             this.listViewFormula.Size = new System.Drawing.Size(398, 125);
-            this.listViewFormula.TabIndex = 2;
+            this.listViewFormula.TabIndex = 1;
             this.listViewFormula.UseCompatibleStateImageBehavior = false;
             this.listViewFormula.View = System.Windows.Forms.View.Details;
             // 
@@ -77,7 +77,7 @@
             this.buttonListar.Location = new System.Drawing.Point(75, 259);
             this.buttonListar.Name = "buttonListar";
             this.buttonListar.Size = new System.Drawing.Size(75, 34);
-            this.buttonListar.TabIndex = 3;
+            this.buttonListar.TabIndex = 2;
             this.buttonListar.Text = "Listar";
             this.buttonListar.UseVisualStyleBackColor = true;
             this.buttonListar.Click += new System.EventHandler(this.buttonListar_Click);
@@ -97,7 +97,7 @@
             this.buttonRemoverItem.Location = new System.Drawing.Point(237, 259);
             this.buttonRemoverItem.Name = "buttonRemoverItem";
             this.buttonRemoverItem.Size = new System.Drawing.Size(75, 34);
-            this.buttonRemoverItem.TabIndex = 5;
+            this.buttonRemoverItem.TabIndex = 3;
             this.buttonRemoverItem.Text = "Remover Item";
             this.buttonRemoverItem.UseVisualStyleBackColor = true;
             this.buttonRemoverItem.Click += new System.EventHandler(this.buttonRemoverItem_Click);
