@@ -144,27 +144,27 @@ namespace Biblioteca.DAO
                 string sql = "SELECT Compra.Quantidade, Compra.Preco, Compra.ID_Fornecedor, Compra.ID_MateriaPrima, ";
                 sql += " MateriaPrima.Nome AS NomeMateriaPrima, Fornecedor.RazaoSocial AS RazaoSocialFornecedor FROM Compra ";
                 sql += " inner join MateriaPrima on Compra.ID_MateriaPrima = MateriaPrima.ID ";
-                sql += " inner join Fornecedor on Compra.ID_Fornecedor = Fornecedor.ID ";
+                sql += " inner join Fornecedor on Compra.ID_Fornecedor = Fornecedor.ID where Compra.ID_Fornecedor = Compra.ID_Fornecedor ";
 
-                if (filtro.Fornecedor.Id > 0)
+                if (filtro.Fornecedor != null && filtro.Fornecedor.Id > 0)
                 {
                     sql += " and compra.ID_Fornecedor = @IdFornecedor ";
                 }
 
-                if (filtro.MateriaPrima.Id > 0)
+                if (filtro.MateriaPrima != null && filtro.MateriaPrima.Id > 0)
                 {
                     sql += " and compra.ID_MateriaPrima = @IdMateriaPrima ";
                 }
 
                 SqlCommand cmd = new SqlCommand(sql, sqlcon);
 
-                if (filtro.Fornecedor.Id > 0)
+                if (filtro.Fornecedor != null && filtro.Fornecedor.Id > 0)
                 {
                     cmd.Parameters.Add("@IdFornecedor", SqlDbType.Int);
                     cmd.Parameters["@IdFornecedor"].Value = filtro.Fornecedor.Id;
                 }
 
-                if (filtro.MateriaPrima.Id > 0)
+                if (filtro.MateriaPrima != null && filtro.MateriaPrima.Id > 0)
                 {
                     cmd.Parameters.Add("@IdMateriaPrima", SqlDbType.Int);
                     cmd.Parameters["@IdMateriaPrima"].Value = filtro.MateriaPrima.Id;

@@ -20,28 +20,10 @@ namespace ProjetoFabricaCosmeticos
         public FormConsultaCompra()
         {
             InitializeComponent();
-            ListarFornecedorCombo();
             ListarMateriaCombo();
+            ListarFornecedorCombo();
         }
-        private void ListarFornecedorCombo()
-        {
-            try
-            {
-                Service1 dados = new Service1();
-                Fornecedor filtro = new Fornecedor();
-                listaFornecedor = dados.SelectFornecedor(filtro).ToList();
-                comboBoxFornecedor.Items.Clear();
-                foreach (Fornecedor f in listaFornecedor)
-                {
-                    comboBoxFornecedor.Items.Add(f.razaoSocial);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
+        
         private void ListarMateriaCombo()
         {
             try
@@ -71,29 +53,51 @@ namespace ProjetoFabricaCosmeticos
         {
             try
             {
-                Service1 dados = new Service1();
                 Compra filtro = new Compra();
-                if (comboBoxMateriaPrima.Text.Trim().Equals("") == false)
+                
+                int indexFornecedor = comboBoxFornecedor.SelectedIndex;
+                if (indexFornecedor > 0)
                 {
-                    filtro.materiaPrima.nome = comboBoxMateriaPrima.Text;
+                    filtro.fornecedor = listaFornecedor.ElementAt(indexFornecedor);
                 }
-                else
-                {
-                    if (comboBoxFornecedor.Text.Trim().Equals("") == false)
-                    {
-                        filtro.fornecedor.razaoSocial = comboBoxFornecedor.Text;
-                    }
 
+                int indexMateriaPrima = comboBoxMateriaPrima.SelectedIndex;
+                if (indexMateriaPrima > 0)
+                {
+                    filtro.materiaPrima = listaMateriaPrima.ElementAt(indexMateriaPrima);
                 }
+
+                Service1 dados = new Service1();
                 listaCompra = dados.SelectCompra(filtro).ToList();
+
                 comboBoxMateriaPrima.Items.Clear();
+
                 foreach (Compra c in listaCompra)
                 {
                     ListViewItem linha = listViewCompra.Items.Add(c.fornecedor.razaoSocial);
-                    listViewCompra.Items.Add(c.materiaPrima.nome);
-                    listViewCompra.Items.Add(Convert.ToString(c.preco));
-                    listViewCompra.Items.Add(Convert.ToString(c.quantidade));
+                    linha.SubItems.Add(c.materiaPrima.nome);
+                    linha.SubItems.Add(Convert.ToString(c.preco));
+                    linha.SubItems.Add(Convert.ToString(c.quantidade));
 
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ListarFornecedorCombo()
+        {
+            try
+            {
+                Service1 dados = new Service1();
+                Fornecedor filtro = new Fornecedor();
+                listaFornecedor = dados.SelectFornecedor(filtro).ToList();
+                comboBoxFornecedor.Items.Clear();
+                foreach (Fornecedor f in listaFornecedor)
+                {
+                    comboBoxFornecedor.Items.Add(f.razaoSocial);
                 }
             }
             catch (Exception ex)

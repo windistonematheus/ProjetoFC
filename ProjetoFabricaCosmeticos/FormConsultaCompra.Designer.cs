@@ -28,29 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBoxFornecedor = new System.Windows.Forms.ComboBox();
             this.comboBoxMateriaPrima = new System.Windows.Forms.ComboBox();
             this.listViewCompra = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.buttonConsultar = new System.Windows.Forms.Button();
             this.buttonAlterar = new System.Windows.Forms.Button();
             this.buttonRemover = new System.Windows.Forms.Button();
+            this.comboBoxFornecedor = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(24, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Fornecedor";
-            this.label1.UseCompatibleTextRendering = true;
             // 
             // label2
             // 
@@ -60,14 +50,6 @@
             this.label2.Size = new System.Drawing.Size(71, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Materia Prima";
-            // 
-            // comboBoxFornecedor
-            // 
-            this.comboBoxFornecedor.FormattingEnabled = true;
-            this.comboBoxFornecedor.Location = new System.Drawing.Point(114, 13);
-            this.comboBoxFornecedor.Name = "comboBoxFornecedor";
-            this.comboBoxFornecedor.Size = new System.Drawing.Size(300, 21);
-            this.comboBoxFornecedor.TabIndex = 2;
             // 
             // comboBoxMateriaPrima
             // 
@@ -91,15 +73,15 @@
             this.listViewCompra.UseCompatibleStateImageBehavior = false;
             this.listViewCompra.View = System.Windows.Forms.View.Details;
             // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Fornecedor";
-            this.columnHeader1.Width = 86;
-            // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "Materia Prima";
             this.columnHeader2.Width = 119;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Fornecedor";
+            this.columnHeader1.Width = 86;
             // 
             // columnHeader3
             // 
@@ -140,19 +122,37 @@
             this.buttonRemover.UseVisualStyleBackColor = true;
             this.buttonRemover.Click += new System.EventHandler(this.buttonRemover_Click);
             // 
+            // comboBoxFornecedor
+            // 
+            this.comboBoxFornecedor.FormattingEnabled = true;
+            this.comboBoxFornecedor.Location = new System.Drawing.Point(114, 12);
+            this.comboBoxFornecedor.Name = "comboBoxFornecedor";
+            this.comboBoxFornecedor.Size = new System.Drawing.Size(300, 21);
+            this.comboBoxFornecedor.TabIndex = 9;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(24, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(62, 17);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Fornecedor";
+            this.label1.UseCompatibleTextRendering = true;
+            // 
             // FormConsultaCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(441, 261);
+            this.Controls.Add(this.comboBoxFornecedor);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonRemover);
             this.Controls.Add(this.buttonAlterar);
             this.Controls.Add(this.buttonConsultar);
             this.Controls.Add(this.listViewCompra);
             this.Controls.Add(this.comboBoxMateriaPrima);
-            this.Controls.Add(this.comboBoxFornecedor);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Name = "FormConsultaCompra";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormConsultaCompra";
@@ -162,10 +162,7 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBoxFornecedor;
         private System.Windows.Forms.ComboBox comboBoxMateriaPrima;
         private System.Windows.Forms.ListView listViewCompra;
         private System.Windows.Forms.ColumnHeader columnHeader1;
@@ -175,5 +172,7 @@
         private System.Windows.Forms.Button buttonConsultar;
         private System.Windows.Forms.Button buttonAlterar;
         private System.Windows.Forms.Button buttonRemover;
+        private System.Windows.Forms.ComboBox comboBoxFornecedor;
+        private System.Windows.Forms.Label label1;
     }
 }
