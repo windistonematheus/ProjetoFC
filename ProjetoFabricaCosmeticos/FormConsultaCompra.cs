@@ -55,7 +55,6 @@ namespace ProjetoFabricaCosmeticos
 
                     Service1 dados = new Service1();
                     dados.DeleteCompra(compraSelecionado);
-
                     listViewCompra.Items.Clear();
                     MessageBox.Show("Compra removida com sucesso");
                 }
@@ -125,6 +124,34 @@ namespace ProjetoFabricaCosmeticos
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void AlterarCompra()
+        {
+            try
+            {
+                if (listViewCompra.FocusedItem != null)
+                {
+                    int posicao = listViewCompra.FocusedItem.Index;
+                    Compra compraSelecionada = this.listaCompra.ElementAt(posicao);
+                    FormCadastroCompra form = new FormCadastroCompra(compraSelecionada);
+                    form.ShowDialog();
+                    listViewCompra.Clear();
+                }
+                else
+                {
+                    MessageBox.Show(" Favor selecioanr a compra");
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void buttonAlterar_Click(object sender, EventArgs e)
+        {
+            AlterarCompra();
         }
     }
 }

@@ -17,13 +17,29 @@ namespace ProjetoFabricaCosmeticos
         List<MateriaPrima> listaMateriaPrima = new List<MateriaPrima>();
         List<MateriaPrima> listaComboMateriaPrima = new List<MateriaPrima>();
 
+        int operacao;
+        int filtro;
 
         public FormCadastroCompra()
         {
             InitializeComponent();
             ListarFornecedorCombo();
             ListarMateriaCombo();
+            this.operacao = 0;
+            buttonCadastrar.Text = "cadastrar";
+            this.Text = "cadastar compra";
+        }
 
+        public FormCadastroCompra(Compra c)
+        {
+            InitializeComponent();
+            comboBoxFornecedor.Text = c.fornecedor.razaoSocial;
+            comboBoxMateriaPrima.Text = c.materiaPrima.nome;
+            textBoxPreco.Text = Convert.ToString(c.preco);
+            textBoxQuantidade.Text = Convert.ToString(c.quantidade);
+            this.operacao = 1;
+            buttonCadastrar.Text = "Atualizar";
+            this.Text = " Atualização da compra";
         }
 
         private void ListarFornecedorCombo()
