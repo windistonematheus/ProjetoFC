@@ -30,7 +30,7 @@ namespace ProjetoFabricaCosmeticos
                     MateriaPrima materiaprimaSelecionada = this.listaMateriaPrima.ElementAt(posicao);
                     FormCadastroMateriaPrima form = new FormCadastroMateriaPrima(materiaprimaSelecionada);
                     form.ShowDialog();
-                    listViewMateriaPrima.Clear();
+                    listViewMateriaPrima.Items.Clear();
                 }
                 else
                 {
