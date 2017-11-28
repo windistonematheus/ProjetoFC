@@ -50,8 +50,7 @@ namespace Biblioteca.DAO
             try
             {
                 this.Conectar();
-                string sql = "update MateriaPrima set Preco = @Preco,Quantidade = @Quantidade, ";
-                sql += " ID_Fornecedor = @ID_Fornecedor,ID_MateriaPrima = @ID_MateriaPrima ";
+                string sql = "update Compra set Preco = @Preco,Quantidade = @Quantidade  ";
                 sql += " Where ID_Fornecedor = @ID_Fornecedor and ID_MateriaPrima = @ID_MateriaPrima";
 
                 SqlCommand cmd = new SqlCommand(sql, this.sqlcon);

@@ -33,6 +33,8 @@ namespace ProjetoFabricaCosmeticos
         public FormCadastroCompra(Compra c)
         {
             InitializeComponent();
+            ListarFornecedorCombo();
+            ListarMateriaCombo();
             comboBoxFornecedor.Text = c.fornecedor.razaoSocial;
             comboBoxMateriaPrima.Text = c.materiaPrima.nome;
             textBoxPreco.Text = Convert.ToString(c.preco);
@@ -100,16 +102,26 @@ namespace ProjetoFabricaCosmeticos
                 return;
             }
             Compra compra = new Compra();
+            compra.fornecedor = new Fornecedor();
+            compra.materiaPrima = new MateriaPrima();
             compra.fornecedor = listaFornecedor.ElementAt(indexFornecedor);
             compra.materiaPrima = listaMateriaPrima.ElementAt(indexMateriaPrima);
             compra.preco = Convert.ToDouble(textBoxPreco.Text);
             compra.quantidade = Convert.ToInt32(textBoxQuantidade.Text);
 
             Service1 dados = new Service1();
+            if (this.operacao == 0)
+            {
+                dados.InsertCompra(compra);
+                MessageBox.Show("Compra cadastrada com sucesso");
+            }
+            else
+            {
+               dados.UpdateCompra(compra);
+                MessageBox.Show("Compra alterado com sucesso");
+            }
 
-            dados.InsertCompra(compra);
-            MessageBox.Show("Compra cadastrada com sucesso");
-
+            
             comboBoxFornecedor.SelectedIndex = -1;
             comboBoxMateriaPrima.SelectedIndex = -1;
             textBoxPreco.Clear();

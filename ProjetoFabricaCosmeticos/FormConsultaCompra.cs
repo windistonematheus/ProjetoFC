@@ -136,7 +136,7 @@ namespace ProjetoFabricaCosmeticos
                     Compra compraSelecionada = this.listaCompra.ElementAt(posicao);
                     FormCadastroCompra form = new FormCadastroCompra(compraSelecionada);
                     form.ShowDialog();
-                    listViewCompra.Clear();
+                    listViewCompra.Items.Clear();
                 }
                 else
                 {
