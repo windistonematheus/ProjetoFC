@@ -76,12 +76,12 @@
             // 
             // columnHeader2
             // 
-            this.columnHeader2.Text = "Materia Prima";
+            this.columnHeader2.Text = "Fornecedor";
             this.columnHeader2.Width = 119;
             // 
             // columnHeader1
             // 
-            this.columnHeader1.Text = "Fornecedor";
+            this.columnHeader1.Text = "Materia Prima";
             this.columnHeader1.Width = 86;
             // 
             // columnHeader3
