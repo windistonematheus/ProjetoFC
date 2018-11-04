@@ -11,16 +11,10 @@ namespace Biblioteca.Negocio
     public class MateriaPrimaNegocio
 
     {
-        public void Delete(MateriaPrima  materiaprima)
+        public void Delete(MateriaPrima materiaprima)
         {
-            if (materiaprima == null)
-            {
-                throw new Exception("Informar os dados do fornecedor");
-            }
-            if (materiaprima.Id <= 0)
-            {
-                throw new Exception("O Id da Materia não poderá ser menor ou igual a zero");
-            }
+            ValidarMateriaPrimaId(materiaprima);
+
             MateriaPrimaDados dados = new MateriaPrimaDados();
 
             if (this.VerificarDuplicidade(materiaprima) == false)
@@ -33,75 +27,7 @@ namespace Biblioteca.Negocio
 
         public void Insert(MateriaPrima materiaprima)
         {
-
-            if (materiaprima == null)
-            {
-                throw new Exception("Informar os dados da materia prima");
-            }
-
-            if (materiaprima.Nome == null)
-            {
-                throw new Exception("Informar o Nome da materia prima");
-            }
-
-            if (materiaprima.Nome.Length > 20)
-            {
-                throw new Exception("O nome da materia prima não pode ter mais de 20 caracteres");
-            }
-
-            if (materiaprima.Nome.Trim().Equals("") == true)
-            {
-                throw new Exception("Informar o Nome da Materia prima");
-            }
-
-            if (materiaprima.Descricao == null)
-            {
-                throw new Exception("Informar a descrição da materia prima");
-            }
-
-            if (materiaprima.Descricao.Trim().Equals("") == true)
-            {
-                throw new Exception("Informar a descricao da materia prima");
-            }
-
-            if (materiaprima.Descricao.Length > 50)
-            {
-                throw new Exception("A descricao da materia prima não pode ter mais de 50 caracteres");
-            }
-
-            if (materiaprima.Lote == null)
-            {
-                throw new Exception("Informar o lote da materia prima");
-            }
-
-            if (materiaprima.Lote.Trim().Equals("") == true)
-            {
-                throw new Exception("Informar o lote da materia prima");
-            }
-
-            if (materiaprima.Lote.Length > 10)
-            {
-                throw new Exception("O lote da materia prima não pode ter mais de 10 caracteres");
-            }
-
-            if (materiaprima.Validade == null)
-            {
-                throw new Exception("Informar a validade da materia prima");
-            }
-
-            if (materiaprima.Validade.Equals("") == true)
-            {
-                throw new Exception("Informar a validade da materia prima");
-            }
-
-            if (materiaprima.EstoqueAtual == 0)
-            {
-                throw new Exception("Informar o estoque atual");
-            }
-            if (materiaprima.EstoqueAtual.Equals("") == true)
-            {
-                throw new Exception("Informar o estoque da mataria prima");
-            }
+            ValidarMateriaPrima(materiaprima);
 
             MateriaPrimaDados dados = new MateriaPrimaDados();
 
@@ -120,11 +46,55 @@ namespace Biblioteca.Negocio
 
         public void Update(MateriaPrima materiaprima)
         {
+            ValidarMateriaPrima(materiaprima);
+
+            MateriaPrimaDados dados = new MateriaPrimaDados();
+
+            if (this.VerificarDuplicidade(materiaprima) == false)
+            {
+                throw new Exception("a materia prima não esta cadastrada");
+            }
+
+            dados.Update(materiaprima);
+        }
+
+        public bool VerificarDuplicidade(MateriaPrima materiaprima)
+        {
+            return new MateriaPrimaDados().VerificarDuplicidade(materiaprima);
+        }
+
+        public void ValidarMateriaPrimaId(MateriaPrima materiaprima)
+        {
+            if (materiaprima == null)
+            {
+                throw new Exception("Informar os dados do fornecedor");
+            }
+            if (materiaprima.Id <= 0)
+            {
+                throw new Exception("O Id da Materia não poderá ser menor ou igual a zero");
+            }
+        }
+
+        public void ValidarMateriaPrima(MateriaPrima materiaprima)
+        {
             if (materiaprima == null)
             {
                 throw new Exception("Informar os dados da materia prima");
             }
 
+            ValidarNome(materiaprima);
+
+            ValidarDescricao(materiaprima);
+
+            ValidarLote(materiaprima);
+
+            ValidarValidade(materiaprima);
+
+            ValidarEstoqueAtual(materiaprima);
+        }
+
+        public void ValidarNome(MateriaPrima materiaprima)
+        {
             if (materiaprima.Nome == null)
             {
                 throw new Exception("Informar o Nome da materia prima");
@@ -139,7 +109,10 @@ namespace Biblioteca.Negocio
             {
                 throw new Exception("Informar o Nome da Materia prima");
             }
+        }
 
+        public void ValidarDescricao(MateriaPrima materiaprima)
+        {
             if (materiaprima.Descricao == null)
             {
                 throw new Exception("Informar a descrição da materia prima");
@@ -154,7 +127,10 @@ namespace Biblioteca.Negocio
             {
                 throw new Exception("A descricao da materia prima não pode ter mais de 50 caracteres");
             }
+        }
 
+        public void ValidarLote(MateriaPrima materiaprima)
+        {
             if (materiaprima.Lote == null)
             {
                 throw new Exception("Informar o lote da materia prima");
@@ -169,38 +145,27 @@ namespace Biblioteca.Negocio
             {
                 throw new Exception("O lote da materia prima não pode ter mais de 10 caracteres");
             }
+        }
 
+        public void ValidarValidade(MateriaPrima materiaprima)
+        {
             if (materiaprima.Validade == null)
             {
                 throw new Exception("Informar a validade da materia prima");
             }
 
-            if (materiaprima.Validade.Equals("") == true)
+            if (materiaprima.Validade < DateTime.Now)
             {
-                throw new Exception("Informar a validade da materia prima");
+                throw new Exception("Data da validade da materia prima não pode ser anterior ao agora");
             }
+        }
 
+        public void ValidarEstoqueAtual(MateriaPrima materiaprima)
+        {
             if (materiaprima.EstoqueAtual == 0)
             {
                 throw new Exception("Informar o estoque atual");
             }
-            if (materiaprima.EstoqueAtual.Equals("") == true)
-            {
-                throw new Exception("Informar o estoque da mataria prima");
-            }
-            MateriaPrimaDados dados = new MateriaPrimaDados();
-
-            if (this.VerificarDuplicidade(materiaprima) == false)
-            {
-                throw new Exception("a materia prima não esta cadastrada");
-            }
-
-            dados.Update(materiaprima);
-        }
-
-        public bool VerificarDuplicidade(MateriaPrima materiaprima)
-        {
-            return new MateriaPrimaDados().VerificarDuplicidade(materiaprima);
         }
     }
 }
