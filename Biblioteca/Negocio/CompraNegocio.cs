@@ -10,6 +10,7 @@ namespace Biblioteca.Negocio
 {
     public class CompraNegocio : InterfaceCompra
     {
+        
         public void Delete(Compra compra)
         {
             if (compra == null)
@@ -41,6 +42,14 @@ namespace Biblioteca.Negocio
 
             dados.Delete(compra);
         }
+        public Boolean ValidarPreco(Compra compra)
+        {
+            return compra.Preco != 0;
+        }
+        public Boolean ValidarQuantidade(Compra compra)
+        {
+            return compra.Quantidade != 0;
+        }
 
         public void Insert(Compra compra)
         {
@@ -49,7 +58,12 @@ namespace Biblioteca.Negocio
                 throw new Exception("Informar os dados da compra");
             }
 
-            if (Convert.ToString(compra.Preco)  == null)
+            if (Convert.ToString(compra.Preco) == null)
+            {
+                throw new Exception("Informar o preço do produto");
+            }
+
+            if (ValidarPreco(compra))
             {
                 throw new Exception("Informar o preço do produto");
             }
@@ -65,6 +79,11 @@ namespace Biblioteca.Negocio
             }
 
             if (Convert.ToString(compra.Quantidade) == null)
+            {
+                throw new Exception("Informar a quantiade do produto");
+            }
+
+            if (ValidarQuantidade(compra))
             {
                 throw new Exception("Informar a quantiade do produto");
             }
@@ -86,7 +105,7 @@ namespace Biblioteca.Negocio
 
         public List<Compra> Select(Compra compra)
         {
-             return new CompraDados().Select(compra);
+            return new CompraDados().Select(compra);
         }
 
         public void Update(Compra compra)
@@ -102,6 +121,6 @@ namespace Biblioteca.Negocio
         }
     }
 
-        
-   
+
+
 }
