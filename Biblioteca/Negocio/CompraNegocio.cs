@@ -10,7 +10,6 @@ namespace Biblioteca.Negocio
 {
     public class CompraNegocio : InterfaceCompra
     {
-        
         public void Delete(Compra compra)
         {
             if (compra == null)
@@ -33,6 +32,7 @@ namespace Biblioteca.Negocio
             {
                 throw new Exception("O Id da matéria prima não poderá ser menor ou igual a zero");
             }
+
             CompraDados dados = new CompraDados();
 
             if (this.VerificarDuplicidade(compra) == false)
@@ -46,10 +46,23 @@ namespace Biblioteca.Negocio
         {
             return compra.Preco != 0;
         }
+
         public Boolean ValidarQuantidade(Compra compra)
         {
             return compra.Quantidade != 0;
         }
+
+        public Boolean ValidarTamanhoPreçoMinimo(Compra compra)
+        {
+            return Convert.ToString(compra.Preco).Length <= 3;
+        }
+
+        public Boolean ValidarTamanhoPreçoMaximo(Compra compra)
+        {
+            return Convert.ToString(compra.Preco).Length <= 14;
+        }
+
+
 
         public void Insert(Compra compra)
         {
@@ -68,11 +81,14 @@ namespace Biblioteca.Negocio
                 throw new Exception("Informar o preço do produto");
             }
 
-            if (Convert.ToString(compra.Preco).Length > 14)
+            if(ValidarTamanhoPreçoMaximo(compra))
             {
                 throw new Exception("O preço do produto não pode ter mais de 14 caracteres");
             }
-
+            if (ValidarTamanhoPreçoMinimo(compra))
+            {
+                throw new Exception("Informar a preço do produto");
+            }
             if (Convert.ToString(compra.Preco).Trim().Equals("") == true)
             {
                 throw new Exception("Informar o preço do produto");
@@ -92,7 +108,7 @@ namespace Biblioteca.Negocio
             {
                 throw new Exception("a quantidade do produto não pode ter mais de 8 caracteres");
             }
-
+                       
             if (Convert.ToString(compra.Quantidade).Trim().Equals("") == true)
             {
                 throw new Exception("Informar a quantidade do produto");

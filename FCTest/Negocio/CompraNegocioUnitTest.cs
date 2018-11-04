@@ -26,6 +26,21 @@ namespace FCTest.Negocio
 
             Assert.IsTrue(compraNegocio.ValidarQuantidade(compra));
         }
+        [TestMethod]
+        public void TestMethod3()
+        {
+            Compra compra = new Compra();
+            compra.Preco = 100;
 
+            Assert.IsTrue(compraNegocio.ValidarTamanhoPreçoMinimo(compra));
+        }
+        [TestMethod]
+        public void TestMethod4()
+        {
+            Compra compra = new Compra();
+            compra.Preco = 500000;
+
+            Assert.IsTrue(compraNegocio.ValidarTamanhoPreçoMaximo(compra));
+        }
     }
 }
