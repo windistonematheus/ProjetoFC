@@ -9,10 +9,18 @@ using System.Threading.Tasks;
 namespace Biblioteca.Negocio
 {
     public class CompraNegocio : InterfaceCompra
+
+
+
     {
+        public Boolean VerificarCompraDeletar(Compra compra)
+        {
+            return compra != null;
+        }
+
         public void Delete(Compra compra)
         {
-            if (compra == null)
+            if (VerificarCompraDeletar(compra))
             {
                 throw new Exception("Informar os dados da compra");
             }
@@ -62,6 +70,34 @@ namespace Biblioteca.Negocio
             return Convert.ToString(compra.Preco).Length <= 14;
         }
 
+        public Boolean VerificarPrecoCompraNula(Compra compra)
+        {
+            return Convert.ToString(compra.Preco) != null;
+        }
+
+        public Boolean VerificarQuantidadeCompraNula(Compra compra)
+        {
+            return Convert.ToString(compra.Quantidade) != null;
+        }
+
+        public Boolean VerificarTamanhoQuantidadeMinimo(Compra compra)
+        {
+            return Convert.ToString(compra.Quantidade).Length >= 1;
+        }
+
+        public Boolean VerificarTamanhoQuantidadeMaximo(Compra compra)
+        {
+            return Convert.ToString(compra.Quantidade).Length <= 8;
+        }
+        public Boolean VerificarQuantidadeCompraNulaTrim(Compra compra)
+        {
+            return Convert.ToString(compra.Quantidade).Trim().Equals("") != true;
+        }
+        public Boolean VerificarPrecoCompraNulaTrim(Compra compra)
+        {
+            return Convert.ToString(compra.Preco).Trim().Equals("") != true;
+        }
+
 
 
         public void Insert(Compra compra)
@@ -71,7 +107,7 @@ namespace Biblioteca.Negocio
                 throw new Exception("Informar os dados da compra");
             }
 
-            if (Convert.ToString(compra.Preco) == null)
+            if (VerificarPrecoCompraNula(compra))
             {
                 throw new Exception("Informar o preço do produto");
             }
@@ -81,7 +117,7 @@ namespace Biblioteca.Negocio
                 throw new Exception("Informar o preço do produto");
             }
 
-            if(ValidarTamanhoPreçoMaximo(compra))
+            if (ValidarTamanhoPreçoMaximo(compra))
             {
                 throw new Exception("O preço do produto não pode ter mais de 14 caracteres");
             }
@@ -89,12 +125,12 @@ namespace Biblioteca.Negocio
             {
                 throw new Exception("Informar a preço do produto");
             }
-            if (Convert.ToString(compra.Preco).Trim().Equals("") == true)
+            if (VerificarPrecoCompraNulaTrim(compra))
             {
                 throw new Exception("Informar o preço do produto");
             }
 
-            if (Convert.ToString(compra.Quantidade) == null)
+            if (VerificarQuantidadeCompraNula(compra))
             {
                 throw new Exception("Informar a quantiade do produto");
             }
@@ -104,12 +140,12 @@ namespace Biblioteca.Negocio
                 throw new Exception("Informar a quantiade do produto");
             }
 
-            if (Convert.ToString(compra.Quantidade).Length > 8)
+            if (VerificarTamanhoQuantidadeMaximo(compra))
             {
                 throw new Exception("a quantidade do produto não pode ter mais de 8 caracteres");
             }
-                       
-            if (Convert.ToString(compra.Quantidade).Trim().Equals("") == true)
+
+            if (VerificarPrecoCompraNulaTrim(compra))
             {
                 throw new Exception("Informar a quantidade do produto");
             }
@@ -135,6 +171,7 @@ namespace Biblioteca.Negocio
         {
             return new CompraDados().VerificarDuplicidade(compra);
         }
+
     }
 
 
