@@ -11,56 +11,70 @@ namespace Biblioteca.Negocio
     public class MateriaPrimaNegocio
 
     {
+        private InterfaceMateriaPrima dados;
+
+        public MateriaPrimaNegocio()
+        {
+            Dados = new MateriaPrimaDados();
+        }
+
+        public InterfaceMateriaPrima Dados
+        {
+            get
+            {
+                return dados;
+            }
+
+            set
+            {
+                dados = value;
+            }
+        }
+
         public void Delete(MateriaPrima materiaprima)
         {
             ValidarMateriaPrimaId(materiaprima);
-
-            MateriaPrimaDados dados = new MateriaPrimaDados();
 
             if (this.VerificarDuplicidade(materiaprima) == false)
             {
                 throw new Exception("A materia prima não esta cadastrado");
             }
 
-            dados.Delete(materiaprima);
+            this.Dados.Delete(materiaprima);
         }
 
         public void Insert(MateriaPrima materiaprima)
         {
             ValidarMateriaPrima(materiaprima);
 
-            MateriaPrimaDados dados = new MateriaPrimaDados();
-
             if (this.VerificarDuplicidade(materiaprima) == true)
             {
                 throw new Exception("a materia já se encontra cadastrada");
             }
 
-            dados.Insert(materiaprima);
+            this.Dados.Insert(materiaprima);
         }
 
         public List<MateriaPrima> Select(MateriaPrima filtro)
         {
-            return new MateriaPrimaDados().Select(filtro);
+            return this.Dados.Select(filtro);
         }
 
         public void Update(MateriaPrima materiaprima)
         {
             ValidarMateriaPrima(materiaprima);
 
-            MateriaPrimaDados dados = new MateriaPrimaDados();
-
             if (this.VerificarDuplicidade(materiaprima) == false)
             {
                 throw new Exception("a materia prima não esta cadastrada");
             }
 
-            dados.Update(materiaprima);
+            this.Dados.Update(materiaprima);
         }
 
         public bool VerificarDuplicidade(MateriaPrima materiaprima)
         {
-            return new MateriaPrimaDados().VerificarDuplicidade(materiaprima);
+            return this.dados.VerificarDuplicidade(materiaprima);
         }
 
         public void ValidarMateriaPrimaId(MateriaPrima materiaprima)
