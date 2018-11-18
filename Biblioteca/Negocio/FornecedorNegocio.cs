@@ -11,6 +11,26 @@ namespace Biblioteca.Negocio
     public class FornecedorNegocio : InterfaceFornecedor
 
     {
+        private InterfaceFornecedor dados;
+        public FornecedorNegocio()
+        {
+            Dados = new FornecedorDados();
+
+        }
+
+        public InterfaceFornecedor Dados
+        {
+            get
+            {
+                return dados;
+            }
+
+            set
+            {
+                dados = value;
+            }
+        }
+
         public void Delete(Fornecedor fornecedor)
         {
             if (fornecedor == null)
@@ -21,14 +41,13 @@ namespace Biblioteca.Negocio
             {
                 throw new Exception("O Id do fornecedor não poderá ser menor ou igual a zero");
             }
-            FornecedorDados dados = new FornecedorDados();
 
             if (this.VerificarDuplicidade(fornecedor) == false)
             {
                 throw new Exception("O fornecedor não esta cadastrado");
             }
 
-            dados.Delete(fornecedor);
+            Dados.Delete(fornecedor);
         }
 
         public void Insert(Fornecedor fornecedor)
@@ -178,19 +197,17 @@ namespace Biblioteca.Negocio
                 throw new Exception("O Telefone do fornecedor não pode ter mais de 50 caracteres");
             }
 
-            FornecedorDados dados = new FornecedorDados();
-
             if (this.VerificarDuplicidade(fornecedor) == true)
             {
                 throw new Exception("O fornecedor já se encontra cadastrado");
             }
 
-            dados.Insert(fornecedor);
+            Dados.Insert(fornecedor);
         }
 
         public List<Fornecedor> Select(Fornecedor filtro)
         {
-            return new FornecedorDados().Select(filtro);
+            return Dados.Select(filtro);
         }
 
         public void Update(Fornecedor fornecedor)
@@ -343,19 +360,18 @@ namespace Biblioteca.Negocio
             {
                 throw new Exception("O Id do fornecedor não poderá ser menor ou igual a zero");
             }
-            FornecedorDados dados = new FornecedorDados();
             
             if (this.VerificarDuplicidade(fornecedor)==false)
             {
                 throw new Exception("O fornecedor não esta cadastrado");
             }
-            
-            dados.Update(fornecedor);
+
+            Dados.Update(fornecedor);
         }
 
         public bool VerificarDuplicidade(Fornecedor fornecedor)
         {
-            return new FornecedorDados().VerificarDuplicidade(fornecedor);
+            return Dados.VerificarDuplicidade(fornecedor);
         }
     }
 }

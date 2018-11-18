@@ -22,7 +22,7 @@
         public TestContext TestContext { get; set; }
 
         [TestMethod]
-        public void PesquisandoPreco()
+        public void TesteConsultaDao()
         {
             List<MateriaPrima> materiasPrimas = new List<MateriaPrima>
                 {
@@ -30,18 +30,41 @@
                     new MateriaPrima {Id = 2, Validade = DateTime.Now, Descricao = "produto2", Lote = "2", Nome="mat 2", EstoqueAtual=2 },
                     new MateriaPrima {Id = 3, Validade = DateTime.Now, Descricao = "produto3", Lote = "3", Nome="mat 3", EstoqueAtual=3 }
                 };
-            MateriaPrima materiaPrima = new MateriaPrima
-            { Id = 4, Validade = DateTime.Now, Descricao = "produto4", Lote = "4", Nome = "mat 4", EstoqueAtual = 4 };
-
+            
             mockMateriaPrimaRepository = new Mock<InterfaceMateriaPrima>();
-            mockMateriaPrimaRepository.Setup(p => p.Select(materiaPrima)).Returns(materiasPrimas);
+            mockMateriaPrimaRepository.Setup(p => p.Select(null)).Returns(materiasPrimas);
 
             materiaPrimaNegocio.Dados = mockMateriaPrimaRepository.Object;
-            List<MateriaPrima> resultado = this.materiaPrimaNegocio.Select(materiaPrima);
+            List<MateriaPrima> resultado = materiaPrimaNegocio.Select(null);
             Assert.AreEqual(materiasPrimas, resultado);
         }
+        [TestMethod]
+        public void VerificarDuplicidadeFalse()
+        {
+            MateriaPrima materiaPrima = new MateriaPrima
+            {
+                Validade = DateTime.Now,
+                Descricao = "produto3",
+                Lote = "3",
+                Nome = "mat 3",
+                EstoqueAtual = 3
 
+            };
+            mockMateriaPrimaRepository = new Mock<InterfaceMateriaPrima>();
+            mockMateriaPrimaRepository.Setup(p => p.VerificarDuplicidade(materiaPrima)).Returns(false);
 
+            materiaPrimaNegocio.Dados = mockMateriaPrimaRepository.Object;
+            Boolean resultado = materiaPrimaNegocio.VerificarDuplicidade(materiaPrima);
+            Assert.IsFalse(resultado);
+        }
+
+      
     }
+
+
+
+
+
+
 
 }
