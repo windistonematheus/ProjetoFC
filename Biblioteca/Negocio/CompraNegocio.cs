@@ -10,9 +10,25 @@ namespace Biblioteca.Negocio
 {
     public class CompraNegocio : InterfaceCompra
 
-
-
     {
+        private InterfaceCompra dados;
+        public CompraNegocio()
+        {
+            Dados = new CompraDados();
+        }
+        public InterfaceCompra Dados
+        {
+            get
+            {
+                return dados;
+            }
+            set
+            {
+                dados = value;
+            }
+        }
+        
+    
         public Boolean VerificarCompraDeletar(Compra compra)
         {
             return compra != null;
@@ -40,15 +56,13 @@ namespace Biblioteca.Negocio
             {
                 throw new Exception("O Id da matéria prima não poderá ser menor ou igual a zero");
             }
-
-            CompraDados dados = new CompraDados();
-
+                        
             if (this.VerificarDuplicidade(compra) == false)
             {
                 throw new Exception("A compra não esta cadastrado");
             }
 
-            dados.Delete(compra);
+            Dados.Delete(compra);
         }
         public Boolean ValidarPreco(Compra compra)
         {
@@ -152,24 +166,23 @@ namespace Biblioteca.Negocio
 
             CompraDados dados = new CompraDados();
 
-            dados.Insert(compra);
+            Dados.Insert(compra);
         }
 
         public List<Compra> Select(Compra compra)
         {
-            return new CompraDados().Select(compra);
+            return Dados.Select(compra);
         }
 
         public void Update(Compra compra)
         {
-            CompraDados dados = new CompraDados();
-
-            dados.Update(compra);
+           
+            Dados.Update(compra);
         }
 
         public bool VerificarDuplicidade(Compra compra)
         {
-            return new CompraDados().VerificarDuplicidade(compra);
+            return Dados.VerificarDuplicidade(compra);
         }
 
     }
